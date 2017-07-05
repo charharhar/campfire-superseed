@@ -1,0 +1,18 @@
+# Project Dependencies
+/node_modules/
+
+# Build output directories
+/build/
+
+# Cached loader directory
+.cache-loader
+
+# API keys and secrets
+.env
+
+# Logs
+logs
+*.log
+
+# OSX Files
+.DS_Store

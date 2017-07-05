@@ -1,0 +1,125 @@
+@import url(https://fonts.googleapis.com/css?family=Lato:400,300,700);
+@import url(https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css);
+
+@import '_mixins';
+
+/* dont delete */
+
+$font-stack: "Lato", "Microsoft JhengHei", "Arial", sans-serif;
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+html, body {
+  width: 100%;
+  font-family: $font-stack;
+  font-weight: 400;
+  color: #222;
+}
+
+.wrapper {
+  width: 100%;
+}
+
+/* dont delete */
+
+/* can delete everything below here */
+
+$font-size: 2px;
+$textColor: #991234;
+$increased-size: $font-size*15;
+
+.animate {
+	transition: all .3s;
+  backface-visibility: hidden; // inline test comment
+}
+
+html,
+body {
+  font-family: $font-stack;
+  margin: 0;
+  padding: 0;
+  background-color: lighten(#499, 20%);
+  height: 100%;
+  width: 100%;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0 0 10px;
+  padding: 0;
+  color: lighten($textColor, 10%);
+  font-size: $increased-size;
+  text-align: center;
+  @extend .animate;
+
+  &:hover {
+  	color: darken(pink, 20%); /* test comment */
+  }
+}
+
+div.shapes {
+	position: relative;
+	width: 350px;
+	height: 350px;
+	margin: 30px;
+	white-space: nowrap;
+	display: inline-block;
+
+	p {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		margin: 0;
+		color: black;
+	}
+}
+
+div.circle {
+	background-color: lighten(#420904, 20%);
+	@include border-radius(50%);
+
+	&.shapes {
+		border: 1px solid green;
+	}
+}
+
+div.rounded-square {
+	background-color: darken(#aec9ee, 20%);
+	@include border-radius(20px);
+	@include transform(rotate(15deg) scale(.9));
+}
+
+.image-wrapper {
+  display: block;
+  margin: 0 auto;
+
+  figure img {
+    width: 300px;
+    opacity: .6;
+    filter: alpha(opacity=60);
+  }
+}
