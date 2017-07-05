@@ -1,3 +1,4 @@
+const chalk = require('chalk');
 const path = require('path');
 const webpack = require('webpack');
 const appRootDir = require('app-root-dir');
@@ -21,6 +22,10 @@ function configFactory() {
 
   const ifDev = ifElse(isDev);
   const ifProd = ifElse(isProd);
+
+  const mode = ifDev('development', 'production');
+
+  console.log(chalk.blue(`==> Creating webpack config in ${mode} mode.`));
 
   let webpackConfig = {
     target: 'web',
