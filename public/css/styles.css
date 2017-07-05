@@ -1,5 +1,5 @@
 /*@import url(https://fonts.googleapis.com/css?family=Lato:400,300,700);*/
-@import url('https://fonts.googleapis.com/css?family=Montserrat:300,600,700');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300, 400, 600,700');
 @import url(https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css);
 
 @import '_mixins';
@@ -123,27 +123,53 @@ div.rounded-square {
     filter: alpha(opacity=60);
   }
 }
-.navbar {
+.container-fluid {
+  margin: 30px 30px 0px 30px;
+}
+
+/* Buttons */
+.button {
+  border: none;
+  border-radius: 4px;
+  padding: 0.7em 1em 0.7em 1em;
+  text-transform: uppercase;
+}
+
+.red-button {
+  color: #FFFFFF;
+  background-color: #AF1D1E;
+}
+
+.gray-button {
+  color: #AF1D1E;
+  background-color: #E9E9E9;
+}
+
+#nav-contact-button {
+  vertical-align: middle;
+  display: inline-block;
+  font-size: 1.2em;
+  font-weight: 600;
+}
+
+.navbar-wrapper {
   float: right;
   padding-top: 2.5em;
   padding-right: 0.5em;
-  text-align: center;
 }
-.navbar-nav {
+
+#navbar-list {
   display: inline-block;
-  float: none;
-}
-#navbar-links {
   text-transform: uppercase;
   list-style-type: none;
 }
-.nav-item {
+
+.navbar-link {
+  display: inline-block;
   margin-right: 2.5em;
 }
-.btn {
-  text-transform: uppercase;
-}
-#nav-contact-button {
-  font-size: 1.2em;
+
+#section-top{
+  background-color: #caabab;
 }
 
