@@ -1,11 +1,12 @@
-@import url(https://fonts.googleapis.com/css?family=Lato:400,300,700);
+/*@import url(https://fonts.googleapis.com/css?family=Lato:400,300,700);*/
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,600,700');
 @import url(https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css);
 
 @import '_mixins';
 
 /* dont delete */
 
-$font-stack: "Lato", "Microsoft JhengHei", "Arial", sans-serif;
+$font-stack: "Montserrat", "Microsoft JhengHei", "Arial", sans-serif;
 
 *, *:before, *:after {
   box-sizing: border-box;
@@ -60,7 +61,6 @@ body {
   font-family: $font-stack;
   margin: 0;
   padding: 0;
-  background-color: lighten(#499, 20%);
   height: 100%;
   width: 100%;
 }
@@ -123,3 +123,27 @@ div.rounded-square {
     filter: alpha(opacity=60);
   }
 }
+.navbar {
+  float: right;
+  padding-top: 2.5em;
+  padding-right: 0.5em;
+  text-align: center;
+}
+.navbar-nav {
+  display: inline-block;
+  float: none;
+}
+#navbar-links {
+  text-transform: uppercase;
+  list-style-type: none;
+}
+.nav-item {
+  margin-right: 2.5em;
+}
+.btn {
+  text-transform: uppercase;
+}
+#nav-contact-button {
+  font-size: 1.2em;
+}
+
