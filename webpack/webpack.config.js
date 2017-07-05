@@ -3,7 +3,6 @@ const webpack = require('webpack');
 const appRootDir = require('app-root-dir');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const AssetsPlugin = require('assets-webpack-plugin');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 function removeEmpty (x) {
   return x.filter(y => y != null);
