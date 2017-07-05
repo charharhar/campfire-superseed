@@ -1,3 +1,4 @@
+const fs = require('fs');
 const path = require('path');
 const chalk = require('chalk');
 const dotenv = require('dotenv');
@@ -12,6 +13,8 @@ const webpackDevMiddleware = require('webpack-dev-middleware');
 const webpackHotMiddleware = require('webpack-hot-middleware');
 const config = require('./webpack/webpack.config');
 const compiler = webpack(config);
+
+const isDev = process.env.NODE_ENV === 'development';
 
 /**
  * Controllers (route handlers).
@@ -29,23 +32,44 @@ const app = express();
 app.use(helmet());
 app.use(compression());
 app.use(logger('dev'));
-
-app.use(webpackDevMiddleware(compiler, {
-  quiet: true,
-  noInfo: true,
-  publicPath: config.output.publicPath,
-  headers: { 'Access-Control-Allow-Origin': '*' },
-}));
-app.use(webpackHotMiddleware(compiler));
-
-app.use('/static', express.static('build'))
-app.use('/static', express.static('public'))
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 app.set('port', process.env.PORT || 3000);
+app.set('views', path.resolve(appRootDir.get(), 'views'));
+app.engine('html', require('ejs').renderFile);
+app.set('view engine', 'html');
+app.use('/', express.static('build'))
+
+/**
+ * Webpack Development Server configuration.
+ */
+if (isDev) {
+  app.use(webpackDevMiddleware(compiler, {
+    quiet: true,
+    noInfo: true,
+    publicPath: config.output.publicPath,
+    headers: { 'Access-Control-Allow-Origin': '*' },
+  }));
+  app.use(webpackHotMiddleware(compiler));
+}
+
+/**
+ * Handle webpack generated assets.
+ */
+const assetsFilePath = path.resolve(
+  appRootDir.get(),
+  './build/',
+  './assets.json',
+);
+
+const assetsMap = JSON.parse(fs.readFileSync(assetsFilePath, 'utf8'));
 
 /**
  * Primary app routes.
  */
-app.get('*', homeController.index);
+app.get('*', (req, res) => {
+  homeController.index(req, res, assetsMap);
+});
 
 /**
  * Start Express server.
