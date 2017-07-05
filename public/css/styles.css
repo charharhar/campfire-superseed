@@ -47,15 +47,6 @@ html, body {
 
 /* can delete everything below here */
 
-$font-size: 2px;
-$textColor: #991234;
-$increased-size: $font-size*15;
-
-.animate {
-	transition: all .3s;
-  backface-visibility: hidden; // inline test comment
-}
-
 html,
 body {
   font-family: $font-stack;
@@ -65,65 +56,14 @@ body {
   width: 100%;
 }
 
-h1,
-h2,
-h3 {
-  margin: 0 0 10px;
-  padding: 0;
-  color: lighten($textColor, 10%);
-  font-size: $increased-size;
-  text-align: center;
-  @extend .animate;
-
-  &:hover {
-  	color: darken(pink, 20%); /* test comment */
-  }
-}
-
-div.shapes {
-	position: relative;
-	width: 350px;
-	height: 350px;
-	margin: 30px;
-	white-space: nowrap;
-	display: inline-block;
-
-	p {
-		position: absolute;
-		top: 50%;
-		left: 50%;
-		transform: translate(-50%, -50%);
-		margin: 0;
-		color: black;
-	}
-}
-
-div.circle {
-	background-color: lighten(#420904, 20%);
-	@include border-radius(50%);
-
-	&.shapes {
-		border: 1px solid green;
-	}
-}
-
-div.rounded-square {
-	background-color: darken(#aec9ee, 20%);
-	@include border-radius(20px);
-	@include transform(rotate(15deg) scale(.9));
-}
-
-.image-wrapper {
-  display: block;
-  margin: 0 auto;
-
-  figure img {
-    width: 300px;
-    opacity: .6;
-    filter: alpha(opacity=60);
-  }
+h2 {
+  font-weight: 300;
+  font-size: 2em;
+  text-transform: uppercase;
 }
 .container-fluid {
+  height: 100%;
+  padding: 0;
   margin: 30px 30px 0px 30px;
 }
 
@@ -146,30 +86,71 @@ div.rounded-square {
 }
 
 #nav-contact-button {
-  vertical-align: middle;
   display: inline-block;
-  font-size: 1.2em;
+  vertical-align: middle;
+  font-size: 1.1em;
   font-weight: 600;
 }
 
 .navbar-wrapper {
   float: right;
+  width: 100%;
+  height: 7em;
   padding-top: 2.5em;
-  padding-right: 0.5em;
+  padding-right: 1.5em;
+  z-index: 1;
 }
-
+.navbar-content {
+  float: right;
+}
 #navbar-list {
   display: inline-block;
   text-transform: uppercase;
   list-style-type: none;
 }
-
 .navbar-link {
   display: inline-block;
   margin-right: 2.5em;
 }
 
-#section-top{
-  background-color: #caabab;
+.navbar-link a {
+  color: #FFFFFF;
+}
+.section-wrapper {
+  min-height: 100%;
+  height: 100%;
+  width: 100%;
+  padding-left: 3.5rem;
 }
 
+#section-top{
+  background-color: #caabab;
+  border-bottom: 30px solid #AF1D1E;
+}
+
+#top-main-quote {
+  padding-top: 15%;
+  padding-bottom: 5%;
+  text-align: left;
+  color: #FFFFFF;
+  font-size: 4rem;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+#top-sub-quote {
+  padding-top: 5%;
+  padding-bottom: 5%;
+  color: #FFFFFF;
+  text-align: center;
+}
+
+#circle-arrow{
+  width: 70px;
+  height: 70px;
+  border: 2px solid #FFFFFF;
+  border-radius: 50%;
+}
+
+#section-about {
+}
