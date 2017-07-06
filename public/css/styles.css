@@ -223,7 +223,7 @@ p, ul, ol {
 #about-image-container{
   height: 34vh;
   background-color: #caabab;
-/*  background-image: url("https://images.unsplash.com/photo-1486230057997-a68a7fe3b16e");*/
+/*  background-image: url("");*/
 }
 /* Features section */
 #section-features {
@@ -254,7 +254,7 @@ p, ul, ol {
 #plans-parallax {
   height: 34vh;
   background-color: #caabab;
-  background-image: url("https://images.unsplash.com/photo-1486230057997-a68a7fe3b16e");
+  background-image: url("");
 }
 /* Accordion styling */
 .plans-container {
