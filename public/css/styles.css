@@ -39,6 +39,8 @@ html, body {
 }
 
 .wrapper {
+  background-color: #FFFFFF;
+  padding: 3.125% 3.125% 0% 3.125%;
   width: 100%;
 }
 
@@ -55,16 +57,29 @@ body {
   width: 100%;
 }
 
+h1 {
+  color: #AF1D1E;
+  font-weight: 700;
+  font-size: 6rem;
+  letter-spacing: 1rem;
+  text-transform: uppercase;
+}
+
 h2 {
   font-weight: 300;
   font-size: 2rem; /* 30 pt in mockup */
   text-transform: uppercase;
 }
-.container-fluid {
-  min-height: 100%;
-  height: 100%;
-  padding: 0;
-  margin: 30px 30px 0px 30px;
+h3 {
+  font-weight: 300;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+}
+
+p {
+  font-size: 0.9rem;
+  line-height: 1.46rem;
+  color: #AF1D1E;
 }
 
 /* Buttons */
@@ -82,6 +97,10 @@ h2 {
 
 .gray-button {
   color: #AF1D1E;
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
+  margin-left: 15%;
+  float: right;
   background-color: #E9E9E9;
 }
 
@@ -118,9 +137,14 @@ h2 {
   color: #FFFFFF;
   text-decoration: none;
 }
-.section-wrapper {
+.row {
   width: 100%;
-  padding-left: 3.5rem;
+}
+.section-wrapper {
+  height: 96.875vh;
+  width: 100%;
+  margin-bottom: 0;
+  padding-left: 5%;
 }
 
 #section-top{
@@ -156,4 +180,21 @@ h2 {
 }
 
 #section-about {
+  padding-top: 5%;
+}
+#about-text {
+  padding-bottom: 3%;
+}
+#who-we-are {
+  padding-right: 10%;
+}
+#about-description {
+  vertical-align: middle;
+  padding-right: 10%;
+}
+#up-todate {
+  color: #AF1D1E;
+}
+#about-bg{
+  background-color: #caabab;
 }
