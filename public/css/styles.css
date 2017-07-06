@@ -90,7 +90,11 @@ p, ul, ol {
 
 /* Alignment etc */
 .vertical-center {
-  display: table;
+  display: flex;
+  -ms-flex-align: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  align-items: center;
 }
 /* Buttons */
 .button {
@@ -196,10 +200,6 @@ p, ul, ol {
 #who-we-are {
   padding-right: 10%;
 }
-#about-description {
-  display: table-cell;
-  vertical-align: middle;
-}
 #up-todate {
   color: #AF1D1E;
 }
@@ -217,4 +217,8 @@ p, ul, ol {
 #features-one, #features-two {
   height: 50vh;
   text-align: center;
+}
+#camper-perks{
+  display: inline-block;
+  text-align: left;
 }
