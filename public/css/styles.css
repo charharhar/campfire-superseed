@@ -53,9 +53,8 @@ html, body {
 h1 {
   color: #AF1D1E;
   font-weight: 700;
-  font-size: 85px;
-  letter-spacing: 15px;
-  line-height: 95px;
+  font-size: 75px;
+  line-height: 85px;
   text-transform: uppercase;
 }
 
@@ -71,8 +70,9 @@ h3 {
 }
 
 p {
-  font-size: 0.9rem;
-  line-height: 1.46rem;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 20px;
   color: #AF1D1E;
 }
 
@@ -80,6 +80,20 @@ p {
   color: #AF1D1E;
 }
 
+.white {
+  color: #FFFFFF;
+}
+
+.letter-space {
+  letter-spacing: 15px;
+}
+
+/* Alignment etc */
+.vertical-center {
+  vertical-align: middle;
+  justify-content: center;
+  align-items: center;
+}
 /* Buttons */
 .button {
   border: none;
@@ -134,6 +148,8 @@ p {
   color: #FFFFFF;
   text-decoration: none;
 }
+
+/* First section */
 .row {
   width: 100%;
 }
@@ -143,8 +159,8 @@ p {
   margin-bottom: 0;
 }
 
-/* First section */
 #section-top{
+  padding-left: 5%;
   height: 96vh;
   background-color: #caabab;
   border-bottom: 30px solid #AF1D1E;
@@ -153,7 +169,6 @@ p {
 #top-main-quote {
   padding-top: 15%;
   padding-bottom: 5%;
-  padding-left: 5%;
   text-align: left;
 }
 #quote-text {
@@ -184,6 +199,7 @@ p {
   padding-right: 10%;
 }
 #about-description {
+  display: table-cell;
   vertical-align: middle;
 }
 #up-todate {
@@ -192,4 +208,14 @@ p {
 #about-image-container{
   height: 34vh;
   background-color: #caabab;
+}
+
+/* Third section */
+#section-features {
+  padding-top: 5%;
+  padding-left: 5%;
+  background-color: #AF1D1E;
+}
+#features-one, #features-two {
+  text-align: center;
 }
