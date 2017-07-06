@@ -33,6 +33,7 @@ time, mark, audio, video {
 
 html, body {
   width: 100%;
+  height: 100%;
   font-family: $font-stack;
   font-weight: 400;
   color: #222;
@@ -41,6 +42,7 @@ html, body {
 .wrapper {
   background-color: #FFFFFF;
   padding: 3.125% 3.125% 0% 3.125%;
+  margin: 0;
   width: 100%;
 }
 
@@ -48,20 +50,12 @@ html, body {
 
 /* can delete everything below here */
 
-html,
-body {
-  font-family: $font-stack;
-  margin: 0;
-  padding: 0;
-  height: 100%;
-  width: 100%;
-}
-
 h1 {
   color: #AF1D1E;
   font-weight: 700;
   font-size: 6rem;
   letter-spacing: 1rem;
+  line-height: 6rem;
   text-transform: uppercase;
 }
 
@@ -100,7 +94,6 @@ p {
   padding-left: 2.5rem;
   padding-right: 2.5rem;
   margin-left: 15%;
-  float: right;
   background-color: #E9E9E9;
 }
 
@@ -144,7 +137,6 @@ p {
   height: 96.875vh;
   width: 100%;
   margin-bottom: 0;
-  padding-left: 5%;
 }
 
 #section-top{
@@ -155,6 +147,7 @@ p {
 #top-main-quote {
   padding-top: 15%;
   padding-bottom: 5%;
+  padding-left: 5%;
   text-align: left;
 }
 #quote-text {
@@ -182,6 +175,10 @@ p {
 #section-about {
   padding-top: 5%;
 }
+#about-text-container {
+  padding-left: 5%;
+  height: 66.364vh;
+}
 #about-text {
   padding-bottom: 3%;
 }
@@ -195,6 +192,7 @@ p {
 #up-todate {
   color: #AF1D1E;
 }
-#about-bg{
+#about-image-container{
+  height: 33.636vh;
   background-color: #caabab;
 }
