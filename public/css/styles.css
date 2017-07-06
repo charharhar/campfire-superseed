@@ -1,11 +1,12 @@
-@import url(https://fonts.googleapis.com/css?family=Lato:400,300,700);
+@import url(https://fonts.googleapis.com/css?family=Montserrat:200,300,400,600);
 @import url(https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css);
 
 @import '_mixins';
 
-$font-stack: "Lato", "Microsoft JhengHei", "Arial", sans-serif;
-$campfire-red: #8B0000;
-$campfire-white: #fefefe;
+$font-stack: "Monsterrat", "Arial", sans-serif;
+$campfire-darkRed: #801618;
+$campfire-lightRed: #af2024;
+$campfire-white: #ffffff;
 
 *, *:before, *:after {
   box-sizing: border-box;
@@ -81,8 +82,12 @@ html, body {
  * Text styles
  */
 
-.campRed {
-  color: $campfire-red;
+.campDarkRed {
+  color: $campfire-darkRed;
+}
+
+.campLightRed {
+  color: $campfire-lightRed
 }
 
 .campWhite {
@@ -96,6 +101,13 @@ h1 {
     font-weight: 600;
     font-size: 54px;
     letter-spacing: 3px;
+    line-height: 150%;
+  }
+
+  &.medium-regular {
+    font-size: 32px;
+    letter-spacing: 1px;
+    font-weight: 400;
   }
 }
 
@@ -111,12 +123,28 @@ h2 {
     text-align: center;
     font-size: 20px;
   }
+
+  &.large-regular {
+    font-size: 30px;
+    text-align: center;
+  }
+}
+
+h3 {
+  text-transform: uppercase;
+
+  &.medium-regular {
+    font-weight: 600;
+    text-align: center;
+    font-size: 18px;
+    letter-spacing: 2px;
+  }
 }
 
 p {
   font-size: 12px;
   letter-spacing: 1px;
-  font-weight: 400;
+  font-weight: 300;
   line-height: 150%;
 }
 
@@ -130,27 +158,41 @@ a.button {
   text-decoration: none;
   width: 140px;
   text-align: center;
+  padding: 15px 20px;
+  border-radius: 4px;
+  transition: .2s all ease-in-out;
 
   &.small-regular {
     font-size: 12px;
     letter-spacing: 1px;
   }
 
-  &.medium-regular {
-    font-size: 14px;
-  }
-
   &.button-grey {
     background-color: #eee;
-    color: $campfire-red;
-    padding: 15px 20px;
-    border-radius: 4px;
-    transition: .2s all ease-in-out;
+    color: $campfire-lightRed;
 
     &:hover {
       background-color: #ccc;
     }
   }
+
+  &.button-red {
+    background-color: $campfire-lightRed;
+    color: $campfire-white;
+
+    &:hover {
+      background-color: darken($campfire-lightRed, 10%);
+    }
+  }
+}
+
+/**
+ * Icon styles
+ */
+
+i.fa-chevron-down,
+i.fa-chevron-right {
+  color: $campfire-white;
 }
 
 /**
@@ -166,7 +208,16 @@ section.section {
   }
 
   .section-row-wrapper {
-    padding: 60px 0;
+    padding: 30px 0;
+  }
+
+  .red-header {
+    background-color: $campfire-lightRed;
+    width: 100%;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .section-image {
@@ -191,7 +242,7 @@ section.section {
  * Main Section
  */
 section.section-main {
-  border-bottom: 30px solid $campfire-red;
+  border-bottom: 30px solid $campfire-lightRed;
 }
 
 /**
@@ -200,6 +251,8 @@ section.section-main {
 section.section-about {
   height: auto;
   background-color: $campfire-white;
+  padding-bottom: 0;
+  padding-top: 50px;
 
   .about-wording {
     max-width: 750px;
@@ -211,8 +264,9 @@ section.section-about {
  */
 section.section-member {
   height: auto;
-  background-color: $campfire-red;
+  background-color: $campfire-darkRed;
   border-bottom: 30px solid $campfire-white;
+  padding: 80px 0;
 
   .flex-display {
     &.position-center {
@@ -247,5 +301,107 @@ section.section-member {
     letter-spacing: 1px;
     font-weight: 400;
     line-height: 150%;
+  }
+}
+
+/**
+ * Plans Section
+ */
+section.section-plans {
+  height: auto;
+  border-bottom: 30px solid $campfire-white;
+
+  .accordion-plans-wrapper {
+    border-bottom: 30px solid $campfire-white;
+
+    .accordion-plan {
+      width: 100%;
+
+      .accordion-button {
+        position: relative;
+        width: 100%;
+        background-color: $campfire-lightRed;
+        border-top: 1px solid white;
+        height: 30px;
+        cursor: pointer;
+        transition: all .5s ease-in-out;
+
+        h2, i {
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          transition: all .5s ease-in-out;
+        }
+
+        h2 {
+          text-align: left;
+          left: 50px;
+          font-size: 18px;
+        }
+
+        i {
+          right: 50px;
+        }
+
+        &.active-plan {
+          background-color: $campfire-white;
+
+          h2, i {
+            color: $campfire-lightRed;
+          }
+
+          h2 {
+            font-size: 20px;
+            transform: translate(10px, -50%)
+          }
+
+          i {
+            transform: translate(-10px, -50%)
+          }
+        }
+      }
+
+      .accordion-content {
+        background-color: #ccc;
+        max-height: 0;
+        overflow: hidden;
+        transition: all .5s ease-in-out;
+
+        &.active-plan {
+          max-height: 75vh;
+        }
+
+        .accordion-content-wrapper {
+          background-color: rgba(0, 0, 0, 0.7);
+          width: 70%;
+          margin: 60px auto;
+          padding: 40px;
+
+          .accordion-left {
+            display: flex;
+            flex-direction: column;
+
+            h2, p, a {
+              text-align: left;
+              margin-bottom: 40px;
+            }
+          }
+
+          .accordion-right {
+            h3 {
+              margin: 20px 0;
+            }
+
+            p {
+              text-align: center;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .section-image {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   }
 }
