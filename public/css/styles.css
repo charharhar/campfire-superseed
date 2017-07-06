@@ -69,7 +69,7 @@ h3 {
   text-transform: uppercase;
 }
 
-p {
+p, ul, ol {
   font-weight: 300;
   font-size: 14px;
   line-height: 20px;
@@ -90,9 +90,7 @@ p {
 
 /* Alignment etc */
 .vertical-center {
-  vertical-align: middle;
-  justify-content: center;
-  align-items: center;
+  display: table;
 }
 /* Buttons */
 .button {
@@ -217,5 +215,6 @@ p {
   background-color: #AF1D1E;
 }
 #features-one, #features-two {
+  height: 50vh;
   text-align: center;
 }
