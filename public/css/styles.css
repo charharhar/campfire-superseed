@@ -1,4 +1,3 @@
-/*@import url(https://fonts.googleapis.com/css?family=Lato:400,300,700);*/
 @import url('https://fonts.googleapis.com/css?family=Montserrat:300, 400, 600,700');
 @import url(https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css);
 
@@ -58,10 +57,11 @@ body {
 
 h2 {
   font-weight: 300;
-  font-size: 2em;
+  font-size: 2rem; /* 30 pt in mockup */
   text-transform: uppercase;
 }
 .container-fluid {
+  min-height: 100%;
   height: 100%;
   padding: 0;
   margin: 30px 30px 0px 30px;
@@ -71,7 +71,7 @@ h2 {
 .button {
   border: none;
   border-radius: 4px;
-  padding: 0.7em 1em 0.7em 1em;
+  padding: 0.7rem 1rem 0.7rem 1rem;
   text-transform: uppercase;
 }
 
@@ -88,16 +88,16 @@ h2 {
 #nav-contact-button {
   display: inline-block;
   vertical-align: middle;
-  font-size: 1.1em;
+  font-size: 1.1rem; /* 25 pt in mockup */
   font-weight: 600;
 }
 
 .navbar-wrapper {
   float: right;
   width: 100%;
-  height: 7em;
-  padding-top: 2.5em;
-  padding-right: 1.5em;
+  height: 7rem;
+  padding-top: 2.5rem;
+  padding-right: 1.5rem;
   z-index: 1;
 }
 .navbar-content {
@@ -105,20 +105,20 @@ h2 {
 }
 #navbar-list {
   display: inline-block;
+  font-size: 1rem; /* 20 pt in mockup*/
   text-transform: uppercase;
   list-style-type: none;
 }
 .navbar-link {
   display: inline-block;
-  margin-right: 2.5em;
+  margin-right: 2.5rem;
 }
 
 .navbar-link a {
   color: #FFFFFF;
+  text-decoration: none;
 }
 .section-wrapper {
-  min-height: 100%;
-  height: 100%;
   width: 100%;
   padding-left: 3.5rem;
 }
@@ -132,8 +132,10 @@ h2 {
   padding-top: 15%;
   padding-bottom: 5%;
   text-align: left;
+}
+#quote-text {
   color: #FFFFFF;
-  font-size: 4rem;
+  font-size: 4.5rem; /* 80pt in mockup */
   font-weight: 400;
   text-transform: uppercase;
 }
@@ -146,6 +148,7 @@ h2 {
 }
 
 #circle-arrow{
+  margin: 0 auto;
   width: 70px;
   height: 70px;
   border: 2px solid #FFFFFF;
