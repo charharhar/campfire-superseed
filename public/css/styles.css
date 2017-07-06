@@ -91,9 +91,6 @@ p, ul, ol {
 /* Alignment etc */
 .vertical-center {
   display: flex;
-  -ms-flex-align: center;
-  justify-content: center;
-  -webkit-align-items: center;
   align-items: center;
 }
 /* Buttons */
