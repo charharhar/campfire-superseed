@@ -3,8 +3,6 @@
 
 @import '_mixins';
 
-/* dont delete */
-
 $font-stack: "Lato", "Microsoft JhengHei", "Arial", sans-serif;
 
 *, *:before, *:after {
@@ -40,86 +38,14 @@ html, body {
 
 .wrapper {
   width: 100%;
+  background-color: #fff;
+  padding-left: 3.125%;
+  padding-right: 3.125%;
+  padding-top: 3.125%;
+
 }
 
-/* dont delete */
-
-/* can delete everything below here */
-
-$font-size: 2px;
-$textColor: #991234;
-$increased-size: $font-size*15;
-
-.animate {
-	transition: all .3s;
-  backface-visibility: hidden; // inline test comment
-}
-
-html,
-body {
-  font-family: $font-stack;
-  margin: 0;
-  padding: 0;
-  background-color: lighten(#499, 20%);
-  height: 100%;
-  width: 100%;
-}
-
-h1,
-h2,
-h3 {
-  margin: 0 0 10px;
-  padding: 0;
-  color: lighten($textColor, 10%);
-  font-size: $increased-size;
-  text-align: center;
-  @extend .animate;
-
-  &:hover {
-  	color: darken(pink, 20%); /* test comment */
-  }
-}
-
-div.shapes {
-	position: relative;
-	width: 350px;
-	height: 350px;
-	margin: 30px;
-	white-space: nowrap;
-	display: inline-block;
-
-	p {
-		position: absolute;
-		top: 50%;
-		left: 50%;
-		transform: translate(-50%, -50%);
-		margin: 0;
-		color: black;
-	}
-}
-
-div.circle {
-	background-color: lighten(#420904, 20%);
-	@include border-radius(50%);
-
-	&.shapes {
-		border: 1px solid green;
-	}
-}
-
-div.rounded-square {
-	background-color: darken(#aec9ee, 20%);
-	@include border-radius(20px);
-	@include transform(rotate(15deg) scale(.9));
-}
-
-.image-wrapper {
-  display: block;
-  margin: 0 auto;
-
-  figure img {
-    width: 300px;
-    opacity: .6;
-    filter: alpha(opacity=60);
-  }
+section.section {
+  height: 100vh;
+  background-color: #333;
 }
