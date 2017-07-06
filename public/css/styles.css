@@ -97,11 +97,11 @@ p, ul, ol {
   display: flex;
   justify-content: center;
 }
-
 .float-right{
   float: right;
 }
 
+/* Parallax */
 .parallax {
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -126,6 +126,11 @@ p, ul, ol {
   padding-right: 30px;
   margin-left: 70px;
   background-color: #E9E9E9;
+}
+
+#readmore, #seemore {
+  margin-top: 15px;
+  margin-bottom: 15px;
 }
 
 #nav-contact-button {
@@ -246,27 +251,30 @@ p, ul, ol {
   height: 8.929vh;
   text-align: center;
 }
-#plans-image-container {
+#plans-parallax {
   height: 34vh;
   background-color: #caabab;
-/*  background-image: url("https://images.unsplash.com/photo-1486230057997-a68a7fe3b16e");*/
+  background-image: url("https://images.unsplash.com/photo-1486230057997-a68a7fe3b16e");
 }
 /* Accordion styling */
-.accordion-container {
-  height: 97.071vh;
+.plans-container {
+  width: 100%;
+  height: 91.071vh;
 }
 .panel-head {
   margin: 0;
   padding-left: 5%;
-  height: 4.464vh;
+  border-bottom: 1px solid #ffffff;
+  height: 4.066vh;
 }
 .panel {
+  width: 100%;
   padding: 0;
   margin: 0;
 }
 .panel-content {
+  width: 100%;
   margin: 0;
-  height: 73.214vh;
 }
 .active {
   background-color: #ffffff;
@@ -276,7 +284,8 @@ p, ul, ol {
   background-color: #af1d1e;
 }
 .open {
-  background-color: #FFFFFF;
+  height: 74.808vh;
+  background-color: #e9e9e9;
 }
 #flex-panel {
   background-color: #e9e5ad;
@@ -285,7 +294,7 @@ p, ul, ol {
 /* Locations section */
 #section-locations {
   height: 100vh;
-  background-color: #AF1D1E;
+  background-color: #e9e9e9;
 }
 
 /* Loop section */
@@ -297,6 +306,12 @@ p, ul, ol {
   border-top: 30px solid #801516;
   border-bottom: 30px solid #801516;
 }
+#loop {
+  padding-bottom: 5%;
+}
+#loop-buttons {
+  text-align: center;
+}
 
 /* Contact section */
 #section-contact {
@@ -306,3 +321,7 @@ p, ul, ol {
 }
 #contact-bottom{
 }
+
+/*footer {
+  height: 28.571;
+}*/
