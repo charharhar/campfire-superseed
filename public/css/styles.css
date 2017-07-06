@@ -53,20 +53,20 @@ html, body {
 h1 {
   color: #AF1D1E;
   font-weight: 700;
-  font-size: 6rem;
-  letter-spacing: 1rem;
-  line-height: 6rem;
+  font-size: 85px;
+  letter-spacing: 15px;
+  line-height: 95px;
   text-transform: uppercase;
 }
 
 h2 {
   font-weight: 300;
-  font-size: 2rem; /* 30 pt in mockup */
+  font-size: 30px; /* 30 pt in mockup */
   text-transform: uppercase;
 }
 h3 {
   font-weight: 300;
-  font-size: 1.5rem;
+  font-size: 20px;
   text-transform: uppercase;
 }
 
@@ -76,11 +76,15 @@ p {
   color: #AF1D1E;
 }
 
+.red {
+  color: #AF1D1E;
+}
+
 /* Buttons */
 .button {
   border: none;
   border-radius: 4px;
-  padding: 0.7rem 1rem 0.7rem 1rem;
+  padding: 12px 14px 12px 14px;
   text-transform: uppercase;
 }
 
@@ -91,23 +95,22 @@ p {
 
 .gray-button {
   color: #AF1D1E;
-  padding-left: 2.5rem;
-  padding-right: 2.5rem;
-  margin-left: 15%;
+  padding-left: 30px;
+  padding-right: 30px;
+  margin-left: 70px;
   background-color: #E9E9E9;
 }
 
 #nav-contact-button {
   display: inline-block;
   vertical-align: middle;
-  font-size: 1.1rem; /* 25 pt in mockup */
+  font-size: 14px; /* 25 pt in mockup */
   font-weight: 600;
 }
 
 .navbar-wrapper {
   float: right;
   width: 100%;
-  height: 7rem;
   padding-top: 2.5rem;
   padding-right: 1.5rem;
   z-index: 1;
@@ -117,7 +120,8 @@ p {
 }
 #navbar-list {
   display: inline-block;
-  font-size: 1rem; /* 20 pt in mockup*/
+  font-weight: 300;
+  font-size: 13px; /* 20 pt in mockup*/
   text-transform: uppercase;
   list-style-type: none;
 }
@@ -134,12 +138,14 @@ p {
   width: 100%;
 }
 .section-wrapper {
-  height: 96.875vh;
+  height: 100vh;
   width: 100%;
   margin-bottom: 0;
 }
 
+/* First section */
 #section-top{
+  height: 96vh;
   background-color: #caabab;
   border-bottom: 30px solid #AF1D1E;
 }
@@ -152,47 +158,38 @@ p {
 }
 #quote-text {
   color: #FFFFFF;
-  font-size: 4.5rem; /* 80pt in mockup */
+  letter-spacing: 2px;
+  font-size: 50px; /* 80pt in mockup */
   font-weight: 400;
   text-transform: uppercase;
 }
 
 #top-sub-quote {
-  padding-top: 5%;
   padding-bottom: 5%;
   color: #FFFFFF;
   text-align: center;
 }
 
-#circle-arrow{
-  margin: 0 auto;
-  width: 70px;
-  height: 70px;
-  border: 2px solid #FFFFFF;
-  border-radius: 50%;
-}
-
-#section-about {
+/* Second section */
+#about-container {
   padding-top: 5%;
-}
-#about-text-container {
   padding-left: 5%;
-  height: 66.364vh;
+  padding-right: 5%;
+  height: 66vh;
 }
-#about-text {
-  padding-bottom: 3%;
+#about-first {
+  padding-bottom: 5%;
 }
 #who-we-are {
   padding-right: 10%;
 }
 #about-description {
   vertical-align: middle;
-  padding-right: 10%;
 }
 #up-todate {
   color: #AF1D1E;
 }
 #about-image-container{
-  height: 33.636vh;
+  height: 34vh;
   background-color: #caabab;
 }
