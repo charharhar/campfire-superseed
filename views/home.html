@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1">
 	<title>Campfire</title>
 
     <link rel="stylesheet" href="<%= assetsMap.main.css %>">
@@ -38,32 +39,61 @@
         </section>
 
         <section class="section-wrapper" id="section-about">
-            <div class="row" id="about-text">
-                <div class="col col-sm-4 align-items-start" id="who-we-are">
-                    <h1>Who we are</h1>
-                </div>
+            <div id="about-container">
+                <div class="row" id="about-first">
+                    <div class="col col-sm-4" id="who-we-are">
+                        <h1 class="red letter-spaced">Who<br>we<br>are</h1>
+                    </div>
 
-                <div class="col col-sm-8" id="about-description">
-                    <p>Campfire Collaborative Spaces is Asia's fastest growing network of shared spaces. By end 2017, Campfire will have 7 industry-focused co-working, 1 co-living, and 1 co-learning sites in 4 countries. With real estate at a premium in most major cities. Campfire provides reliable and flexible sites to maximise utilisation. Currently operating 2 industry focused workspaces in Hong Kong (Kennedy Town - Tech and Wong Chuk Hang - Fashion), that were designed to provide every tools and services possible for members to grow. Campfire was conceptualized as a place where like-minded entrepreneurs can gather to share their experiences and work together. Campfire encourages its members to connect, create, and collaborate through industry-specific facilities, relevant events, and vibrant communities.</p>
+                    <div class="col col-sm-8 vertical-center" id="about-description">
+                        <p>Campfire Collaborative Spaces is Asia's fastest growing network of shared spaces. By end 2017, Campfire will have 7 industry-focused co-working, 1 co-living, and 1 co-learning sites in 4 countries. With real estate at a premium in most major cities. Campfire provides reliable and flexible sites to maximise utilisation. Currently operating 2 industry focused workspaces in Hong Kong (Kennedy Town - Tech and Wong Chuk Hang - Fashion), that were designed to provide every tools and services possible for members to grow. Campfire was conceptualized as a place where like-minded entrepreneurs can gather to share their experiences and work together. Campfire encourages its members to connect, create, and collaborate through industry-specific facilities, relevant events, and vibrant communities.</p>
+                    </div>
+                </div>
+                <div class="row" id="about-second">
+                    <div class="col col-sm-7" id="">
+                        <h3 class="red">Stay up to date with out latest project<br /> developments of co-learning and co-living spaces</h3>
+                    </div>
+                    <div class="col col-sm-5" id="about-buttons">
+                        <button type="button" class="button gray-button" id="co-learning">co-learning</button>
+                        <button type="button" class="button gray-button" id="co-living">co-living</button>
+                    </div>
                 </div>
             </div>
-            <div class="row" id="about-subtext">
-                <div class="col col-sm-7">
-                    <h3 id="up-todate">Stay up to date with out latest project developments of co-learning and co-living spaces</h3>
-                </div>
-                <div class="col col-sm-5" id="about-buttons">
-                    <button type="button" class="button gray-button" id="co-learning">co-learning</button>
-                    <button type="button" class="button gray-button" id="co-living">co-living</button>
-                </div>
-            </div>
-            <div class="row" id="about-bg">
+
+            <div id="about-image-container">
             </div>
         </section>
 
         <section class="section-wrapper" id="section-features">
+            <div class="row" id="features-table">
+                <div class="col col-sm-5 vertical-center">
+                    <h1 class="white">Membership<br>features</h1>
+                </div>
+                <div class="col col-sm-7">
+                    <div class="row" id="features-one">
+                        <div class="col col-sm-6">
+                            <h3 class="white">Industry focused<br>hardware</h2>
+                        </div>
+                        <div class="col col-sm-6">
+                            <h3 class="white">Industry relevant<br>events</h2>
+                        </div>
+                    </div>
+                <div class="row" id="features-two">
+                        <div class="col col-sm-6">
+                            <h3 class="white">Global access</h2>
+                        </div>
+                        <div class="col col-sm-6">
+                            <h3 class="white">Camper perks</h2>
+                        </div>
+                </div>
+                </div>
+            </div>
         </section>
 
         <section class="section-wrapper" id="section-plans">
+        </section>
+
+        <section class="section-wrapper" id="loop">
         </section>
 
         <section class="section-wrapper" id="section-contact">
