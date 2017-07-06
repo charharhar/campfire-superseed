@@ -106,13 +106,18 @@
                 <h2 class="white">Campfire Plans</h2>
             </div>
             <div class="accordion-container">
-                <h3 class="panel-head vertical-center active" id="flex-head">Flex</h3>
-                <div class="panel-content open">
+                <h3 class="panel-toggle vertical-center active" id="flex-toggle">Flex</h3>
+                <div class="panel-content open" id="flex-panel">
                 </div>
-                <h3 class="panel-head vertical-center inactive" id="hot-head">Hot Desks</h3>
-                <h3 class="panel-head vertical-center inactive" id="mixed-head">Mixed Desks</h3>
-                <h3 class="panel-head vertical-center inactive" id="private-head">Private</h3>
-
+                <h3 class="panel-toggle vertical-center inactive" id="hot-toggle">Hot Desks</h3>
+                <div class="panel-content closed">
+                </div>
+                <h3 class="panel-toggle vertical-center inactive" id="mixed-toggle">Mixed Desks</h3>
+                <div class="panel-content closed">
+                </div>
+                <h3 class="panel-toggle vertical-center inactive" id="private-toggle">Private</h3>
+                <div class="panel-content closed">
+                </div>
             </div>
         </section>
 
@@ -173,6 +178,6 @@
     </div>
 
     <script src="<%= assetsMap.main.js %>"></script>
-    <script src=".../js/index.js"></script>
+
 </body>
 </html>
