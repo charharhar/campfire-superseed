@@ -181,7 +181,7 @@ p, ul, ol {
 #section-top{
   padding-left: 5%;
   height: 96vh;
-  background-color: #caabab;
+  background-image: url('../images/section-top/headerbg.png');
   border-bottom: 30px solid #AF1D1E;
 }
 
@@ -222,15 +222,20 @@ p, ul, ol {
 }
 #about-image-container{
   height: 34vh;
+  background-size: cover;
+  background-repeat: no-repeat;
   background-color: #caabab;
-/*  background-image: url("");*/
+/*  background-image: url("../images/paralax-2.png");*/
 }
+
 /* Features section */
 #section-features {
   border-bottom: 30px solid #FFFFFF;
   padding-top: 5%;
   padding-left: 5%;
   background-color: #801516;
+  background-image: url('../images/section-features/membershipfeature-bg.png');
+  background-repeat: no-repeat;
 }
 #features-one, #features-two {
   height: 50vh;
@@ -253,8 +258,10 @@ p, ul, ol {
 }
 #plans-parallax {
   height: 34vh;
+  background-size: cover;
+  background-repeat: no-repeat;
   background-color: #caabab;
-  background-image: url("");
+  background-image: url("../images/paralax-2.png");
 }
 /* Accordion styling */
 .plans-container {
