@@ -197,6 +197,12 @@ a.button {
     letter-spacing: 1px;
   }
 
+  &.small-bold {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1px;
+  }
+
   &.button-grey {
     background-color: #eee;
     color: $campfire-lightRed;
@@ -215,7 +221,7 @@ a.button {
 
     &:hover {
       background-color: darken($campfire-lightRed, 10%);
-      border: 1px solid $campfire-lightRed;
+      border: 1px solid darken($campfire-lightRed, 10%);
     }
   }
 }
@@ -236,9 +242,59 @@ i.fa-chevron-right {
 }
 
 /**
+ * Navigation Styles
+ */
+.main-navigation {
+  padding: 25px 25px 0 25px;
+
+  .navigation-logo-wrapper {
+    display: inline-block;
+
+    figure.heading-logo-image {
+      max-width: 100px;
+    }
+  }
+
+  .navigation-list-wrapper {
+    display: inline-block;
+
+    ul {
+      list-style: none;
+
+      li {
+        display: inline;
+        margin: 0 10px;
+
+        a {
+          text-transform: uppercase;
+          font-size: 14px;
+          font-weight: 300;
+          text-decoration: none;
+          letter-spacing: 1px;
+
+          &:hover {
+            color: $campfire-white;
+          }
+
+          &.normal-nav-item {
+
+          }
+
+          &.button-nav-item {
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 1px;
+          }
+        }
+      }
+    }
+
+  }
+}
+
+/**
  * Section Styles
  */
-
 section.section {
   position: relative;
   height: 100vh;
@@ -267,6 +323,7 @@ section.section {
     padding-bottom: 19.27%;
     width: 100%;
     overflow: hidden;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.29);
 
     figure {
       width: 100%;
@@ -287,6 +344,28 @@ section.section-main {
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
+
+  .main-heading {
+    position: absolute;
+    top: 50%;
+    left: 50px;
+    transform: translateY(-50%);
+  }
+
+  .main-subheading {
+    position: absolute;
+    bottom: 50px;
+    width: 100%;
+
+    h2 {
+      margin-bottom: 10px;
+    }
+
+    figure.arrow-image {
+      max-width: 97px;
+      cursor: pointer;
+    }
+  }
 }
 
 /**
@@ -476,8 +555,6 @@ section.section-plans {
   }
 
   .section-image {
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-
     &.parallax-second {
       background-image: url(/images/parallax-2.png);
       background-attachment: fixed;

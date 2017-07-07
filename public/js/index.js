@@ -1,14 +1,10 @@
 
 import '../css/styles.css';
+import { polyfill } from './smoothscroll';
 
 /**
- * Accordion handler
+ * Utility Functions
  */
-
-const accordionPlansButtons = sliceArray(document.querySelectorAll('.accordion-plans-button'))
-const accordionPlansContents = sliceArray(document.querySelectorAll('.accordion-plans-content'))
-const accordionLocationButtons = sliceArray(document.querySelectorAll('.accordion-location-button'))
-const accordionLocationContents = sliceArray(document.querySelectorAll('.accordion-location-content'))
 
 function findParent(node, className) {
   let tempNode = node;
@@ -23,6 +19,46 @@ function findParent(node, className) {
 function sliceArray(nodeArray) {
   return Array.prototype.slice.call(nodeArray)
 }
+
+function getDistanceFromLeft(el) {
+  const rect = el.getBoundingClientRect();
+  const docEl = document.documentElement;
+
+  return (rect.left + (window.pageXOffset || docEl.scrollLeft || 0))
+}
+
+/**
+ * Smooth Scroll Handler
+ */
+
+const navLinks = sliceArray(document.querySelectorAll('.navLink'))
+
+function scrollTo(elem) {
+  document.querySelector(elem).scrollIntoView({ behavior: 'smooth' });
+}
+
+window.addEventListener('load', () => {
+  polyfill(); // adds smooth scrolling polyfill
+
+  navLinks.forEach(link => {
+    link.addEventListener('click', e => {
+      e.preventDefault();
+
+      const target = `.${e.target.getAttribute('scrollTo')}`
+      scrollTo(target);
+    })
+  })
+
+})
+
+/**
+ * Accordion handler
+ */
+
+const accordionPlansButtons = sliceArray(document.querySelectorAll('.accordion-plans-button'))
+const accordionPlansContents = sliceArray(document.querySelectorAll('.accordion-plans-content'))
+const accordionLocationButtons = sliceArray(document.querySelectorAll('.accordion-location-button'))
+const accordionLocationContents = sliceArray(document.querySelectorAll('.accordion-location-content'))
 
 function handleAccordionClick(e, buttons, contents) {
   let target = e.target;
@@ -74,13 +110,6 @@ accordionLocationButtons.forEach(button => {
 
 const inputNewsletter = document.querySelector('input[name="newsletter"]');
 const newsletterButton = document.querySelector('.newsletter-button');
-
-function getDistanceFromLeft(el) {
-  const rect = el.getBoundingClientRect();
-  const docEl = document.documentElement;
-
-  return (rect.left + (window.pageXOffset || docEl.scrollLeft || 0))
-}
 
 function calculateNewsletterMaxWidth() {
   let inputMaxWidth = getDistanceFromLeft(newsletterButton) - getDistanceFromLeft(inputNewsletter)
