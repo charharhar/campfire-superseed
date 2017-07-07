@@ -1,12 +1,13 @@
-@import url(https://fonts.googleapis.com/css?family=Montserrat:200,300,400,600);
+@import url(https://fonts.googleapis.com/css?family=Montserrat:300,400,600);
 @import url(https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css);
 
 @import '_mixins';
 
-$font-stack: "Monsterrat", "Arial", sans-serif;
+$font-stack: "Montserrat", "Arial", sans-serif;
 $campfire-darkRed: #801618;
 $campfire-lightRed: #af2024;
 $campfire-white: #ffffff;
+$campfire-black: #222;
 
 *, *:before, *:after {
   box-sizing: border-box;
@@ -36,7 +37,7 @@ html, body {
   width: 100%;
   font-family: $font-stack;
   font-weight: 400;
-  color: #222;
+  color: $campfire-black;
 }
 
 .wrapper {
@@ -98,6 +99,16 @@ html, body {
   color: $campfire-white;
 }
 
+.nowrap {
+  white-space: nowrap;
+}
+
+@media (max-width: 768px) {
+  .nowrap {
+    white-space: normal;
+  }
+}
+
 h1 {
   text-transform: uppercase;
   letter-spacing: 1px;
@@ -111,7 +122,6 @@ h1 {
 
   &.medium-regular {
     font-size: 32px;
-    letter-spacing: 1px;
     font-weight: 400;
   }
 }
@@ -120,7 +130,8 @@ h2 {
   text-transform: uppercase;
   letter-spacing: 1px;
 
-  &.medium-thin {
+  &.medium-light {
+    font-size: 20px;
     font-weight: 300;
   }
 
@@ -140,6 +151,11 @@ h2 {
   &.large-regular {
     font-size: 30px;
     text-align: center;
+  }
+
+  &.large-light {
+   font-size: 30px;
+   font-weight: 300;
   }
 }
 
@@ -224,8 +240,9 @@ i.fa-chevron-right {
  */
 
 section.section {
+  position: relative;
   height: 100vh;
-  background-color: #333;
+  background-color: $campfire-white;
 
   &:first-of-type {
     height: 96.825vh;
@@ -249,7 +266,6 @@ section.section {
     min-height: 200px;
     padding-bottom: 19.27%;
     width: 100%;
-    background-color: #aaa;
     overflow: hidden;
 
     figure {
@@ -563,7 +579,25 @@ section.section-loop {
   height: auto;
   background-color: $campfire-white;
   border-bottom: 30px solid $campfire-darkRed;
-  padding: 80px 0;
+  padding: 0;
+  overflow: hidden;
+
+  .loop-bg {
+    position: absolute;
+    width: 85%;
+
+    &.loop-bg-left {
+      left: -40%;
+      top: 50%;
+      transform: translate(0, -50%);
+    }
+
+    &.loop-bg-right {
+      right: -40%;
+      top: 50%;
+      transform: translate(0, -50%);
+    }
+  }
 
   .join-heading-wrapper {
     max-width: 330px;
@@ -595,11 +629,11 @@ section.section-loop {
       font-size: 12px;
       letter-spacing: 1px;
       border-radius: 4px;
-      color: #555;
+      color: $campfire-black;
       width: 350%;
       background-color: #fff;
       background-image: none;
-      border: 1px solid #ccc;
+      border: 1px solid $campfire-black;
       margin-right: 10px;
       margin-bottom: 20px;
       -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
@@ -613,19 +647,102 @@ section.section-loop {
       text-transform: uppercase;
       font-size: 12px;
       letter-spacing: 1px;
+      color: $campfire-black;
     }
   }
 
 }
 
+@media (max-width: 768px) {
+  section.section-loop {
+    .loop-bg {
+      position: absolute;
+      width: 110%;
+
+      &.loop-bg-left {
+        left: -40%;
+        top: 10%;
+        transform: translate(0, -50%);
+      }
+
+      &.loop-bg-right {
+        right: -40%;
+        top: 90%;
+        transform: translate(0, -50%);
+      }
+    }
+  }
+}
+
 /**
  * Join Section
  */
-section.section-join {}
+section.section-join {
+  height: auto;
+  background-color: $campfire-white;
+  padding: 40px 0 20px 0;
+
+  .flex-display {
+    align-items: flex-start;
+
+    &.flex-end {
+      justify-content: flex-end;
+      align-items: flex-end;
+    }
+  }
+}
 
 /**
  * Footer
  */
 footer.footer {
+  height: auto;
+  background-color: $campfire-white;
+  padding: 20px 0 40px 0;
 
+  .flex-display {
+    align-items: center;
+
+    &.flex-end {
+      justify-content: flex-end;
+    }
+  }
+
+  figure.logo-image,
+  figure.footer-social-image {
+    margin-right: 20px;
+  }
+
+  figure.logo-image {
+    max-width: 65px;
+  }
+
+  figure.footer-social-image {
+    max-width: 40px;
+  }
+
+  p {
+    &.medium-light {
+      font-size: 16px;
+    }
+
+    &.small-light {
+      margin-top: 10px;
+      text-align: center;
+      font-size: 12px;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  footer.footer {
+    .flex-display {
+      justify-content: center;
+      margin-bottom: 10px;
+
+      &.flex-end {
+        justify-content: center;
+      }
+    }
+  }
 }
