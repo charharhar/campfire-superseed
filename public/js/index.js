@@ -32,9 +32,14 @@ function getDistanceFromLeft(el) {
  */
 
 const navLinks = sliceArray(document.querySelectorAll('.navLink'))
+const arrowDown = document.querySelector('.arrowDown');
 
-function scrollTo(elem) {
-  document.querySelector(elem).scrollIntoView({ behavior: 'smooth' });
+function scrollTo(e, elem) {
+  e.preventDefault();
+
+  const target = `.${elem.getAttribute('scrollTo')}`
+  document.querySelector(target).scrollIntoView({ behavior: 'smooth' });
+
 }
 
 window.addEventListener('load', () => {
@@ -42,11 +47,16 @@ window.addEventListener('load', () => {
 
   navLinks.forEach(link => {
     link.addEventListener('click', e => {
-      e.preventDefault();
-
-      const target = `.${e.target.getAttribute('scrollTo')}`
-      scrollTo(target);
+      scrollTo(e, e.target)
     })
+  })
+
+  arrowDown.addEventListener('click', e => {
+    let target = e.target;
+
+    target = findParent(target, 'arrowDown');
+
+    scrollTo(e, target);
   })
 
 })
@@ -119,6 +129,24 @@ function calculateNewsletterMaxWidth() {
 
 window.addEventListener('resize', calculateNewsletterMaxWidth)
 window.addEventListener('load', calculateNewsletterMaxWidth)
+
+/**
+ * Google Maps Handling
+ */
+
+window.addEventListener('load', () => {
+  let hongkongMap;
+
+  function initMap() {
+    hongkongMap = new google.maps.Map(document.querySelector('#hongkong-map'), {
+      center: { lat: -34.397, lng: 150.644 },
+      zoom: 8
+    });
+  }
+
+  initMap()
+
+})
 
 /**
  * Hot module loader (DEVELOPMENT ONLY)

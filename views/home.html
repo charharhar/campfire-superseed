@@ -53,7 +53,7 @@
 
             <div class="main-subheading flex-display position-center direction-column">
                 <h2 class="campWhite large-light">connect. collaborate. create.</h2>
-                <figure class="arrow-image">
+                <figure class="arrow-image arrowDown" scrollTo="section-about">
                     <img src="/images/section-main/arrow-down.png" alt="">
                 </figure>
             </div>
@@ -333,6 +333,9 @@
                         <i class="fa fa-chevron-down" aria-hidden="true"></i>
                     </div>
                     <div class="accordion-content accordion-location-content active-plan" id="acc-1">
+                        <div class="google-map-wrapper">
+                            <div class="google-map" id="hongkong-map"></div>
+                        </div>
 
                         <div class="container-fluid accordion-content-wrapper flex-display position-center"></div>
 
@@ -346,6 +349,10 @@
                     </div>
                     <div class="accordion-content accordion-location-content" id="acc-2">
 
+                        <div class="google-map-wrapper">
+                            <div class="google-map" id="australia-map"></div>
+                        </div>
+
                         <div class="container-fluid accordion-content-wrapper flex-display position-center"></div>
 
                     </div>
@@ -358,6 +365,10 @@
                     </div>
                     <div class="accordion-content accordion-location-content" id="acc-3">
 
+                        <div class="google-map-wrapper">
+                            <div class="google-map" id="singapore-map"></div>
+                        </div>
+
                         <div class="container-fluid accordion-content-wrapper flex-display position-center"></div>
 
                     </div>
@@ -365,10 +376,14 @@
 
                 <div class="accordion-location">
                     <div class="accordion-button accordion-location-button" id="acc-4">
-                        <h2 class="campWhite medium-regular">United Kingdom</h2>
+                        <h2 class="campWhite medium-regular nowrap">United Kingdom</h2>
                         <i class="fa fa-chevron-right" aria-hidden="true"></i>
                     </div>
                     <div class="accordion-content accordion-location-content" id="acc-4">
+
+                        <div class="google-map-wrapper">
+                            <div class="google-map" id="unitedkingdom-map"></div>
+                        </div>
 
                         <div class="container-fluid accordion-content-wrapper flex-display position-center"></div>
 
@@ -468,7 +483,7 @@
                     </div>
                 </div>
                 <div class="row">
-                    <p class="small-light campLightRed">&copy; Campfire Inc. 2017</p>
+                    <p class="small-light campLightRed">&copy; Campfire Inc. 2017 All Rights Reserved.</p>
                 </div>
             </div>
         </footer>
@@ -476,5 +491,6 @@
     </div>
 
     <script src="<%= assetsMap.main.js %>"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAnT2AePmWqjDBFz29YAmHLnGT53yqXcCc"></script>
 </body>
 </html>
