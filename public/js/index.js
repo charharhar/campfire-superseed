@@ -1,7 +1,9 @@
 
 import '../css/styles.css';
 
-console.log('Application started')
+/**
+ * Accordion handler
+ */
 
 const accordionPlansButtons = sliceArray(document.querySelectorAll('.accordion-plans-button'))
 const accordionPlansContents = sliceArray(document.querySelectorAll('.accordion-plans-content'))
@@ -66,6 +68,30 @@ accordionLocationButtons.forEach(button => {
   })
 })
 
-if (module.hot) {
-  module.hot.accept();
+/**
+ * Newsletter Input CSS listener
+ */
+
+const inputNewsletter = document.querySelector('input[name="newsletter"]');
+const newsletterButton = document.querySelector('.newsletter-button');
+
+function getDistanceFromLeft(el) {
+  const rect = el.getBoundingClientRect();
+  const docEl = document.documentElement;
+
+  return (rect.left + (window.pageXOffset || docEl.scrollLeft || 0))
 }
+
+function calculateNewsletterMaxWidth() {
+  let inputMaxWidth = getDistanceFromLeft(newsletterButton) - getDistanceFromLeft(inputNewsletter)
+  inputNewsletter.style.maxWidth = `${inputMaxWidth - 10}px`;
+}
+
+
+window.addEventListener('resize', calculateNewsletterMaxWidth)
+window.addEventListener('load', calculateNewsletterMaxWidth)
+
+/**
+ * Hot module loader (DEVELOPMENT ONLY)
+ */
+process.env.NODE_ENV === 'development' && module.hot && module.hot.accept();
