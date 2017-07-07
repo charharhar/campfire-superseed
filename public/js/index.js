@@ -3,17 +3,29 @@ import '../css/styles.css';
 
 console.log('Application started')
 
-const accordionPlansButtons = Array.prototype.slice.call(document.querySelectorAll('.accordion-plans-button'))
-const accordionPlansContents = Array.prototype.slice.call(document.querySelectorAll('.accordion-plans-content'))
-const accordionLocationButtons = Array.prototype.slice.call(document.querySelectorAll('.accordion-location-button'))
-const accordionLocationContents = Array.prototype.slice.call(document.querySelectorAll('.accordion-location-content'))
+const accordionPlansButtons = sliceArray(document.querySelectorAll('.accordion-plans-button'))
+const accordionPlansContents = sliceArray(document.querySelectorAll('.accordion-plans-content'))
+const accordionLocationButtons = sliceArray(document.querySelectorAll('.accordion-location-button'))
+const accordionLocationContents = sliceArray(document.querySelectorAll('.accordion-location-content'))
+
+function findParent(node, className) {
+  let tempNode = node;
+
+  while (!tempNode.classList.contains(className)) {
+    tempNode = tempNode.parentNode;
+  }
+
+  return tempNode
+}
+
+function sliceArray(nodeArray) {
+  return Array.prototype.slice.call(nodeArray)
+}
 
 function handleAccordionClick(e, buttons, contents) {
   let target = e.target;
 
-  while (!target.classList.contains('accordion-button')) {
-    target = target.parentNode;
-  }
+  target = findParent(target, 'accordion-button')
 
   buttons.forEach(button => {
     if (button.getAttribute('id') !== target.getAttribute('id')) {

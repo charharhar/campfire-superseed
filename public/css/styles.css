@@ -322,7 +322,7 @@ section.section-plans {
         width: 100%;
         background-color: $campfire-lightRed;
         border-top: 2px solid $campfire-white;
-        height: 30px;
+        height: 35px;
         cursor: pointer;
         transition: all .5s ease-in-out;
 
@@ -433,7 +433,7 @@ section.section-locations {
         width: 100%;
         background-color: $campfire-lightRed;
         border-top: 2px solid $campfire-white;
-        height: 30px;
+        height: 35px;
         cursor: pointer;
         transition: all .5s ease-in-out;
 
