@@ -321,7 +321,7 @@ section.section-plans {
         position: relative;
         width: 100%;
         background-color: $campfire-lightRed;
-        border-top: 1px solid white;
+        border-top: 2px solid $campfire-white;
         height: 30px;
         cursor: pointer;
         transition: all .5s ease-in-out;
@@ -351,7 +351,7 @@ section.section-plans {
           }
 
           h2 {
-            font-size: 20px;
+            font-size: 24px;
             transform: translate(10px, -50%)
           }
 
@@ -400,6 +400,93 @@ section.section-plans {
               text-align: center;
             }
           }
+        }
+      }
+    }
+  }
+
+  .section-image {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
+}
+
+/**
+ * Location Section
+ */
+section.section-locations {
+  height: auto;
+  border-bottom: 30px solid $campfire-darkRed;
+
+  .accordion-location-wrapper {
+
+    .accordion-location {
+      width: 100%;
+
+      &:last-of-type {
+        .accordion-button {
+          border-bottom: 2px solid $campfire-white;
+        }
+      }
+
+      .accordion-button {
+        position: relative;
+        width: 100%;
+        background-color: $campfire-lightRed;
+        border-top: 2px solid $campfire-white;
+        height: 30px;
+        cursor: pointer;
+        transition: all .5s ease-in-out;
+
+        h2, i {
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          transition: all .5s ease-in-out;
+        }
+
+        h2 {
+          text-align: left;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          font-size: 18px;
+        }
+
+        i {
+          right: 50px;
+        }
+
+        &.active-plan {
+          background-color: $campfire-white;
+
+          h2, i {
+            color: $campfire-lightRed;
+          }
+
+          h2 {
+            font-size: 24px;
+          }
+
+          i {
+            transform: translate(-10px, -50%)
+          }
+        }
+      }
+
+      .accordion-content {
+        background-color: #ccc;
+        max-height: 0;
+        overflow: hidden;
+        transition: all .5s ease-in-out;
+
+        &.active-plan {
+          max-height: 75vh;
+        }
+
+        .accordion-content-wrapper {
+          background-color: rgba(0, 0, 0, 0.7);
+          width: 70%;
+          margin: 60px auto;
+          padding: 40px;
         }
       }
     }

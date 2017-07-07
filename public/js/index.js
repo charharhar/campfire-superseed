@@ -3,13 +3,19 @@ import '../css/styles.css';
 
 console.log('Application started')
 
-const accordionButtons = Array.prototype.slice.call(document.querySelectorAll('.accordion-button'))
-const accordionContent = Array.prototype.slice.call(document.querySelectorAll('.accordion-content'))
+const accordionPlansButtons = Array.prototype.slice.call(document.querySelectorAll('.accordion-plans-button'))
+const accordionPlansContents = Array.prototype.slice.call(document.querySelectorAll('.accordion-plans-content'))
+const accordionLocationButtons = Array.prototype.slice.call(document.querySelectorAll('.accordion-location-button'))
+const accordionLocationContents = Array.prototype.slice.call(document.querySelectorAll('.accordion-location-content'))
 
-function handleAccordionClick(e) {
-  const target = e.target
+function handleAccordionClick(e, buttons, contents) {
+  let target = e.target;
 
-  accordionButtons.forEach(button => {
+  while (!target.classList.contains('accordion-button')) {
+    target = target.parentNode;
+  }
+
+  buttons.forEach(button => {
     if (button.getAttribute('id') !== target.getAttribute('id')) {
       button.classList.remove('active-plan');
       button.lastElementChild.classList.add('fa-chevron-right')
@@ -17,7 +23,7 @@ function handleAccordionClick(e) {
     }
   })
 
-  accordionContent.forEach(content => {
+  contents.forEach(content => {
     if (content.getAttribute('id') !== target.getAttribute('id')) {
       content.classList.remove('active-plan');
     }
@@ -36,8 +42,16 @@ function handleAccordionClick(e) {
   }
 }
 
-accordionButtons.forEach(button => {
-  button.addEventListener('click', handleAccordionClick)
+accordionPlansButtons.forEach(button => {
+  button.addEventListener('click', e => {
+    handleAccordionClick(e, accordionPlansButtons, accordionPlansContents)
+  })
+})
+
+accordionLocationButtons.forEach(button => {
+  button.addEventListener('click', e => {
+    handleAccordionClick(e, accordionLocationButtons, accordionLocationContents)
+  })
 })
 
 if (module.hot) {
