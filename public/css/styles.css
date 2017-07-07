@@ -299,8 +299,31 @@ p, ul, ol {
   display: none;
   height: 0;
 }
-#flex-panel {
-  background-color: #e9e5ad;
+#flex-content {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url('../images/section-plans/Flex.png');
+}
+.plans-details {
+  margin: 0 auto;
+  width: 50%;
+  height: 50vh;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+#hot-content {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url('../images/section-plans/Hotdesk.png');
+}
+#mixed-content {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url('../images/section-plans/Mixed.png');
+}
+#private-content {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url('../images/section-plans/private.png');
 }
 
 /* Locations section */

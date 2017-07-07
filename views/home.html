@@ -35,9 +35,7 @@
 
             <div class="row" id="top-sub-quote">
                 <h2>Connect. Collaborate. Create.</h2>
-                <figure class="arrow-down">
-                    <img src="images/section-top/arrow-down.png" alt="">
-                </figure>
+                    <img src='/public/images/section-top/arrow-down.png' alt=""/>
             </div>
         </section>
 
@@ -78,7 +76,7 @@
                             <h3 class="white">Industry focused<br>hardware</h2>
                             <div class="features-icon">
                                 <figure class="features-img">
-                                    <img src="../images/section-features/hardware.png" alt="">
+                                    <img src="public/images/section-features/events.png" alt="">
                                 </figure>
                             </div>
                             <p class="white">Utilize state-of-the-art hardware for each specific industry at every Campfire site</p>
@@ -113,18 +111,32 @@
             <div class="section-header vertical-center centered-text">
                 <h2 class="white">Campfire Plans</h2>
             </div>
-            <div class="accordion-container">
-                <h3 class="panel-toggle vertical-center active" id="flex-toggle">Flex</h3>
-                <div class="panel-content open" id="flex-panel">
+
+            <div class="plans-accordion">
+                <div class="panel-toggle vertical-center active" id="flex-toggle">
+                    <h3>Flex</h3>
                 </div>
-                <h3 class="panel-toggle vertical-center inactive" id="hot-toggle">Hot Desks</h3>
-                <div class="panel-content closed">
+                <div class="panel-content open" id="flex-content">
+                    <div class="plans-details" id="flex-details">
+                    </div>
                 </div>
-                <h3 class="panel-toggle vertical-center inactive" id="mixed-toggle">Mixed Desks</h3>
-                <div class="panel-content closed">
+
+                <div class="panel-toggle vertical-center inactive" id="hot-toggle">
+                    <h3 class="white">Hot Desk</h3>
                 </div>
-                <h3 class="panel-toggle vertical-center inactive" id="private-toggle">Private</h3>
-                <div class="panel-content closed">
+                <div class="panel-content closed" id="hot-content">
+                </div>
+
+                <div class="panel-toggle vertical-center inactive" id="mixed-toggle">
+                    <h3 class="white">Mixed Desk</h3>
+                </div>
+                <div class="panel-content closed" id="mixed-content">
+                </div>
+
+                <div class="panel-toggle vertical-center inactive" id="private-toggle">
+                    <h3 class="white">Private</h3>
+                </div>
+                <div class="panel-content closed" id="private-content">
                 </div>
             </div>
         </section>
