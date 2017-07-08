@@ -39,6 +39,7 @@ app.set('views', path.resolve(appRootDir.get(), 'views'));
 app.engine('html', require('ejs').renderFile);
 app.set('view engine', 'html');
 app.use('/', express.static('build'))
+app.use('/', express.static('public'))
 
 /**
  * Webpack Development Server configuration.
