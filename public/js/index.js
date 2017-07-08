@@ -10,12 +10,14 @@ if (module.hot) {
 $('.panel-toggle').on('click', function(){
   var panelContent = $(this).next('.panel-content');
   var nextContent = $(this).nextAll('.panel-toggle:first').next();
+  var chevronArrow = $(this).find('i');
 
   if($(this).hasClass('inactive')) {
     panelContent.removeClass('closed').addClass('open');
     $(this).removeClass('inactive').addClass('active');
     $('.open').not(panelContent).addClass('closed').removeClass('open');
     $('.active').not($(this)).addClass('inactive').removeClass('active');
+    chevronArrow.addClass('fa-chevron-up').removeClass('fa-chevron-down');
   } else {
     panelContent.removeClass('open').addClass('closed');
     $(this).addClass('inactive').removeClass('active');
