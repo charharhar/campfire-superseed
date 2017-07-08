@@ -180,11 +180,13 @@
             </div>
             <div class="locations-container">
                 <div class="locations-accordion">
-                    <div class="panel-toggle active" id="hk">
+                    <div class="location-toggle active" id="hk">
                         <h3 class="toggle-text">Hong Kong</h3>
                         <i class="fa fa-chevron-up fa-lg chevron-arrows" aria-hidden="true"></i>
                     </div>
-                    <div class="panel-content open" id="hk-content">
+                    <div class="location-content open" id="hk-content">
+                        <div class="map-wrapper hk-map">
+                        </div>
                     </div>
 
                     <div class="panel-toggle inactive" id="aus">
@@ -238,22 +240,48 @@
         </section>
 
         <section class="section-wrapper" id="section-contact">
-            <div class="row vertical-center" id="contact-bottom">
+            <div class="row vertical-center">
                 <div class="col col-md-7">
                     <h2 class="red-text letter-space">Interested in our space?</h2>
                     <h1 class="red-text letter-space">Join us</h1>
                 </div>
                 <div class="col col-md-5">
-                    <a href="#" type="button" class="button red-button normal-button">Contact Us</a>
+                    <a href="#" type="button" id="loop-contact" class="button red-button normal-button">Contact Us</a>
                 </div>
             </div>
         </section>
 
-        <footer>
-            <p class="red-text">Industry focused coworking spaces</p>
+        <footer class="footer">
+            <div class="footer-wrapper">
+                <div class="row vertical-center icon-wrapper">
+                    <div class="col col-mid-6 vertical-center">
+                        <img class="footer-logo" src="../images/footer/footersmall-logo.png">
+                        <p class="red-text footer-text">Industry focused coworking spaces</p>
+                    </div>
+                    <div class="col col-mid-6 social-wrapper">
+                        <a href="">
+                            <img class="social-icons" src="../images/footer/footer-social-icons_01.png" alt="Instagram">
+                        </a>
+                        <a href="">
+                            <img class="social-icons" src="../images/footer/footer-social-icons_03.png" alt="Facebook">
+                        </a>
+                        <a href="">
+                            <img class="social-icons" src="../images/footer/footer-social-icons_05.png" alt="LinkedIn">
+                        </a>
+                        <a href="">
+                            <img class="social-icons" src="../images/footer/footer-social-icons_07.png" alt="Twitter">
+                        </a>
+                    </div>
+                </div>
+                <div class="row">
+                    <p class="red-text copyright-text">&copy; Campfire</p>
+                </div>
+            </div>
         </footer>
     </div>
 
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDeUTHyja3qHkEDdBeQk4Py0s1TcavBF38&callback=initMap"
+  type="text/javascript"></script>
     <script src="http://code.jquery.com/jquery.min.js"></script>
     <script src="<%= assetsMap.main.js %>"></script>
 
