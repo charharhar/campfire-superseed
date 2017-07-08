@@ -20,7 +20,7 @@
                     <li class="navbar-link"><a href="#">Blogs/Events</a></li>
                     <li class="navbar-link"><a href="#">Join Us</a></li>
                 </ul>
-                <a href="#" type="button" class="button red-button">Contact Us</a>
+                <a href="#" type="button" class="button red-button normal-button">Contact Us</a>
             </nav>
         </nav>
 
@@ -55,8 +55,8 @@
                         <h3 class="red-text">Stay up to date with out latest project<br /> developments of co-learning and co-living spaces</h3>
                     </div>
                     <div class="col col-md-5" id="about-buttons">
-                        <a href="" type="button" class="button gray-button large-button">Co-learning</a>
-                        <a href="" type="button" class="button gray-button large-button">Co-living</a>
+                        <a href="" type="button" class="button gray-button medium-button">Co-learning</a>
+                        <a href="" type="button" class="button gray-button medium-button">Co-living</a>
                     </div>
                 </div>
             </div>
@@ -114,38 +114,57 @@
             </div>
 
             <div class="plans-accordion">
-                <div class="panel-toggle vertical-center active" id="flex-toggle">
-                    <h3>Flex</h3>
+                <div class="panel-toggle active" id="flex-toggle">
+                    <h3 class="toggle-text">Flex</h3>
+                    <i class="fa fa-chevron-down fa-lg chevron-arrows" aria-hidden="true"></i>
                 </div>
                 <div class="panel-content open" id="flex-content">
-                    <div class="panel-details" id="flex-details">
-                        <div class="row">
+                    <div class="panel-wrapper" id="flex-details">
+                        <div class="row panel-details">
                             <div class="col col-md-6">
                                 <h2 class="white-text">Flex Plan</h2>
                                 <p class="white-text">The Flexible plan is a short-term alternative to a home-office. These plans are flexible Hot Desk for a short-term membership. The plans include the following</p>
                                 <a href="#" type="button" class="button red-button large-button">Sign me up</a>
                             </div>
-                            <div class="col col-md-6">
-
+                            <div class="col col-md-6 hours-addons">
+                                <div class="plans-hours">
+                                    <h3 class="white-text">Hours</h3>
+                                    <p class="white-text">
+                                        Day (9.00AM - 6.30PM)<br/>
+                                        Week (Monday - Friday 9.00AM - 6.30PM)<br />
+                                        Half Day Monthly
+                                    </p>
+                                </div>
+                                <div class="plans-addons">
+                                    <h3 class="white-text">Additional Add-Ons</h3>
+                                    <p class="white-text">
+                                        Lockers<br />
+                                        Mail/Handling<br/>
+                                        Meeting Room<br />
+                                    </p>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="panel-toggle vertical-center inactive" id="hot-toggle">
-                    <h3>Hot Desk</h3>
+                <div class="panel-toggle inactive" id="hot-toggle">
+                    <h3 class="toggle-text">Hot Desk</h3>
+                    <i class="fa fa-chevron-down fa-lg chevron-arrows" aria-hidden="true"></i>
                 </div>
                 <div class="panel-content closed" id="hot-content">
                 </div>
 
-                <div class="panel-toggle vertical-center inactive" id="mixed-toggle">
-                    <h3>Mixed Desk</h3>
+                <div class="panel-toggle inactive" id="mixed-toggle">
+                    <h3 class="toggle-text">Mixed Desk</h3>
+                    <i class="fa fa-chevron-down fa-lg chevron-arrows" aria-hidden="true"></i>
                 </div>
                 <div class="panel-content closed" id="mixed-content">
                 </div>
 
-                <div class="panel-toggle vertical-center inactive" id="private-toggle">
-                    <h3>Private</h3>
+                <div class="panel-toggle inactive" id="private-toggle">
+                    <h3 class="toggle-text">Private</h3>
+                    <i class="fa fa-chevron-down fa-lg chevron-arrows" aria-hidden="true"></i>
                 </div>
                 <div class="panel-content closed" id="private-content">
                 </div>
@@ -160,7 +179,34 @@
                 <h2 class="white-text">Locations</h2>
             </div>
             <div class="locations-container">
+                <div class="locations-accordion">
+                    <div class="panel-toggle active" id="hk">
+                        <h3 class="toggle-text">Hong Kong</h3>
+                        <i class="fa fa-chevron-up fa-lg chevron-arrows" aria-hidden="true"></i>
+                    </div>
+                    <div class="panel-content open" id="hk-content">
+                    </div>
 
+                    <div class="panel-toggle inactive" id="aus">
+                        <h3 class="toggle-text">Australia</h3>
+                        <i class="fa fa-chevron-down fa-lg chevron-arrows" aria-hidden="true"></i>
+                    </div>
+                    <div class="panel-content closed" id="aus-content">
+                    </div>
+
+                    <div class="panel-toggle inactive" id="sing">
+                        <h3 class="toggle-text">Singapore</h3>
+                        <i class="fa fa-chevron-down fa-lg chevron-arrows" aria-hidden="true"></i>
+                    </div>
+                    <div class="panel-content closed" id="sing-content">
+                    </div>
+
+                    <div class="panel-toggle inactive" id="uk">
+                        <h3 class="toggle-text">United Kingdom</h3>
+                        <i class="fa fa-chevron-down fa-lg chevron-arrows" aria-hidden="true"></i>
+                    </div>
+                    <div class="panel-content closed" id="uk-content">
+                    </div>
             </div>
         </section>
 
@@ -178,11 +224,11 @@
             <div class="row" id="loop-buttons">
                 <div class="col col-md-6">
                     <h3 class="red-text">Blogs</h3>
-                    <a href="#" type="button" class="button red-button large-button">Read More</a>
+                    <a href="#" type="button" class="button red-button medium-button">Read More</a>
                 </div>
                 <div class="col col-md-6">
                     <h3 class="red-text">Events</h3>
-                    <a href="#" type="button" class="button red-button large-button">See More</a>
+                    <a href="#" type="button" class="button red-button medium-button">See More</a>
                 </div>
             </div>
             <div class="row" id="loop-email">
@@ -198,14 +244,14 @@
                     <h1 class="red-text letter-space">Join us</h1>
                 </div>
                 <div class="col col-md-5">
-                    <a href="#" type="button" class="button red-button">Contact Us</a>
+                    <a href="#" type="button" class="button red-button normal-button">Contact Us</a>
                 </div>
             </div>
         </section>
-<!--
+
         <footer>
             <p class="red-text">Industry focused coworking spaces</p>
-        </footer> -->
+        </footer>
     </div>
 
     <script src="http://code.jquery.com/jquery.min.js"></script>
