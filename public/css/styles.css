@@ -90,6 +90,7 @@ p, ul, ol {
 /* Alignment etc */
 .vertical-center {
   display: flex;
+  justify-content: center;
   align-items: center;
 }
 
@@ -231,8 +232,7 @@ a.button {
 #section-features {
   height: 100vh;
   border-bottom: 30px solid #FFFFFF;
-  padding-top: 5%;
-  padding-left: 5%;
+  padding: 3%;
   background-color: #801516;
   background-image: url('../images/section-features/membershipfeature-bg.png');
   background-repeat: no-repeat;
@@ -274,19 +274,18 @@ a.button {
   background-image: url("../images/paralax-2.png");
 }
 /* Accordion styling */
-.plans-container {
-  width: 100%;
-  height: 91.071vh;
-}
+
 .panel-toggle {
   padding-left: 5%;
   border-bottom: 1px solid #ffffff;
   height: 4.066vh;
+  cursor: pointer;
 }
 .panel-content {
+  position: relative;
+  overflow: hidden;
   height: 74.808vh;
   width: 100%;
-  margin: 0;
 }
 .toggle-text {
   line-height: 30px;
@@ -300,9 +299,13 @@ a.button {
   float: right;
 }
 .panel-details {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
   padding: 40px;
   width: 70%;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.65);
 }
 /* States*/
 .active {
@@ -318,6 +321,11 @@ a.button {
 }
 .closed {
   display: none;
+}
+
+/* Panel content */
+.plans-hours, .plans-addons {
+  text-align: center;
 }
 
 /* Panel backgrounds */
