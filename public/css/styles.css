@@ -108,11 +108,20 @@ p, ul, ol {
   background-size: cover;
 }
 /* Buttons */
-.button {
+a.button {
+  text-align: center;
+  display: inline-block;
   border: none;
   border-radius: 4px;
   padding: 12px 14px 12px 14px;
+  text-decoration: none;
   text-transform: uppercase;
+}
+
+/* Buttons: Sizes */
+.large-button {
+  padding-left: 30px;
+  padding-right: 30px;
 }
 
 .red-button {
@@ -122,22 +131,8 @@ p, ul, ol {
 
 .gray-button {
   color: #AF1D1E;
-  padding-left: 30px;
-  padding-right: 30px;
   margin-left: 70px;
   background-color: #E9E9E9;
-}
-
-#readmore, #seemore {
-  margin-top: 15px;
-  margin-bottom: 15px;
-}
-
-#nav-contact-button {
-  display: inline-block;
-  vertical-align: middle;
-  font-size: 14px; /* 25 pt in mockup */
-  font-weight: 600;
 }
 
 .navbar-wrapper {
