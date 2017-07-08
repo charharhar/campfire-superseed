@@ -55,7 +55,8 @@ function configFactory() {
 
     plugins: removeEmpty([
       new webpack.EnvironmentPlugin({
-        NODE_ENV: process.env.NODE_ENV,
+        NODE_ENV: JSON.stringify(process.env.NODE_ENV),
+        ENABLE_TUNNEL: JSON.stringify(process.env.ENABLE_TUNNEL) || 'false',
       }),
 
       new AssetsPlugin({

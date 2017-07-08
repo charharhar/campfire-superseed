@@ -333,7 +333,7 @@ i.fa-chevron-right {
   }
 
   .navigation-list-wrapper {
-    display: inline-block;
+    display: none;
 
     ul {
       list-style: none;

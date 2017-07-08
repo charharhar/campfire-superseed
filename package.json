@@ -29,6 +29,7 @@
     "extract-text-webpack-plugin": "^2.1.0",
     "file-loader": "^0.11.1",
     "latest": "^0.2.0",
+    "ngrok": "^2.2.13",
     "node-sass": "^4.5.3",
     "postcss-loader": "^2.0.5",
     "postcss-mixins": "^6.0.0",
@@ -43,7 +44,9 @@
   "scripts": {
     "dev:build": "rimraf build && cross-env NODE_ENV=development webpack --config webpack/webpack.config.js",
     "prod:build": "rimraf build && cross-env NODE_ENV=production webpack --config webpack/webpack.config.js",
+    "tunnel:build": "rimraf build && cross-env NODE_ENV=production ENABLE_TUNNEL=true webpack --config webpack/webpack.config.js",
     "dev:start": "cross-env NODE_ENV=development babel-node app.js",
-    "prod:start": "cross-env NODE_ENV=production babel-node app.js"
+    "prod:start": "cross-env NODE_ENV=production babel-node app.js",
+    "tunnel:start": "cross-env NODE_NEV=production ENABLE_TUNNEL=true babel-node app.js"
   }
 }

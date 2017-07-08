@@ -15,6 +15,8 @@ const config = require('./webpack/webpack.config');
 const compiler = webpack(config);
 
 const isDev = process.env.NODE_ENV === 'development';
+const ngrok = process.env.ENABLE_TUNNEL === 'true' ? require('ngrok') : false;
+const port = process.env.PORT || 3000;
 
 /**
  * Controllers (route handlers).
@@ -34,7 +36,7 @@ app.use(compression());
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-app.set('port', process.env.PORT || 3000);
+app.set('port', port);
 app.set('views', path.resolve(appRootDir.get(), 'views'));
 app.engine('html', require('ejs').renderFile);
 app.set('view engine', 'html');
@@ -76,8 +78,19 @@ app.get('*', (req, res) => {
  * Start Express server.
  */
 app.listen(app.get('port'), () => {
-  console.log('==> %s App is running at http://localhost:%d', chalk.green('✓'), app.get('port')); 
-  console.log(chalk.yellow('  Press CTRL-C to stop\n'));
+
+  if (ngrok) {
+    ngrok.connect(port, (innerErr, url) => {
+      if (innerErr) {
+        return console.error(err);
+      }
+      console.log(`Server tunnel enabled at ${url}`)
+    })
+  } else {
+    console.log('==> %s App is running at http://localhost:%d', chalk.green('✓'), app.get('port')); 
+    console.log(chalk.yellow('  Press CTRL-C to stop\n'));
+  }
+
 });
 
 module.exports = app;
