@@ -123,10 +123,17 @@ accordionLocationButtons.forEach(button => {
 
 const inputNewsletter = document.querySelector('input[name="newsletter"]');
 const newsletterButton = document.querySelector('.newsletter-button');
+const eventsButton = document.querySelector('.events-button');
 
 function calculateNewsletterMaxWidth() {
-  let inputMaxWidth = getDistanceFromLeft(newsletterButton) - getDistanceFromLeft(inputNewsletter)
-  inputNewsletter.style.maxWidth = `${inputMaxWidth - 10}px`;
+  let inputMaxWidth;
+  if (window.innerWidth <= 768) {
+    inputMaxWidth = getDistanceFromLeft(eventsButton) + eventsButton.clientWidth - getDistanceFromLeft(inputNewsletter);
+  } else {
+    inputMaxWidth = getDistanceFromLeft(newsletterButton) - getDistanceFromLeft(inputNewsletter) - 10
+  }
+
+  inputNewsletter.style.maxWidth = `${inputMaxWidth}px`;
 }
 
 
