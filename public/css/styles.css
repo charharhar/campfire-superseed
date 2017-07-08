@@ -580,7 +580,7 @@ section.section-plans {
         background-position: center center;
         background-repeat: no-repeat;
         background-size: cover;
-        transition: all .5s ease-in-out;
+        transition: all .5s ease;
 
         &#acc-1 {
           background-image: url(/images/section-plans/flex.png);
@@ -599,7 +599,12 @@ section.section-plans {
         }
 
         &.active-plan {
-          max-height: 1000px;
+          max-height: 500px;
+
+          .accordion-content-wrapper {
+            transform: scale(1, 1);
+            opacity: 1;
+          }
         }
 
         .accordion-content-wrapper {
@@ -607,6 +612,10 @@ section.section-plans {
           width: 70%;
           margin: 60px auto;
           padding: 40px;
+          transform: scale(.3, .3);
+          max-width: 700px;
+          opacity: 0;
+          transition: all .5s ease;
 
           .accordion-left {
             display: flex;

@@ -27,6 +27,10 @@ function getDistanceFromLeft(el) {
   return (rect.left + (window.pageXOffset || docEl.scrollLeft || 0))
 }
 
+function scrollTop() {
+  return (window.pageYOffset !== undefined) ? window.pageYOffset : (document.documentElement || document.body.parentNode || document.body).scrollTop;
+}
+
 /**
  * Smooth Scroll Handler
  */
@@ -39,7 +43,6 @@ function scrollTo(e, elem) {
 
   const target = `.${elem.getAttribute('scrollTo')}`
   document.querySelector(target).scrollIntoView({ behavior: 'smooth' });
-
 }
 
 window.addEventListener('load', () => {
@@ -182,10 +185,6 @@ window.addEventListener('load', handleAllAnimations)
  */
 
 const parallaxBackground = sliceArray(document.querySelectorAll('.section-image'));
-
-function scrollTop() {
-  return (window.pageYOffset !== undefined) ? window.pageYOffset : (document.documentElement || document.body.parentNode || document.body).scrollTop;
-}
 
 function handleParallax(target) {
     let yPos = -scrollTop() / target.getAttribute('data-speed');
