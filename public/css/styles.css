@@ -71,15 +71,15 @@ h3 {
 p, ul, ol {
   font-weight: 300;
   font-size: 14px;
-  line-height: 20px;
+  line-height: 24px;
   color: #AF1D1E;
 }
 
-.red {
+.red-text {
   color: #AF1D1E;
 }
 
-.white {
+.white-text {
   color: #FFFFFF;
 }
 
@@ -285,6 +285,7 @@ p, ul, ol {
   margin: 0;
 }
 .active {
+  color: #AF1D1E;
   background-color: #ffffff;
 }
 .inactive {
@@ -293,11 +294,9 @@ p, ul, ol {
 }
 .open {
   display: block;
-  background-color: #e9e9e9;
 }
 .closed {
   display: none;
-  height: 0;
 }
 #flex-content {
   background-repeat: no-repeat;
@@ -305,8 +304,8 @@ p, ul, ol {
   background-image: url('../images/section-plans/Flex.png');
 }
 .plans-details {
-  margin: 0 auto;
-  width: 50%;
+  padding: 40px;
+  width: 70%;
   height: 50vh;
   background-color: rgba(0, 0, 0, 0.5);
 }
