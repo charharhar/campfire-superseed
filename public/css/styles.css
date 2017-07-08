@@ -269,16 +269,17 @@ a.button {
   border-bottom: 1px solid #ffffff;
   height: 4.066vh;
 }
-.panel {
-  width: 100%;
-  padding: 0;
-  margin: 0;
-}
 .panel-content {
   height: 74.808vh;
   width: 100%;
   margin: 0;
 }
+.panel-details {
+  padding: 40px;
+  width: 70%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+/* States*/
 .active {
   color: #AF1D1E;
   background-color: #ffffff;
@@ -293,16 +294,12 @@ a.button {
 .closed {
   display: none;
 }
+
+/* Panel backgrounds */
 #flex-content {
   background-repeat: no-repeat;
   background-size: cover;
   background-image: url('../images/section-plans/Flex.png');
-}
-.plans-details {
-  padding: 40px;
-  width: 70%;
-  height: 50vh;
-  background-color: rgba(0, 0, 0, 0.5);
 }
 #hot-content {
   background-repeat: no-repeat;
