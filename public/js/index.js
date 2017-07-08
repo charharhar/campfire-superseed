@@ -37,6 +37,7 @@ function scrollTop() {
 
 const navLinks = sliceArray(document.querySelectorAll('.navLink'))
 const arrowDown = document.querySelector('.arrowDown');
+const comingSoonLinks = sliceArray(document.querySelectorAll('.comingSoonLinks'));
 
 function scrollTo(e, elem) {
   e.preventDefault();
@@ -60,6 +61,12 @@ window.addEventListener('load', () => {
     target = findParent(target, 'arrowDown');
 
     scrollTo(e, target);
+  })
+
+  comingSoonLinks.forEach(link => {
+    link.addEventListener('click', e => {
+      scrollTo(e, e.target)
+    })
   })
 
 })
@@ -231,16 +238,43 @@ parallaxBackground.forEach(section => {
  */
 
 window.addEventListener('load', () => {
-  let hongkongMap;
+  let HK_MAP;
+  let AUS_MAP;
+  let SG_MAP;
+  let UK_MAP
 
-  function initMap() {
-    hongkongMap = new google.maps.Map(document.querySelector('#hongkong-map'), {
-      center: { lat: -34.397, lng: 150.644 },
-      zoom: 8
+  function init_HK() {
+    HK_MAP = new google.maps.Map(document.querySelector('#hk-map'), {
+      center: { lat: 22.3964, lng: 114.1095 },
+      zoom: 10,
     });
   }
 
-  initMap()
+  function init_AUS() {
+    AUS_MAP = new google.maps.Map(document.querySelector('#aus-map'), {
+      center: { lat: -35.2809, lng: 149.1300 },
+      zoom: 10,
+    });
+  }
+
+  function init_SG() {
+    SG_MAP = new google.maps.Map(document.querySelector('#sg-map'), {
+      center: { lat: 1.3521, lng: 103.8198 },
+      zoom: 10,
+    });
+  }
+
+  function init_UK() {
+    UK_MAP = new google.maps.Map(document.querySelector('#uk-map'), {
+      center: { lat: 51.5074, lng: -0.1278 },
+      zoom: 10,
+    });
+  }
+
+  init_HK();
+  init_AUS();
+  init_SG();
+  init_UK();
 
 })
 
