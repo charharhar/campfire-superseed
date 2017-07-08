@@ -131,6 +131,53 @@ window.addEventListener('resize', calculateNewsletterMaxWidth)
 window.addEventListener('load', calculateNewsletterMaxWidth)
 
 /**
+ * WAYPOINT HANDLER
+ */
+const waypoints = sliceArray(document.querySelectorAll('.waypoint'));
+
+function isScrolledIntoView(el) {
+  const elemTop = el.getBoundingClientRect().top;
+  const elemBottom = el.getBoundingClientRect().bottom;
+  const elemHeight = el.clientHeight;
+
+  return (
+    elemTop <= window.innerHeight &&
+    elemBottom <= (window.innerHeight + elemHeight) &&
+    elemTop >= (-elemHeight) &&
+    elemBottom >= 0
+  )
+}
+
+function scrolledInAnimationHandler(visible, elem) {
+  const animated = elem.classList.contains('animated');
+  const enterDirection = elem.getAttribute('data');
+
+  if (visible) {
+    elem.classList.add('inView', 'animated-visible')
+    elem.classList.remove('notInView', `${enterDirection}-hidden`)
+    elem.classList.add('animated')
+  } else if (!visible) {
+    elem.classList.add('notInView', `${enterDirection}-hidden`)
+    elem.classList.remove('animated', 'inView', 'animated-visible')
+  }
+
+  // } else if (!visible && !animated) {
+  //   elem.classList.add('notInView', `${enterDirection}-hidden`)
+  // }
+}
+
+function handleAllAnimations() {
+  let visible;
+  waypoints.forEach(waypoint => {
+    let visible = isScrolledIntoView(waypoint)
+    scrolledInAnimationHandler(visible, waypoint);
+  })
+}
+
+window.addEventListener('scroll', handleAllAnimations)
+window.addEventListener('load', handleAllAnimations)
+
+/**
  * Google Maps Handling
  */
 

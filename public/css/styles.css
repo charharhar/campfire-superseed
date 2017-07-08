@@ -82,6 +82,7 @@ span.br {
 @media (max-width: 768px) {
   span.br {
     display: inline-block;
+    margin: 0 5px;
   }
 }
 
@@ -123,10 +124,18 @@ span.br {
 h1 {
   text-transform: uppercase;
   letter-spacing: 1px;
+  transition: .2s all;
+
+  &.massive-bold {
+    font-weight: 600;
+    font-size: 76px;
+    letter-spacing: 3px;
+    line-height: 120%;
+  }
 
   &.large-bold {
     font-weight: 600;
-    font-size: 54px;
+    font-size: 48px;
     letter-spacing: 3px;
     line-height: 150%;
   }
@@ -140,6 +149,7 @@ h1 {
 h2 {
   text-transform: uppercase;
   letter-spacing: 1px;
+  transition: .2s all;
 
   &.medium-light {
     font-size: 20px;
@@ -173,6 +183,7 @@ h2 {
 h3 {
   text-transform: uppercase;
   letter-spacing: 1px;
+  transition: .2s all;
 
   &.medium-regular {
     font-weight: 600;
@@ -191,6 +202,10 @@ p {
 
 @media (max-width: 768px) {
   h1 {
+    &.massive-bold {
+      font-size: 40px;
+    }
+
     &.large-bold {
       font-size: 34px;
     }
@@ -239,7 +254,7 @@ a.button {
   display: inline-block;
   text-transform: uppercase;
   text-decoration: none;
-  width: 140px;
+  width: 150px;
   text-align: center;
   padding: 15px 20px;
   border-radius: 4px;
@@ -726,11 +741,29 @@ section.section-locations {
 
           .location-buttons {
             .location-button {
-              background-color: rgba(255, 255, 255, 0.3);
+              background-color: rgba($campfire-white, 0.3);
               margin-bottom: 10px;
               margin-left: -15px;
               padding: 10px 10px 10px 20px;
               max-width: 275px;
+              cursor: pointer;
+              transition: .2s all;
+
+              &:hover {
+                background-color: rgba($campfire-lightRed, .3);
+
+                h2 {
+                  color: $campfire-white;
+                }
+              }
+
+              &.active-location {
+                background-color: rgba($campfire-lightRed, .8);
+
+                h2 {
+                  color: $campfire-white;
+                }
+              }
             }
           }
 
@@ -798,10 +831,12 @@ section.section-loop {
   }
 
   .join-heading-wrapper {
-    max-width: 330px;
+    max-width: 410px;
+    // max-width: 230px;
 
     h1 {
       text-align: center;
+      white-space: nowrap;
     }
 
     h2 {
@@ -821,6 +856,8 @@ section.section-loop {
 
   .newsletter-input-wrapper {
     width: 140px;
+    position: relative;
+    z-index: 1;
 
     input[type="text"].input-newsletter {
       padding: 15px 20px;
@@ -839,6 +876,12 @@ section.section-loop {
       -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
       -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
       transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+
+      &:focus {
+        border-color: rgba(175,32,36, 0.8);
+        box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(175,32,36, 0.6);
+        outline: 0 none;
+      }
     }
 
     input[type="text"].input-newsletter::-webkit-input-placeholder {
@@ -942,5 +985,41 @@ footer.footer {
         justify-content: center;
       }
     }
+  }
+}
+
+/*
+ * JS WAYPOINT ANIMATION
+ **/
+
+.waypoint {
+  transition: 1s all ease-in-out;
+
+  &.inView {
+    opacity: 1;
+  }
+
+  &.notInView {
+    opacity: 0;
+  }
+
+  &.animated-visible {
+    transform: translate(0, 0);
+  }
+
+  &.bottomToTop-hidden {
+    transform: translateY(100px);
+  }
+
+  &.leftToRight-hidden {
+    transform: translateX(-100px);
+  }
+
+  &.rightToLeft-hidden {
+    transform: translateX(100px);
+  }
+
+  &.leftToRightSpecial-hidden {
+    transform: translateX(-100%);
   }
 }
