@@ -64,6 +64,25 @@ window.addEventListener('load', () => {
 
 })
 
+// Hamburger mobile event handler
+// const hamburger = document.querySelector(".c-hamburger");
+// const mobileNavList = document.querySelector('.mobile-nav-list');
+
+// function toggleHandler(toggle) {
+//   toggle.addEventListener('click', function(e) {
+//     e.preventDefault();
+//     (this.classList.contains('is-active') === true)
+//       ? this.classList.remove('is-active')
+//       : this.classList.add('is-active');
+
+//     (mobileNavList.classList.contains('is-active') === true)
+//       ? mobileNavList.classList.remove('is-active')
+//       : mobileNavList.classList.add('is-active');
+//   });
+// }
+
+// toggleHandler(hamburger);
+
 /**
  * Accordion handler
  */
