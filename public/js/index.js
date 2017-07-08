@@ -181,6 +181,30 @@ window.addEventListener('load', handleAllAnimations)
  * Google Maps Handling
  */
 
+const parallaxBackground = sliceArray(document.querySelectorAll('.section-image'));
+
+function scrollTop() {
+  return (window.pageYOffset !== undefined) ? window.pageYOffset : (document.documentElement || document.body.parentNode || document.body).scrollTop;
+}
+
+function handleParallax(target) {
+    let yPos = -scrollTop() / target.getAttribute('data-speed');
+
+    let coords = '50% ' + yPos + 'px';
+
+    target.style.backgroundPosition = coords;
+}
+
+parallaxBackground.forEach(section => {
+  window.addEventListener('scroll', () => {
+    // handleParallax(section);
+  })
+})
+
+/**
+ * Google Maps Handling
+ */
+
 window.addEventListener('load', () => {
   let hongkongMap;
 
