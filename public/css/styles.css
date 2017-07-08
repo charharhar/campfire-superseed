@@ -166,14 +166,10 @@ a.button {
   width: 100%;
 }
 
-/* First section */
-.section-wrapper {
-  height: 100vh;
-  width: 100%;
-  margin-bottom: 0;
-}
+/* Top section*/
 
 #section-top{
+  width: 100%;
   padding-left: 5%;
   height: 96vh;
   background-image: url('../images/section-top/headerbg.png');
@@ -197,6 +193,14 @@ a.button {
   padding-bottom: 5%;
   color: #FFFFFF;
   text-align: center;
+}
+.arrow-down {
+  display: block;
+  margin-top: 40px;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 70px;
+  cursor: pointer;
 }
 
 /* About section */
@@ -222,11 +226,6 @@ a.button {
   background-color: #caabab;
 /*  background-image: url("../images/paralax-2.png");*/
 }
-.arrow-down {
-  display: block;
-  padding-top: 40px;
-  max-width: 70px;
-}
 
 /* Features section */
 #section-features {
@@ -251,7 +250,12 @@ a.button {
   height: 50vh;
   text-align: center;
 }
-
+#camper-perks {
+  display: inline-block;
+}
+#camper-perks > li {
+  text-align: left;
+}
 /* Plans section */
 #section-plans {
   height: 100vh;
@@ -275,7 +279,6 @@ a.button {
   height: 91.071vh;
 }
 .panel-toggle {
-  margin: 0;
   padding-left: 5%;
   border-bottom: 1px solid #ffffff;
   height: 4.066vh;
@@ -284,6 +287,17 @@ a.button {
   height: 74.808vh;
   width: 100%;
   margin: 0;
+}
+.toggle-text {
+  line-height: 30px;
+  display: inline-block;
+  float: left;
+}
+.chevron-arrows {
+  line-height: 30px;
+  display: inline-block;
+  padding-right: 5px;
+  float: right;
 }
 .panel-details {
   padding: 40px;
