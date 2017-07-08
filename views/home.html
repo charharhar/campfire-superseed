@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1">
 	<title>Campfire</title>
-
+    <script src="https://use.fontawesome.com/e1a7194148.js"></script>
     <link rel="stylesheet" href="<%= assetsMap.main.css %>">
 </head>
 <body>
@@ -20,7 +20,7 @@
                     <li class="navbar-link"><a href="#">Blogs/Events</a></li>
                     <li class="navbar-link"><a href="#">Join Us</a></li>
                 </ul>
-                <button type="button" class="button red-button" id="nav-contact-button">contact us</button>
+                <a href="#" type="button" class="button red-button">Contact Us</a>
             </nav>
         </nav>
 
@@ -35,7 +35,7 @@
 
             <div class="row" id="top-sub-quote">
                 <h2>Connect. Collaborate. Create.</h2>
-                    <img src='/public/images/section-top/arrow-down.png' alt=""/>
+                    <img src="images/section-top/arrow-down.png" alt="" />
             </div>
         </section>
 
@@ -43,7 +43,7 @@
             <div id="about-container">
                 <div class="row vertical-center" id="about-first">
                     <div class="col col-md-4" id="who-we-are">
-                        <h1 class="red letter-space">Who<br>we<br>are</h1>
+                        <h1 class="red-text letter-space">Who<br>we<br>are</h1>
                     </div>
 
                     <div class="col col-md-8" id="about-description">
@@ -52,11 +52,11 @@
                 </div>
                 <div class="row" id="about-second">
                     <div class="col col-md-7" id="">
-                        <h3 class="red">Stay up to date with out latest project<br /> developments of co-learning and co-living spaces</h3>
+                        <h3 class="red-text">Stay up to date with out latest project<br /> developments of co-learning and co-living spaces</h3>
                     </div>
                     <div class="col col-md-5" id="about-buttons">
-                        <button type="button" class="button gray-button" id="co-learning">co-learning</button>
-                        <button type="button" class="button gray-button" id="co-living">co-living</button>
+                        <a href="" type="button" class="button gray-button">Co-learning</a>
+                        <a href="" type="button" class="button gray-button">Co-living</a>
                     </div>
                 </div>
             </div>
@@ -68,32 +68,35 @@
         <section class="section-wrapper" id="section-features">
             <div class="row vertical-center" id="features-table">
                 <div class="col col-md-6">
-                    <h1 class="white">Membership<br>features</h1>
+                    <h1 class="white-text">Membership<br>features</h1>
                 </div>
                 <div class="col col-md-6">
                     <div class="row" id="features-one">
                         <div class="col col-md-6">
-                            <h3 class="white">Industry focused<br>hardware</h2>
+                            <h3 class="white-text">Industry focused<br>hardware</h2>
                             <div class="features-icon">
                                 <figure class="features-img">
-                                    <img src="public/images/section-features/events.png" alt="">
+                                    <img src="/public/images/section-features/events.png" alt="">
                                 </figure>
                             </div>
-                            <p class="white">Utilize state-of-the-art hardware for each specific industry at every Campfire site</p>
+                            <p class="white-text">Utilize state-of-the-art hardware for each specific industry at every Campfire site</p>
                         </div>
                         <div class="col col-md-6">
-                            <h3 class="white">Industry relevant<br>events</h2>
-                            <p class="white">Be inspired by frequent events with  expert speakers and networking with your peers </p>
+                            <h3 class="white-text">Industry relevant<br>events</h2>
+                                <figure class="features-img">
+                                    <img src="../images/section-features/events.png" alt="">
+                                </figure>
+                            <p class="white-text">Be inspired by frequent events with  expert speakers and networking with your peers </p>
                         </div>
                     </div>
                     <div class="row" id="features-two">
                         <div class="col col-md-6">
-                            <h3 class="white">Global access</h2>
-                            <p class="white">Travel and work with ease, Campfire Memberships entitles you to work anywhere we are</p>
+                            <h3 class="white-text">Global access</h2>
+                            <p class="white-text">Travel and work with ease, Campfire Memberships entitles you to work anywhere we are</p>
                         </div>
                         <div class="col col-md-6">
-                            <h3 class="white">Camper perks</h2>
-                            <ul class="white" id="camper-perks">
+                            <h3 class="white-text">Camper perks</h2>
+                            <ul class="white-text" id="camper-perks">
                                 <li>Reliable Internet</li>
                                 <li>Friendly Community Hosts</li>
                                 <li>Clean Locations</li>
@@ -109,7 +112,7 @@
 
         <section class="section-wrapper" id="section-plans">
             <div class="section-header vertical-center centered-text">
-                <h2 class="white">Campfire Plans</h2>
+                <h2 class="white-text">Campfire Plans</h2>
             </div>
 
             <div class="plans-accordion">
@@ -118,23 +121,31 @@
                 </div>
                 <div class="panel-content open" id="flex-content">
                     <div class="plans-details" id="flex-details">
+                        <div class="row">
+                            <div class="col col-md-6">
+                                <h2 class="white-text">Flex Plan</h2>
+                                <p class="white-text">The Flexible plan is a short-term alternative to a home-office. These plans are flexible Hot Desk for a short-term membership. The plans include the following</p>
+                            </div>
+                            <div class="col col-md-6">
+                            </div>
+                        </div>
                     </div>
                 </div>
 
                 <div class="panel-toggle vertical-center inactive" id="hot-toggle">
-                    <h3 class="white">Hot Desk</h3>
+                    <h3>Hot Desk</h3>
                 </div>
                 <div class="panel-content closed" id="hot-content">
                 </div>
 
                 <div class="panel-toggle vertical-center inactive" id="mixed-toggle">
-                    <h3 class="white">Mixed Desk</h3>
+                    <h3>Mixed Desk</h3>
                 </div>
                 <div class="panel-content closed" id="mixed-content">
                 </div>
 
                 <div class="panel-toggle vertical-center inactive" id="private-toggle">
-                    <h3 class="white">Private</h3>
+                    <h3>Private</h3>
                 </div>
                 <div class="panel-content closed" id="private-content">
                 </div>
@@ -146,7 +157,7 @@
 
         <section class="section-wrapper" id="section-locations">
             <div class="section-header vertical-center centered-text">
-                <h2 class="white">Locations</h2>
+                <h2 class="white-text">Locations</h2>
             </div>
             <div class="locations-container">
 
@@ -156,9 +167,9 @@
         <section class="section-wrapper" id="section-loop">
             <div class="row vertical-center" id="loop">
                 <div class="col col-md-6">
-                    <h2 class="red letter-space">Stay in</h2>
-                    <h1 class="red letter-space">the Loop</h1>
-                    <h2 class="red letter-space float-right">with us</h2>
+                    <h2 class="red-text letter-space">Stay in</h2>
+                    <h1 class="red-text letter-space">the Loop</h1>
+                    <h2 class="red-text letter-space float-right">with us</h2>
                 </div>
                 <div class="col col-md-offset-6">
                 </div>
@@ -166,12 +177,12 @@
             </div>
             <div class="row" id="loop-buttons">
                 <div class="col col-md-6">
-                    <h3 class="red">Blogs</h3>
-                    <button type="button" class="button red-button" id="readmore">Read More</button>
+                    <h3 class="red-text">Blogs</h3>
+                    <a href="#" type="button" class="button red-button">Read More</a>
                 </div>
                 <div class="col col-md-6">
-                    <h3 class="red">Events</h3>
-                    <button type="button" class="button red-button" id="seemore">See More</button>
+                    <h3 class="red-text">Events</h3>
+                    <a href="#" type="button" class="button red-button">See More</a>
                 </div>
             </div>
             <div class="row" id="loop-email">
@@ -180,23 +191,24 @@
             </div>
         </section>
 
-        <section class="section-wrapper letter-space" id="section-contact">
+        <section class="section-wrapper" id="section-contact">
             <div class="row vertical-center" id="contact-bottom">
                 <div class="col col-md-7">
-                    <h2 class="red">Interested in our space?</h2>
-                    <h1 class="red letter-space">Join us</h1>
+                    <h2 class="red-text letter-space">Interested in our space?</h2>
+                    <h1 class="red-text letter-space">Join us</h1>
                 </div>
                 <div class="col col-md-5">
-                    <button type="button" class="button red-button">Contact Us</button>
-                 </div>
+                    <a href="#" type="button" class="button red-button">Contact Us</a>
+                </div>
             </div>
         </section>
 <!--
         <footer>
-            <p class="red">Industry focused coworking spaces</p>
+            <p class="red-text">Industry focused coworking spaces</p>
         </footer> -->
     </div>
 
+    <script src="http://code.jquery.com/jquery.min.js"></script>
     <script src="<%= assetsMap.main.js %>"></script>
 
 </body>
