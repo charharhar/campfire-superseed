@@ -7,6 +7,8 @@ if (module.hot) {
   module.hot.accept();
 }
 
+/* Accordion */
+
 $('.panel-toggle').on('click', function(){
   var panelContent = $(this).next('.panel-content');
   var nextContent = $(this).nextAll('.panel-toggle:first').next();
@@ -25,3 +27,18 @@ $('.panel-toggle').on('click', function(){
     nextContent.removeClass('closed').addClass('open');
   }
 });
+
+/* Google Maps */
+window.onload = function showHK() {
+  var hk = new google.maps.LatLng(22.2759, 114.1455);
+  var hkMap = new google.maps.Map(document.querySelector(".hk-map"),{
+    center: hk,
+    zoom: 14
+  });
+  var marker = new google.maps.Marker({
+    position: hk,
+    map: hkMap
+  });
+};
+
+// showHK();
