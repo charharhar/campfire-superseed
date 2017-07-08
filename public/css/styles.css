@@ -70,7 +70,7 @@ h3 {
 
 p, ul, ol {
   font-weight: 300;
-  font-size: 13px;
+  font-size: 14px;
   line-height: 20px;
   color: #AF1D1E;
 }
@@ -114,15 +114,19 @@ a.button {
   display: inline-block;
   border: none;
   border-radius: 4px;
-  padding: 12px 14px 12px 14px;
   text-decoration: none;
   text-transform: uppercase;
 }
 
 /* Buttons: Sizes */
+.normal-button {
+  padding: 12px 14px 12px 14px;
+}
+.medium-button {
+  padding: 12px 30px 12px 30px;
+}
 .large-button {
-  padding-left: 30px;
-  padding-right: 30px;
+  padding: 12px 50px 12px 50px;
 }
 
 .red-button {
@@ -136,6 +140,7 @@ a.button {
   background-color: #E9E9E9;
 }
 
+/* Navigation */
 .navbar-wrapper {
   float: right;
   width: 100%;
@@ -295,10 +300,10 @@ a.button {
 .chevron-arrows {
   line-height: 30px;
   display: inline-block;
-  padding-right: 5px;
+  margin-right: 15px;
   float: right;
 }
-.panel-details {
+.panel-wrapper {
   position: absolute;
   left: 50%;
   top: 50%;
@@ -306,6 +311,13 @@ a.button {
   padding: 40px;
   width: 70%;
   background-color: rgba(0, 0, 0, 0.65);
+}
+.panel-details > div > h2 {
+  margin-bottom: 25px;
+}
+.panel-details > div > a[type="button"] {
+  margin-top: 30px;
+  margin-bottom: 40px;
 }
 /* States*/
 .active {
@@ -325,6 +337,7 @@ a.button {
 
 /* Panel content */
 .plans-hours, .plans-addons {
+  margin-bottom: 3rem;
   text-align: center;
 }
 
@@ -370,6 +383,10 @@ a.button {
 }
 #loop-buttons {
   text-align: center;
+}
+#loop-buttons > div > a[type="button"] {
+  margin-top: 10px;
+  margin-bottom: 25px;
 }
 
 /* Contact section */
