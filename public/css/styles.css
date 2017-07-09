@@ -401,7 +401,7 @@ a.button {
   transform: translate(0, 0);
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: rgba(0, 0, 0, 0.5);
   z-index: 1;
 }
 .location-tab {
@@ -417,20 +417,28 @@ a.button {
   background-color: #af1d1e;
 }
 .inactive-tab {
+  color: #2f4f4f;
   background-color: rgba(255, 255, 255, 0.3);
 }
+.tab-list {
+  margin-bottom: 120px;
+}
 .address-details {
+  font-size: 18px;
+  letter-spacing: 1px;
   padding-left: 5%;
 }
-.address-table tr {
-  padding-top: 40px;
-}
-.address-table td {
-  padding-left: 0px;
-  padding-right: 50px;
-}
 .address-table {
-  margin-bottom: 60px;
+  max-height: 200px;
+  margin-bottom: 100px;
+}
+td {
+  padding-bottom: 20px;
+}
+.table-left {
+  text-transform: uppercase;
+  padding-left: 0px;
+  padding-right: 80px;
 }
 .map-wrapper {
   display: relative;
