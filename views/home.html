@@ -114,13 +114,13 @@
             </div>
 
             <div class="plans-accordion">
-                <div class="panel-toggle active" id="flex-toggle">
+                <div class="plans-toggle active" id="flex-toggle">
                     <h3 class="toggle-text">Flex</h3>
-                    <i class="fa fa-chevron-down fa-lg chevron-arrows" aria-hidden="true"></i>
+                    <i class="fa fa-chevron-down fa-lg plans-chevron" aria-hidden="true"></i>
                 </div>
-                <div class="panel-content open" id="flex-content">
-                    <div class="panel-wrapper" id="flex-details">
-                        <div class="row panel-details">
+                <div class="plans-content open" id="flex-content">
+                    <div class="plans-wrapper" id="flex-details">
+                        <div class="row plans-details">
                             <div class="col col-md-6">
                                 <h2 class="white-text">Flex Plan</h2>
                                 <p class="white-text">The Flexible plan is a short-term alternative to a home-office. These plans are flexible Hot Desk for a short-term membership. The plans include the following</p>
@@ -148,13 +148,13 @@
                     </div>
                 </div>
 
-                <div class="panel-toggle inactive" id="hot-toggle">
+                <div class="plans-toggle inactive" id="hot-toggle">
                     <h3 class="toggle-text">Hot Desk</h3>
-                    <i class="fa fa-chevron-down fa-lg chevron-arrows" aria-hidden="true"></i>
+                    <i class="fa fa-chevron-down fa-lg plans-chevron" aria-hidden="true"></i>
                 </div>
-                <div class="panel-content closed" id="hot-content">
-                    <div class="panel-wrapper" id="flex-details">
-                        <div class="row panel-details">
+                <div class="plans-content closed" id="hot-content">
+                    <div class="plans-wrapper" id="flex-details">
+                        <div class="row plans-details">
                             <div class="col col-md-6">
                                 <h2 class="white-text">Flex Plan</h2>
                                 <p class="white-text">The Flexible plan is a short-term alternative to a home-office. These plans are flexible Hot Desk for a short-term membership. The plans include the following</p>
@@ -182,13 +182,13 @@
                     </div>
                 </div>
 
-                <div class="panel-toggle inactive" id="mixed-toggle">
+                <div class="plans-toggle inactive" id="mixed-toggle">
                     <h3 class="toggle-text">Mixed Desk</h3>
-                    <i class="fa fa-chevron-down fa-lg chevron-arrows" aria-hidden="true"></i>
+                    <i class="fa fa-chevron-down fa-lg plans-chevron" aria-hidden="true"></i>
                 </div>
-                <div class="panel-content closed" id="mixed-content">
-                    <div class="panel-wrapper" id="mixed-details">
-                        <div class="row panel-details">
+                <div class="plans-content closed" id="mixed-content">
+                    <div class="plans-wrapper" id="mixed-details">
+                        <div class="row plans-details">
                             <div class="col col-md-6">
                                 <h2 class="white-text">Flex Plan</h2>
                                 <p class="white-text">The Flexible plan is a short-term alternative to a home-office. These plans are flexible Hot Desk for a short-term membership. The plans include the following</p>
@@ -216,13 +216,13 @@
                     </div>
                 </div>
 
-                <div class="panel-toggle inactive" id="private-toggle">
+                <div class="plans-toggle inactive" id="private-toggle">
                     <h3 class="toggle-text">Private</h3>
-                    <i class="fa fa-chevron-down fa-lg chevron-arrows" aria-hidden="true"></i>
+                    <i class="fa fa-chevron-down fa-lg plans-chevron" aria-hidden="true"></i>
                 </div>
-                <div class="panel-content closed" id="private-content">
-                    <div class="panel-wrapper" id="mixed-details">
-                        <div class="row panel-details">
+                <div class="plans-content closed" id="private-content">
+                    <div class="plans-wrapper" id="mixed-details">
+                        <div class="row plans-details">
                             <div class="col col-md-6">
                                 <h2 class="white-text">Flex Plan</h2>
                                 <p class="white-text">The Flexible plan is a short-term alternative to a home-office. These plans are flexible Hot Desk for a short-term membership. The plans include the following</p>
@@ -263,9 +263,9 @@
                 <div class="locations-accordion">
                     <div class="location-toggle active" id="hk">
                         <h3 class="toggle-text">Hong Kong</h3>
-                        <i class="fa fa-chevron-up fa-lg chevron-arrows" aria-hidden="true"></i>
+                        <i class="fa fa-chevron-up fa-lg location-chevron" aria-hidden="true"></i>
                     </div>
-                    <div class="location-wrapper open" id="hk-content">
+                    <div class="location-wrapper open-location" id="hk-content">
                         <div class="map-overlay">
                             <div class="row map-details">
                                 <div class="col col-md-6">
@@ -302,29 +302,35 @@
                             </div>
                         </div>
 
-                        <div class="map-wrapper hk-map">
+                        <div class="map-wrapper" id="map-canvas1">
                         </div>
                     </div>
 
-                    <div class="panel-toggle inactive" id="aus">
+                    <div class="location-toggle inactive" id="aus">
                         <h3 class="toggle-text">Australia</h3>
-                        <i class="fa fa-chevron-down fa-lg chevron-arrows" aria-hidden="true"></i>
+                        <i class="fa fa-chevron-down fa-lg location-chevron" aria-hidden="true"></i>
                     </div>
-                    <div class="panel-content closed" id="aus-content">
+                    <div class="location-wrapper closed-location" id="au-content">
+                        <div class="map-wrapper" id="map-canvas2">
+                        </div>
                     </div>
 
-                    <div class="panel-toggle inactive" id="sing">
+                    <div class="location-toggle inactive" id="sing">
                         <h3 class="toggle-text">Singapore</h3>
-                        <i class="fa fa-chevron-down fa-lg chevron-arrows" aria-hidden="true"></i>
+                        <i class="fa fa-chevron-down fa-lg location-chevron" aria-hidden="true"></i>
                     </div>
-                    <div class="panel-content closed" id="sing-content">
+                    <div class="location-wrapper closed-location" id="sg-content">
+                        <div class="map-wrapper" id="map-canvas3">
+                        </div>
                     </div>
 
-                    <div class="panel-toggle inactive" id="uk">
+                    <div class="location-toggle inactive" id="uk">
                         <h3 class="toggle-text">United Kingdom</h3>
-                        <i class="fa fa-chevron-down fa-lg chevron-arrows" aria-hidden="true"></i>
+                        <i class="fa fa-chevron-down fa-lg location-chevron" aria-hidden="true"></i>
                     </div>
-                    <div class="panel-content closed" id="uk-content">
+                    <div class="location-wrapper closed-location" id="uk-content">
+                        <div class="map-wrapper" id="map-canvas4">
+                        </div>
                     </div>
             </div>
         </section>
@@ -375,7 +381,7 @@
                         <img class="footer-logo" src="../images/footer/footersmall-logo.png">
                         <p class="red-text footer-text">Industry focused coworking spaces</p>
                     </div>
-                    <div class="col col-mid-6 social-wrapper flex-end">
+                    <div class="col col-mid-6 social-wrapper inline-flex flex-end">
                         <a href="">
                             <img class="social-icons" src="../images/footer/footer-social-icons_01.png" alt="Instagram">
                         </a>
@@ -397,10 +403,10 @@
         </footer>
     </div>
 
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDeUTHyja3qHkEDdBeQk4Py0s1TcavBF38&callback=initMap"
-  type="text/javascript"></script>
+
     <script src="http://code.jquery.com/jquery.min.js"></script>
     <script src="<%= assetsMap.main.js %>"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDeUTHyja3qHkEDdBeQk4Py0s1TcavBF38"></script>
 
 </body>
 </html>

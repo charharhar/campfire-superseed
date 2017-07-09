@@ -101,8 +101,8 @@ tr, td{
 .float-right{
   float: right;
 }
-.flex-row {
-  display: flex;
+.inline-flex {
+  display: inline-flex;
   flex-direction: row;
 }
 .flex-end {
@@ -293,13 +293,13 @@ a.button {
 }
 /* Accordion styling */
 
-.panel-toggle, .location-toggle {
+.plans-toggle, .location-toggle {
   padding-left: 5%;
   border-bottom: 1px solid #ffffff;
   height: 4.066vh;
   cursor: pointer;
 }
-.panel-content {
+.plans-content {
   position: relative;
   overflow: hidden;
   height: 74.808vh;
@@ -310,13 +310,13 @@ a.button {
   display: inline-block;
   float: left;
 }
-.chevron-arrows {
+.plans-chevron, .location-chevron {
   line-height: 30px;
   display: inline-block;
   margin-right: 15px;
   float: right;
 }
-.panel-wrapper {
+.plans-wrapper {
   position: absolute;
   left: 50%;
   top: 50%;
@@ -325,10 +325,10 @@ a.button {
   width: 70%;
   background-color: rgba(0, 0, 0, 0.65);
 }
-.panel-details > div > h2 {
+.plans-details > div > h2 {
   margin-bottom: 25px;
 }
-.panel-details > div > a[type="button"] {
+.plans-details > div > a[type="button"] {
   margin-top: 30px;
   margin-bottom: 40px;
 }
@@ -346,6 +346,13 @@ a.button {
 }
 .closed {
   display: none;
+}
+
+.closed-location {
+  max-height: 0;
+}
+.open-location {
+  max-height: 100%;
 }
 
 /* Panel content */
@@ -427,6 +434,7 @@ a.button {
   margin-bottom: 60px;
 }
 .map-wrapper {
+  display: block;
   width: 100%;
   height: 100%;
 }

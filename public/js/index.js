@@ -8,64 +8,78 @@ if (module.hot) {
 }
 
 /* Plans accordion */
-$('.panel-toggle').on('click', function(){
-  var panelContent = $(this).next('.panel-content');
-  var nextContent = $(this).nextAll('.panel-toggle:first').next();
-  var chevronArrow = $(this).find('i');
+$('.plans-toggle').on('click', function(){
+  var plansContent = $(this).next('.plans-content');
+  var nextPlan = $(this).nextAll('.plans-toggle:first').next();
+  var plansChevron = $(this).find('i');
+  var map = new google.ma
 
   if($(this).hasClass('inactive')) {
-    panelContent.removeClass('closed').addClass('open');
+    plansContent.removeClass('closed').addClass('open');
     $(this).removeClass('inactive').addClass('active');
-    $('.open').not(panelContent).addClass('closed').removeClass('open');
+    $('.open').not(plansContent).addClass('closed').removeClass('open');
     $('.active').not($(this)).addClass('inactive').removeClass('active');
-    chevronArrow.addClass('fa-chevron-up').removeClass('fa-chevron-down');
+    plansChevron.addClass('fa-chevron-up').removeClass('fa-chevron-down');
   } else {
-    panelContent.removeClass('open').addClass('closed');
+    plansContent.removeClass('open').addClass('closed');
     $(this).addClass('inactive').removeClass('active');
-    $(this).nextAll('.panel-toggle:first').addClass('active').removeClass('inactive');
-    nextContent.removeClass('closed').addClass('open');
-  }
-});
-
-/* Location accordion*/
-$('.panel-toggle').on('click', function(){
-  var panelContent = $(this).next('.panel-content');
-  var nextContent = $(this).nextAll('.panel-toggle:first').next();
-  var chevronArrow = $(this).find('i');
-
-  if($(this).hasClass('inactive')) {
-    panelContent.removeClass('closed').addClass('open');
-    $(this).removeClass('inactive').addClass('active');
-    $('.open').not(panelContent).addClass('closed').removeClass('open');
-    $('.active').not($(this)).addClass('inactive').removeClass('active');
-    chevronArrow.addClass('fa-chevron-up').removeClass('fa-chevron-down');
-  } else {
-    panelContent.removeClass('open').addClass('closed');
-    $(this).addClass('inactive').removeClass('active');
-    $(this).nextAll('.panel-toggle:first').addClass('active').removeClass('inactive');
-    nextContent.removeClass('closed').addClass('open');
+    $(this).nextAll('.plans-toggle:first').addClass('active').removeClass('inactive');
+    nextPlan.removeClass('closed').addClass('open');
   }
 });
 
 /* Google Maps */
 /* HK */
-window.onload = function showHK() {
-  var hk = new google.maps.LatLng(22.248337, 114.166833);
-  var hkMap = new google.maps.Map(document.querySelector(".hk-map"),{
-    center: hk,
-    zoom: 15,
-    mapTypeControl: false
-  });
-  var marker = new google.maps.Marker({
-    position: hk,
-    map: hkMap
-  });
-};
+window.addEventListener('load', function() {
+  var coords = [
+    {lat: 22.248337, lng: 114.166833, zoom: 15}, // hk
+    {lat: -33.8688, lng: 151.2093, zoom: 15}, // aus
+    {lat: 1.3554, lng: 103.8677, zoom: 15}, // sg
+    {lat: 51.5074, lng: -0.1278, zoom: 15} //uk
+  ];
+  var markers = [];
+  var maps = [];
 
-/* Australia */
+  function showMap() {
+      for(var i = 0, length = coords.length; i < length; i++) {
+        var center = coords[i];
+        var latlng = new google.maps.LatLng(center.lat, center.lng);
 
-/* Singapore */
+        maps[i] = new google.maps.Map(document.getElementById('map-canvas' + (i + 1)), {
+          zoom: center.zoom,
+          center: latlng,
+          scrollWheel: false,
+          mapTypeControl: false
+        });
 
-/* UK */
+        markers[i] = new google.maps.Marker({
+          position: latlng,
+          map: maps[i]
+        });
+        $('.location-toggle').on('click', function() {
+          google.maps.event.trigger(maps, 'resize');
+        });
+      }
 
+  }
+  showMap();
+});
 
+/* Location accordion*/
+$('.location-toggle').on('click', function(){
+  var locationContent = $(this).next('.location-wrapper');
+  var nextLocation = $(this).nextAll('.location-toggle:first').next();
+  var locationChevron = $(this).find('.location-chevron');
+  if($(this).hasClass('inactive')) {
+    locationContent.removeClass('closed-location').addClass('open-location');
+    $(this).removeClass('inactive').addClass('active');
+    $('.open-location').not(locationContent).addClass('closed-location').removeClass('open-location');
+    $('.active').not($(this)).addClass('inactive').removeClass('active');
+    locationChevron.addClass('fa-chevron-up').removeClass('fa-chevron-down');
+  } else {
+    locationContent.removeClass('open-location').addClass('closed-location');
+    $(this).addClass('inactive').removeClass('active');
+    $(this).nextAll('.location-toggle:first').addClass('active').removeClass('inactive');
+    nextLocation.removeClass('closed-location').addClass('open-location');
+  }
+});
