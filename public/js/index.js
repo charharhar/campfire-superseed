@@ -35,7 +35,8 @@ function scrollTop() {
  * Smooth Scroll Handler
  */
 
-const navLinks = sliceArray(document.querySelectorAll('.navLink'))
+const navLinks = sliceArray(document.querySelectorAll('.navLink'));
+const mobileNavLinks = sliceArray(document.querySelectorAll('.mobileNavLink'));
 const arrowDown = document.querySelector('.arrowDown');
 const comingSoonLinks = sliceArray(document.querySelectorAll('.comingSoonLinks'));
 
@@ -51,6 +52,18 @@ window.addEventListener('load', () => {
 
   navLinks.forEach(link => {
     link.addEventListener('click', e => {
+      scrollTo(e, e.target)
+    })
+  })
+
+  mobileNavLinks.forEach(link => {
+    link.addEventListener('click', e => {
+      hamburger.classList.remove('is-active')
+      mobileNavList.classList.remove('is-active')
+      wrapper.classList.remove('is-active')
+      html.classList.remove('is-active')
+      body.classList.remove('is-active')
+
       scrollTo(e, e.target)
     })
   })
@@ -74,17 +87,28 @@ window.addEventListener('load', () => {
 // Hamburger mobile event handler
 const hamburger = document.querySelector(".hamburger");
 const mobileNavList = document.querySelector('.mobile-nav-list');
+const wrapper = document.querySelector('.wrapper');
+const html = document.querySelector('html');
+const body = document.querySelector('body');
 
 function toggleHandler(toggle) {
   toggle.addEventListener('click', function(e) {
     e.preventDefault();
-    (this.classList.contains('is-active') === true)
-      ? this.classList.remove('is-active')
-      : this.classList.add('is-active');
 
-    // (mobileNavList.classList.contains('is-active') === true)
-    //   ? mobileNavList.classList.remove('is-active')
-    //   : mobileNavList.classList.add('is-active');
+    if (this.classList.contains('is-active') === true) {
+      this.classList.remove('is-active')
+      mobileNavList.classList.remove('is-active')
+      wrapper.classList.remove('is-active')
+      html.classList.remove('is-active')
+      body.classList.remove('is-active')
+    } else {
+      this.classList.add('is-active');
+      mobileNavList.classList.add('is-active');
+      wrapper.classList.add('is-active');
+      html.classList.add('is-active')
+      body.classList.add('is-active')
+    }
+
   });
 }
 
