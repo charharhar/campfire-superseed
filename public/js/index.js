@@ -534,7 +534,7 @@ function generateSoonTemplate() {
   return `
     <h2 class="campWhite medium-regular">Coming soon</h2>
     <p class="campWhite">Be the first to know! <br> Subscribe to our newsletter</p>
-    <a href="" class="button small-regular button-red comingSoonLinks" scrollTo="section-loop">Sign Me Up</a>
+    <a href="" class="button small-regular button-red comingSoonLink" scrollTo="section-loop">Sign Me Up</a>
   `
 }
 
@@ -572,6 +572,14 @@ function locationChangeHandler(button) {
 
   removeAllChildren(locationDetails);
   locationDetails.innerHTML = detailsTemplate;
+
+  const comingSoonLink = document.querySelector('.comingSoonLink');
+
+  if (!!comingSoonLink) {
+    comingSoonLink.addEventListener('click', e => {
+      scrollTo(e, e.target)
+    })
+  }
 
   sliderFor.classList.add('slider-for');
   sliderNav.classList.add('slider-nav');
