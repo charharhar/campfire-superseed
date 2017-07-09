@@ -44,6 +44,12 @@ window.addEventListener('load', function() {
       for(var i = 0, length = coords.length; i < length; i++) {
         var center = coords[i];
         var latlng = new google.maps.LatLng(center.lat, center.lng);
+        var icon = {
+          url: '../images/section-locations/pin.png',
+          scaledSize: new google.maps.Size(40,60),
+          origin: new google.maps.Point(0,0),
+          anchor: new google.maps.Point(0,32)
+        };
 
         maps[i] = new google.maps.Map(document.getElementById('map' + (i + 1)), {
           zoom: center.zoom,
@@ -53,9 +59,11 @@ window.addEventListener('load', function() {
         });
 
         markers[i] = new google.maps.Marker({
+          icon: icon,
           position: latlng,
           map: maps[i]
         });
+
         $('.location-toggle').on('click', function() {
           google.maps.event.trigger(maps, 'resize');
         });
@@ -64,6 +72,7 @@ window.addEventListener('load', function() {
   }
   if($('.locations-content').hasClass("open-location")) {
     showMap();
+    $('.modal').show();
   }
 });
 

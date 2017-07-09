@@ -255,83 +255,56 @@
         <section class="section-wrapper parallax" id="plans-parallax">
         </section>
 
-        <section class="section-wrapper" id="section-locations">
+        <section class="section-wrapper" id="section-location">
             <div class="section-header vertical-center flex-center">
                 <h2 class="white-text">Locations</h2>
             </div>
             <div class="locations-container">
                 <div class="locations-accordion">
-                    <div class="location-toggle active" id="hk">
+                    <div class="locations-toggle active-location" id="hk">
                         <h3 class="toggle-text">Hong Kong</h3>
-                        <i class="fa fa-chevron-up fa-lg location-chevron" aria-hidden="true"></i>
+                        <i class="fa fa-chevron-up fa-lg locations-chevron" aria-hidden="true"></i>
                     </div>
-                    <div class="location-wrapper open-location" id="hk-content">
-                        <div class="map-overlay">
-                            <div class="row map-details">
-                                <div class="col col-md-6">
-                                    <div class="row location-tab-wrapper">
-                                        <div class="hk-locations">
-                                            <div class="location-tab inactive-location"><h3>Kennedy Town</h3></div>
-                                            <div class="location-tab inactive-location"><h3>Quarry Bay</h3></div>
-                                            <div class="location-tab active-location"><h3>Wong Chuk Hang</h3></div>
-                                        </div>
-                                    </div>
-                                    <div class="row address-details">
-                                        <table class="white-text address-table">
-                                            <tr>
-                                                <td>Industry:</td>
-                                                <td>Fashion</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Address:</td>
-                                                <td>5/F, Remex Centre,<br>
-                                                    42 Wong Chuk Hang Road,<br>
-                                                    Hong Kong
-                                            </tr>
-                                            <tr>
-                                                <td>Contact:</td>
-                                                <td>hello.wch@campfire.work</td>
-                                            </tr>
-                                        </table>
+                    <div class="locations-content open-location" id="hk-content">
+                        <div class="modal hk-modal">
 
-                                        <a href="" type="button" class="button red-button medium-button">Contact Us</a>
-                                    </div>
-                                </div>
-                                <div class="col col-md-6">
-                                </div>
+                        </div>
+                        <div class="map-wrapper">
+                            <div class="map-canvas" id="map1"></div>
+                        </div>
+                    </div>
+
+                    <div class="locations-toggle inactive-location" id="au">
+                        <h3 class="toggle-text">Australia</h3>
+                        <i class="fa fa-chevron-down fa-lg locations-chevron" aria-hidden="true"></i>
+                    </div>
+                    <div class="locations-content closed-location" id="au-content">
+                        <div class="map-wrapper">
+                            <div class="map-canvas" id="map2">
                             </div>
                         </div>
-
-                        <div class="map-wrapper" id="map-canvas1">
-                        </div>
                     </div>
 
-                    <div class="location-toggle inactive" id="aus">
-                        <h3 class="toggle-text">Australia</h3>
-                        <i class="fa fa-chevron-down fa-lg location-chevron" aria-hidden="true"></i>
-                    </div>
-                    <div class="location-wrapper closed-location" id="au-content">
-                        <div class="map-wrapper" id="map-canvas2">
-                        </div>
-                    </div>
-
-                    <div class="location-toggle inactive" id="sing">
+                    <div class="locations-toggle inactive-location" id="sg">
                         <h3 class="toggle-text">Singapore</h3>
-                        <i class="fa fa-chevron-down fa-lg location-chevron" aria-hidden="true"></i>
+                        <i class="fa fa-chevron-down fa-lg locations-chevron" aria-hidden="true"></i>
                     </div>
-                    <div class="location-wrapper closed-location" id="sg-content">
-                        <div class="map-wrapper" id="map-canvas3">
+                    <div class="locations-content closed-location" id="sg-content">
+                        <div class="map-wrapper">
+                            <div class="map-canvas" id="map3"></div>
                         </div>
                     </div>
 
-                    <div class="location-toggle inactive" id="uk">
+                    <div class="locations-toggle inactive-location" id="uk">
                         <h3 class="toggle-text">United Kingdom</h3>
-                        <i class="fa fa-chevron-down fa-lg location-chevron" aria-hidden="true"></i>
+                        <i class="fa fa-chevron-down fa-lg locations-chevron" aria-hidden="true"></i>
                     </div>
-                    <div class="location-wrapper closed-location" id="uk-content">
-                        <div class="map-wrapper" id="map-canvas4">
+                    <div class="locations-content closed-location" id="uk-content">
+                        <div class="map-wrapper">
+                            <div class="map-canvas" id="map4"></div>
                         </div>
                     </div>
+                </div>
             </div>
         </section>
 
