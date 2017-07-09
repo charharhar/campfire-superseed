@@ -237,44 +237,116 @@ parallaxBackground.forEach(section => {
  * Google Maps Handling
  */
 
+const closeButtons = sliceArray(document.querySelectorAll('.location-x-image'));
+
+closeButtons.forEach(button => {
+  button.addEventListener('click', () => {
+    const target = document.querySelector(`#${button.getAttribute('data-close')}`)
+    target.classList.remove('marker-clicked')
+  })
+})
+
+const HK_MAP_OPTIONS = {
+  map_id: '#hk-map',
+  center: { lat: 22.3964, lng: 114.1095 },
+  zoom: 10,
+  markers: [
+    { coords: { lat: 22.3964, lng: 114.1095 }, content: 'hk-1', target: '#hk-content' },
+  ],
+}
+
+const AUS_MAP_OPTIONS = {
+  map_id: '#aus-map',
+  center: { lat: -35.2809, lng: 149.1300 },
+  zoom: 10,
+  markers: [
+    { coords: { lat: -35.2809, lng: 149.1300 }, content: 'aus-1', target: '#aus-content' },
+  ],
+}
+
+const SG_MAP_OPTIONS = {
+  map_id: '#sg-map',
+  center: { lat: 1.3521, lng: 103.8198 },
+  zoom: 10,
+  markers: [
+    { coords: { lat: 1.3521, lng: 103.8198 }, content: 'sg-1', target: '#sg-content' },
+  ],
+}
+
+const UK_MAP_OPTIONS = {
+  map_id: '#uk-map',
+  center: { lat: 51.5074, lng: -0.1278 },
+  zoom: 10,
+  markers: [
+    { coords: { lat: 51.5074, lng: -0.1278 }, content: 'uk-1', target: '#uk-content' },
+  ],
+}
+
+function generateMapOptions(center, zoom) {
+  return {
+    center: center,
+    zoom: zoom,
+    disableDoubleClickZoom: true,
+    scrollwheel: false,
+    mapTypeControl: false,
+    streetViewControl: false,
+    styles: [{
+      featureType: "all",
+      stylers: [{
+        saturation: -80
+      }]
+      }, {
+        featureType: "road.arterial",
+        elementType: "geometry",
+        stylers: [{
+          hue: "#d55050"
+      }, {
+        saturation: 50
+      }]
+      }, {
+        featureType: "poi.business",
+        elementType: "labels",
+        stylers: [{
+          visibility: "off"
+      }]
+    }],
+  }
+}
+
+function addMarker(point, map) {
+  const { coords, content, target } = point;
+  const icon = '/images/section-location/pin.png';
+
+  const marker = new google.maps.Marker({
+    position: coords,
+    map: map,
+    icon,
+  })
+
+  google.maps.event.addListener(marker, 'click', (e) => {
+    const targetContent = document.querySelector(target)
+    targetContent.classList.add('marker-clicked');
+    targetContent.setAttribute('data-content', content)
+  });
+}
+
 window.addEventListener('load', () => {
-  let HK_MAP;
-  let AUS_MAP;
-  let SG_MAP;
-  let UK_MAP
 
-  function init_HK() {
-    HK_MAP = new google.maps.Map(document.querySelector('#hk-map'), {
-      center: { lat: 22.3964, lng: 114.1095 },
-      zoom: 10,
+  function initMap(options) {
+    const { map_id, center, zoom, markers } = options;
+    const mapOptions = generateMapOptions(center, zoom)
+    const map = new google.maps.Map(document.querySelector(map_id), mapOptions);
+
+    markers.forEach(marker => {
+      addMarker(marker, map)
     });
+
   }
 
-  function init_AUS() {
-    AUS_MAP = new google.maps.Map(document.querySelector('#aus-map'), {
-      center: { lat: -35.2809, lng: 149.1300 },
-      zoom: 10,
-    });
-  }
-
-  function init_SG() {
-    SG_MAP = new google.maps.Map(document.querySelector('#sg-map'), {
-      center: { lat: 1.3521, lng: 103.8198 },
-      zoom: 10,
-    });
-  }
-
-  function init_UK() {
-    UK_MAP = new google.maps.Map(document.querySelector('#uk-map'), {
-      center: { lat: 51.5074, lng: -0.1278 },
-      zoom: 10,
-    });
-  }
-
-  init_HK();
-  init_AUS();
-  init_SG();
-  init_UK();
+  initMap(HK_MAP_OPTIONS);
+  initMap(AUS_MAP_OPTIONS);
+  initMap(SG_MAP_OPTIONS);
+  initMap(UK_MAP_OPTIONS);
 
 })
 
