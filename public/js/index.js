@@ -72,23 +72,23 @@ window.addEventListener('load', () => {
 })
 
 // Hamburger mobile event handler
-// const hamburger = document.querySelector(".c-hamburger");
-// const mobileNavList = document.querySelector('.mobile-nav-list');
+const hamburger = document.querySelector(".hamburger");
+const mobileNavList = document.querySelector('.mobile-nav-list');
 
-// function toggleHandler(toggle) {
-//   toggle.addEventListener('click', function(e) {
-//     e.preventDefault();
-//     (this.classList.contains('is-active') === true)
-//       ? this.classList.remove('is-active')
-//       : this.classList.add('is-active');
+function toggleHandler(toggle) {
+  toggle.addEventListener('click', function(e) {
+    e.preventDefault();
+    (this.classList.contains('is-active') === true)
+      ? this.classList.remove('is-active')
+      : this.classList.add('is-active');
 
-//     (mobileNavList.classList.contains('is-active') === true)
-//       ? mobileNavList.classList.remove('is-active')
-//       : mobileNavList.classList.add('is-active');
-//   });
-// }
+    // (mobileNavList.classList.contains('is-active') === true)
+    //   ? mobileNavList.classList.remove('is-active')
+    //   : mobileNavList.classList.add('is-active');
+  });
+}
 
-// toggleHandler(hamburger);
+toggleHandler(hamburger);
 
 /**
  * Accordion handler
@@ -214,7 +214,20 @@ window.addEventListener('scroll', handleAllAnimations)
 window.addEventListener('load', handleAllAnimations)
 
 /**
- * Google Maps Handling
+ * Loops Mouseover handler
+ */
+const sectionLoop = document.querySelector('.section-loop');
+
+sectionLoop.addEventListener('mouseover', e => {
+  sectionLoop.classList.add('loop-hovering')
+})
+
+sectionLoop.addEventListener('mouseout', e => {
+  sectionLoop.classList.remove('loop-hovering')
+})
+
+/**
+ * Parallax Handling
  */
 
 const parallaxBackground = sliceArray(document.querySelectorAll('.section-image'));
