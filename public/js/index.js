@@ -394,7 +394,7 @@ function addMarker(point, map) {
     const targetContent = document.querySelector(target)
     targetContent.classList.add('marker-clicked');
     const targetButton = document.querySelector(`[data-context="${content}"]`)
-    locationChangeHandler(targetButton);
+    !!targetButton && locationChangeHandler(targetButton);
   });
 }
 

@@ -1166,7 +1166,7 @@ section.section-locations {
 
     .accordion-content {
       &.active-plan {
-        // max-height: 1600px;
+        max-height: 600px;
       }
 
       .location-right-wrapper {
