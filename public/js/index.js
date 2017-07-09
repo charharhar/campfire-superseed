@@ -6,6 +6,12 @@ import { polyfill } from './smoothscroll';
  * Utility Functions
  */
 
+function removeAllChildren(parent) {
+  while (parent.hasChildNodes()) {
+    parent.removeChild(parent.lastChild);
+  }
+}
+
 function findParent(node, className) {
   let tempNode = node;
 
@@ -288,16 +294,29 @@ const HK_MAP_OPTIONS = {
   center: { lat: 22.3964, lng: 114.1095 },
   zoom: 10,
   markers: [
-    { coords: { lat: 22.3964, lng: 114.1095 }, content: 'hk-1', target: '#hk-content' },
+    {
+      coords: { lat: 22.280789, lng: 114.129113 },
+      content: 'HK_1',
+      target: '#hk-content'
+    },
+    {
+      coords: { lat: 22.248338, lng: 114.166835 },
+      content: 'HK_2',
+      target: '#hk-content'
+    }
   ],
 }
 
 const AUS_MAP_OPTIONS = {
   map_id: '#aus-map',
-  center: { lat: -35.2809, lng: 149.1300 },
+  center: { lat: -33.8688, lng: 151.2093 },
   zoom: 10,
   markers: [
-    { coords: { lat: -35.2809, lng: 149.1300 }, content: 'aus-1', target: '#aus-content' },
+    {
+      coords: { lat: -33.8688, lng: 151.2093 },
+      content: 'aus-1',
+      target: '#aus-content'
+    },
   ],
 }
 
@@ -306,7 +325,11 @@ const SG_MAP_OPTIONS = {
   center: { lat: 1.3521, lng: 103.8198 },
   zoom: 10,
   markers: [
-    { coords: { lat: 1.3521, lng: 103.8198 }, content: 'sg-1', target: '#sg-content' },
+    {
+      coords: { lat: 1.3521, lng: 103.8198 },
+      content: 'sg-1',
+      target: '#sg-content'
+    },
   ],
 }
 
@@ -315,7 +338,11 @@ const UK_MAP_OPTIONS = {
   center: { lat: 51.5074, lng: -0.1278 },
   zoom: 10,
   markers: [
-    { coords: { lat: 51.5074, lng: -0.1278 }, content: 'uk-1', target: '#uk-content' },
+    {
+      coords: { lat: 51.5074, lng: -0.1278 },
+      content: 'uk-1',
+      target: '#uk-content'
+    },
   ],
 }
 
@@ -352,7 +379,10 @@ function generateMapOptions(center, zoom) {
 
 function addMarker(point, map) {
   const { coords, content, target } = point;
-  const icon = '/images/section-location/pin.png';
+  const icon = {
+    url: '/images/section-location/pin.png',
+    scaledSize: new google.maps.Size(25, 41.48),
+  }
 
   const marker = new google.maps.Marker({
     position: coords,
@@ -363,7 +393,8 @@ function addMarker(point, map) {
   google.maps.event.addListener(marker, 'click', (e) => {
     const targetContent = document.querySelector(target)
     targetContent.classList.add('marker-clicked');
-    targetContent.setAttribute('data-content', content)
+    const targetButton = document.querySelector(`[data-context="${content}"]`)
+    locationChangeHandler(targetButton);
   });
 }
 
@@ -385,6 +416,199 @@ window.addEventListener('load', () => {
   initMap(SG_MAP_OPTIONS);
   initMap(UK_MAP_OPTIONS);
 
+})
+
+/**
+ * Location Swap handler
+ */
+
+const HK_LOCATIONS = {
+  HK_1: {
+    soon: false,
+    name: 'Kennedy Town',
+    tableData: {
+      industry: 'Tech',
+      address: '4/F, Cheung Hing Industrial Building, <br> 12P Smithfield, Kennedy Town <br> Hong Kong',
+      contact: 'hello.kt@campfire.work',
+    },
+    images: [
+      '/images/section-location/photo2.png',
+      '/images/section-location/photo1.png',
+      '/images/section-location/photo3.png',
+    ],
+  },
+
+  HK_2: {
+    soon: false,
+    name: 'Wong Chuk Hang',
+    tableData: {
+      industry: 'Fashion',
+      address: '5/F, Remex Centre, <br> 42 Wong Chuk Hang Road. <br> Hong Kong',
+      contact: 'hello.wch@campfire.work',
+    },
+    images: [
+      '/images/section-location/photo1.png',
+      '/images/section-location/photo3.png',
+      '/images/section-location/photo2.png',
+    ],
+  },
+
+  HK_3: {
+    soon: true,
+    name: 'Quarry Bay',
+    tableData: {
+      message: 'Coming soon',
+    },
+    images: [
+      '/images/section-location/photo3.png',
+      '/images/section-location/photo2.png',
+      '/images/section-location/photo1.png',
+    ],
+  },
+
+  HK_4: {
+    soon: true,
+    name: 'Tai Koo',
+    tableData: {
+      message: 'Coming soon',
+    },
+    images: [
+      '/images/section-location/photo1.png',
+      '/images/section-location/photo2.png',
+      '/images/section-location/photo3.png',
+    ],
+  },
+
+  HK_5: {
+    soon: true,
+    name: 'Sham Shui Po',
+    tableData: {
+      message: 'Coming soon',
+    },
+    images: [
+      '/images/section-location/photo2.png',
+      '/images/section-location/photo3.png',
+      '/images/section-location/photo1.png',
+    ],
+  },
+
+  HK_6: {
+    soon: true,
+    name: 'Tseung Kwan O',
+    tableData: {
+      message: 'Coming soon',
+    },
+    images: [
+      '/images/section-location/photo3.png',
+      '/images/section-location/photo1.png',
+      '/images/section-location/photo2.png',
+    ],
+  },
+}
+
+const locationButtons = sliceArray(document.querySelectorAll('.location-button'));
+const locationDetails = document.querySelector('.location-details');
+const locationRightWrapper = document.querySelector('.location-right-wrapper');
+
+
+function generateDetailsTemplate(data) {
+  return `
+    <table>
+      <tr>
+        <td class="table-head campWhite">Industry:</td>
+        <td class="table-body campWhite">${data.industry}</td>
+      </tr>
+      <tr>
+        <td class="table-head campWhite">Address:</td>
+        <td class="table-body campWhite">${data.address}</td>
+      </tr>
+      <tr>
+        <td class="table-head campWhite">Contact:</td>
+        <td class="table-body campWhite">${data.contact}</td>
+      </tr>
+    </table>
+  `
+}
+
+function generateSoonTemplate() {
+  return `
+    <h2 class="campWhite medium-regular">Coming soon</h2>
+    <p class="campWhite">Be the first to know! <br> Subscribe to our newsletter</p>
+    <a href="" class="button small-regular button-red comingSoonLinks" scrollTo="section-loop">Sign Me Up</a>
+  `
+}
+
+function generateSlide(image, slideType) {
+  const div = document.createElement('div');
+  const figure = document.createElement('figure');
+  const img = document.createElement('img');
+
+  figure.classList.add(slideType);
+  img.setAttribute('src', image)
+
+  figure.appendChild(img)
+  div.appendChild(figure)
+
+  return div;
+}
+
+function locationChangeHandler(button) {
+  const context = HK_LOCATIONS[button.getAttribute('data-context')];
+  const sliderFor = document.createElement('div');
+  const sliderNav = document.createElement('div');
+  let detailsTemplate;
+
+  locationButtons.forEach(btn => {
+    btn.classList.remove('active-location');
+  })
+
+  button.classList.add('active-location')
+
+  if (context.soon) {
+    detailsTemplate = generateSoonTemplate()
+  } else {
+    detailsTemplate = generateDetailsTemplate(context.tableData);
+  }
+
+  removeAllChildren(locationDetails);
+  locationDetails.innerHTML = detailsTemplate;
+
+  sliderFor.classList.add('slider-for');
+  sliderNav.classList.add('slider-nav');
+
+  context.images.forEach(image => {
+    sliderFor.appendChild(generateSlide(image, 'slider-for-image'))
+  })
+  context.images.forEach(image => {
+    sliderNav.appendChild(generateSlide(image, 'slider-for-image'))
+  })
+
+  removeAllChildren(locationRightWrapper)
+  locationRightWrapper.appendChild(sliderFor);
+  locationRightWrapper.appendChild(sliderNav);
+
+  $('.slider-for').slick({
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    arrows: false,
+    fade: true,
+    asNavFor: '.slider-nav'
+  });
+
+  $('.slider-nav').slick({
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    asNavFor: '.slider-for',
+    dots: false,
+    arrows: false,
+    centerMode: true,
+  });
+}
+
+locationButtons.forEach(button => {
+  button.addEventListener('click', e => {
+    locationChangeHandler(button);
+  });
 })
 
 /**

@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Campfire</title>
 
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick-theme.css"/>
+
     <link rel="stylesheet" href="<%= assetsMap.main.css %>">
 
     <script src="https://use.fontawesome.com/374bf92dc0.js"></script>
@@ -379,32 +382,41 @@
                             </figure>
 
                             <div class="row full-height">
-                                <div class="col-sm-4 col-xs-6 location-left-wrapper">
+                                <div class="col-sm-4 location-left-wrapper">
                                     <div class="location-buttons location-left">
-                                        <div class="location-button">
+                                        <div class="location-button" data-context="HK_1">
                                             <h2 class="medium-light">Kennedy Town</h2>
                                         </div>
-                                        <div class="location-button">
+                                        <div class="location-button active-location" data-context="HK_2">
+                                            <h2 class="medium-light">Wong Chuk Hang</h2>
+                                        </div>
+                                        <div class="location-button" data-context="HK_3">
                                             <h2 class="medium-light">Quarry Bay</h2>
                                         </div>
-                                        <div class="location-button active-location">
-                                            <h2 class="medium-light">Wong Chuk Hang</h2>
+                                        <div class="location-button" data-context="HK_4">
+                                            <h2 class="medium-light">Tai Koo</h2>
+                                        </div>
+                                        <div class="location-button" data-context="HK_5">
+                                            <h2 class="medium-light">Sham Shui Po</h2>
+                                        </div>
+                                        <div class="location-button" data-context="HK_6">
+                                            <h2 class="medium-light">Tseung Kwan O</h2>
                                         </div>
                                     </div>
 
                                     <div class="location-details location-left">
                                         <table>
                                             <tr>
-                                                <td class="table-head"><p class="campWhite">Industry:</p></td>
-                                                <td class="table-body"><p class="campWhite">Fashion</p></td>
+                                                <td class="table-head campWhite">Industry:</td>
+                                                <td class="table-body campWhite">Fashion</td>
                                             </tr>
                                             <tr>
-                                                <td class="table-head"><p class="campWhite">Address:</p></td>
-                                                <td class="table-body"><p class="campWhite">5/F, Remex Centre, <br> 42 Wong Chuk Hang Road. <br> Hong Kong </p></td>
+                                                <td class="table-head campWhite">Address:</td>
+                                                <td class="table-body campWhite">5/F, Remex Centre, <br> 42 Wong Chuk Hang Road. <br> Hong Kong </td>
                                             </tr>
                                             <tr>
-                                                <td class="table-head"><p class="campWhite">Contact:</p></td>
-                                                <td class="table-body"><p class="campWhite">hello.wch@campfire.work</p></td>
+                                                <td class="table-head campWhite">Contact:</td>
+                                                <td class="table-body campWhite">hello.wch@campfire.work</td>
                                             </tr>
                                         </table>
                                     </div>
@@ -413,8 +425,51 @@
                                         <a href="" class="button small-bold button-red">Contact Us</a>
                                     </div>
                                 </div>
-                                <div class="col-sm-8 col-xs-6 location-right">
-                                    <h1 class="campWhite">hello</h1>
+                                <div class="col-sm-8 full-height location-right-wrapper">
+                                    <div class="slider-for">
+                                        <div>
+                                            <figure class="slider-for-image">
+                                                <img src="/images/section-location/photo1.png" alt="">
+                                            </figure>
+                                        </div>
+                                        <div>
+                                            <figure class="slider-for-image">
+                                                <img src="/images/section-location/photo2.png" alt="">
+                                            </figure>
+                                        </div>
+                                        <div>
+                                            <figure class="slider-for-image">
+                                                <img src="/images/section-location/photo3.png" alt="">
+                                            </figure>
+                                        </div>
+                                        <div>
+                                            <figure class="slider-for-image">
+                                                <img src="/images/section-location/photo1.png" alt="">
+                                            </figure>
+                                        </div>
+                                    </div>
+                                    <div class="slider-nav">
+                                        <div>
+                                            <figure class="slider-nav-image">
+                                                <img src="/images/section-location/photo1.png" alt="">
+                                            </figure>
+                                        </div>
+                                        <div>
+                                            <figure class="slider-nav-image">
+                                                <img src="/images/section-location/photo2.png" alt="">
+                                            </figure>
+                                        </div>
+                                        <div>
+                                            <figure class="slider-nav-image">
+                                                <img src="/images/section-location/photo3.png" alt="">
+                                            </figure>
+                                        </div>
+                                        <div>
+                                            <figure class="slider-for-image">
+                                                <img src="/images/section-location/photo1.png" alt="">
+                                            </figure>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -594,6 +649,11 @@
 
     </div>
 
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.min.js"
+      integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+      crossorigin="anonymous"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js"></script>
     <script src="<%= assetsMap.main.js %>"></script>
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAnT2AePmWqjDBFz29YAmHLnGT53yqXcCc"></script>
 </body>
