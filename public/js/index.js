@@ -45,7 +45,7 @@ window.addEventListener('load', function() {
         var center = coords[i];
         var latlng = new google.maps.LatLng(center.lat, center.lng);
 
-        maps[i] = new google.maps.Map(document.getElementById('map-canvas' + (i + 1)), {
+        maps[i] = new google.maps.Map(document.getElementById('map' + (i + 1)), {
           zoom: center.zoom,
           center: latlng,
           scrollWheel: false,
@@ -62,24 +62,26 @@ window.addEventListener('load', function() {
       }
 
   }
-  showMap();
+  if($('.locations-content').hasClass("open-location")) {
+    showMap();
+  }
 });
 
 /* Location accordion*/
-$('.location-toggle').on('click', function(){
-  var locationContent = $(this).next('.location-wrapper');
-  var nextLocation = $(this).nextAll('.location-toggle:first').next();
-  var locationChevron = $(this).find('.location-chevron');
-  if($(this).hasClass('inactive')) {
+$('.locations-toggle').on('click', function(){
+  var locationContent = $(this).next('.locations-content');
+  var nextLocation = $(this).nextAll('.locations-toggle:first').next();
+  var locationChevron = $(this).find('.locations-chevron');
+  if($(this).hasClass('inactive-location')) {
     locationContent.removeClass('closed-location').addClass('open-location');
-    $(this).removeClass('inactive').addClass('active');
+    $(this).removeClass('inactive-location').addClass('active-location');
     $('.open-location').not(locationContent).addClass('closed-location').removeClass('open-location');
-    $('.active').not($(this)).addClass('inactive').removeClass('active');
+    $('.active-location').not($(this)).addClass('inactive-location').removeClass('active-location');
     locationChevron.addClass('fa-chevron-up').removeClass('fa-chevron-down');
   } else {
     locationContent.removeClass('open-location').addClass('closed-location');
-    $(this).addClass('inactive').removeClass('active');
-    $(this).nextAll('.location-toggle:first').addClass('active').removeClass('inactive');
+    $(this).addClass('inactive-location').removeClass('active-location');
+    $(this).nextAll('.locations-toggle:first').addClass('active-location').removeClass('inactive-location');
     nextLocation.removeClass('closed-location').addClass('open-location');
   }
 });
