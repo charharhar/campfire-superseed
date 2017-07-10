@@ -89,10 +89,21 @@ span.br {
   display: block;
 }
 
+span.br-mobile {
+  content: ' ';
+  display: inline-block;
+  margin: 0 3px;
+}
+
 @media (max-width: 768px) {
   span.br {
     display: inline-block;
     margin: 0 5px;
+  }
+
+  span.br-mobile {
+    content: ' ';
+    display: block;
   }
 }
 
@@ -211,6 +222,8 @@ h2 {
    font-size: 30px;
    font-weight: 300;
   }
+
+
 }
 
 h3 {
@@ -288,6 +301,7 @@ p {
 
   p {
     font-size: 12px;
+    text-align: center;
   }
 }
 
@@ -406,6 +420,10 @@ i.fa-chevron-right {
               color: $campfire-white;
               border-bottom: 2px solid $campfire-white;
             }
+
+            &:focus {
+              color: $campfire-white;
+            }
           }
 
           &.navButton {
@@ -458,6 +476,10 @@ i.fa-chevron-right {
             &:hover {
               color: $campfire-lightRed;
               border-bottom: 2px solid $campfire-lightRed;
+            }
+
+            &:focus {
+              color: $campfire-white;
             }
           }
 
@@ -620,7 +642,7 @@ section.section-main {
     width: 100%;
 
     h2 {
-      margin-bottom: 10px;
+      margin-bottom: 20px;
     }
 
     figure.arrow-image {
@@ -646,6 +668,7 @@ section.section-about {
   h2 {
     margin-bottom: 20px;
     font-size: 16px;
+    text-align: center;
   }
 
   .about-wording {
@@ -792,23 +815,23 @@ section.section-plans {
         transition: all .5s ease-out;
 
         &#acc-1 {
-          background-image: url(/images/section-plans/flex.png);
+          background-image: url(/images/section-plans/plans-flex.png);
         }
 
         &#acc-2 {
-          background-image: url(/images/section-plans/hotdesk.png);
+          background-image: url(/images/section-plans/plans-hotdesk.png);
         }
 
         &#acc-3 {
-          background-image: url(/images/section-plans/mixed.png);
+          background-image: url(/images/section-plans/plans-mixeddesk.png);
         }
 
         &#acc-4 {
-          background-image: url(/images/section-plans/private.png);
+          background-image: url(/images/section-plans/plans-privateoffice.png);
         }
 
         &.active-plan {
-          max-height: 600px;
+          max-height: 800px;
 
           .accordion-content-wrapper {
             transform: scale(1, 1);
@@ -818,7 +841,7 @@ section.section-plans {
 
         .accordion-content-wrapper {
           background-color: rgba(0, 0, 0, 0.7);
-          width: 70%;
+          width: 75%;
           margin: 60px auto;
           padding: 40px;
           transform: scale(.3, .3);
@@ -837,6 +860,18 @@ section.section-plans {
             h2, p {
               text-align: left;
               margin-bottom: 40px;
+            }
+
+            ul {
+              margin-top: -20px;
+              margin-bottom: 20px;
+            }
+
+            ul.plan-list {
+              font-size: 14px;
+              letter-spacing: 1px;
+              font-weight: 300;
+              line-height: 150%;
             }
 
             a {
@@ -881,14 +916,24 @@ section.section-plans {
 
     .accordion-content {
       &.active-plan {
-        max-height: 780px;
+        max-height: 980px;
       }
 
       .accordion-content-wrapper {
         .accordion-left {
           h2, p, a {
             margin: 0 auto 20px auto;
-            max-width: 200px;
+            max-width: 270px;
+          }
+
+          ul.plan-list {
+            font-size: 12px;
+            margin: 0 auto 20px auto;
+            width: 200px;
+          }
+
+          p {
+            text-align: center;
           }
         }
 
@@ -1224,8 +1269,7 @@ section.section-loop {
   }
 
   .join-heading-wrapper {
-    max-width: 410px;
-    // max-width: 230px;
+    width: 410px;
 
     h1 {
       text-align: center;
@@ -1289,6 +1333,12 @@ section.section-loop {
 
 @media (max-width: 768px) {
   section.section-loop {
+    .join-heading-wrapper {
+      width: 230px;
+      margin-left: 50%;
+      transform: translateX(-50%);
+    }
+
     .loop-bg {
       position: absolute;
       width: 110%;
@@ -1333,6 +1383,15 @@ section.section-join {
 @media (max-width: 768px) {
   section.section-join {
     padding: 45px 0 25px 0;
+
+    .flex-display {
+      align-items: center;
+
+      &.flex-end {
+        justify-content: center;
+        align-items: center;
+      }
+    }
   }
 }
 
@@ -1380,6 +1439,8 @@ footer.footer {
 
 @media (max-width: 768px) {
   footer.footer {
+    padding-top: 30px;
+
     .flex-display {
       justify-content: center;
       margin-bottom: 20px;
