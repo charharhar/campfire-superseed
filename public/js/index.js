@@ -588,7 +588,7 @@ function locationChangeHandler(button) {
     sliderFor.appendChild(generateSlide(image, 'slider-for-image'))
   })
   context.images.forEach(image => {
-    sliderNav.appendChild(generateSlide(image, 'slider-for-image'))
+    sliderNav.appendChild(generateSlide(image, 'slider-nav-image'))
   })
 
   removeAllChildren(locationRightWrapper)
