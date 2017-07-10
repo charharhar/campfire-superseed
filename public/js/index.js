@@ -75,13 +75,21 @@ window.addEventListener('load', function() {
         $('.location-toggle').on('click', function() {
           google.maps.event.trigger(maps, 'resize');
         });
+
+        google.maps.event.addListener(markers[i], 'click', function () {
+          $('.modal').css('display', 'block');
+        });
       }
 
   }
   if($('.locations-content').hasClass("open-location")) {
     showMap();
-    $('.modal').show();
   }
+});
+
+/* Location Modal */
+$('.close-x').on('click', function() {
+  $('.modal').css('display','none');
 });
 
 /* Location accordion*/
