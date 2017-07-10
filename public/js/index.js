@@ -7,12 +7,18 @@ if (module.hot) {
   module.hot.accept();
 }
 
+/* Smooth Scrolling */
+function scrollTo(className) {
+$('html, body').animate({
+    scrollTop: $(className).offset().top
+  }, 500);
+};
+
 /* Plans accordion */
 $('.plans-toggle').on('click', function(){
   var plansContent = $(this).next('.plans-content');
-  var nextPlan = $(this).nextAll('.plans-toggle:first').next();
-  var plansChevron = $(this).find('i');
-  var map = new google.ma
+  var nextPlan = $(this).nextAll('.plans-toggle:first');
+  var plansChevron = $(this).find('.plans-chevron');
 
   if($(this).hasClass('inactive')) {
     plansContent.removeClass('closed').addClass('open');
@@ -23,8 +29,10 @@ $('.plans-toggle').on('click', function(){
   } else {
     plansContent.removeClass('open').addClass('closed');
     $(this).addClass('inactive').removeClass('active');
+    plansChevron.addClass('fa-chevron-down').removeClass('fa-chevron-up');
     $(this).nextAll('.plans-toggle:first').addClass('active').removeClass('inactive');
-    nextPlan.removeClass('closed').addClass('open');
+    nextPlan.next().removeClass('closed').addClass('open');
+    nextPlan.find('.plans-chevron').removeClass('fa-chevron-down').addClass('fa-chevron-up');
   }
 });
 
