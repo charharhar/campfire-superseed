@@ -624,7 +624,7 @@ section.section {
  */
 section.section-main {
   border-bottom: 30px solid $campfire-lightRed;
-  background-image: url(/images/section-main/headerbg.png);
+  background-image: url(/images/section-main/header-bg.jpg);
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
