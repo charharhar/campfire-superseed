@@ -260,21 +260,21 @@ sectionLoop.addEventListener('mouseout', e => {
  * Parallax Handling
  */
 
-const parallaxBackground = sliceArray(document.querySelectorAll('.section-image'));
+// const parallaxBackground = sliceArray(document.querySelectorAll('.section-image'));
 
-function handleParallax(target) {
-    let yPos = -scrollTop() / target.getAttribute('data-speed');
+// function handleParallax(target) {
+//     let yPos = -scrollTop() / target.getAttribute('data-speed');
 
-    let coords = '50% ' + yPos + 'px';
+//     let coords = '50% ' + yPos + 'px';
 
-    target.style.backgroundPosition = coords;
-}
+//     target.style.backgroundPosition = coords;
+// }
 
-parallaxBackground.forEach(section => {
-  window.addEventListener('scroll', () => {
-    // handleParallax(section);
-  })
-})
+// parallaxBackground.forEach(section => {
+//   window.addEventListener('scroll', () => {
+//     handleParallax(section);
+//   })
+// })
 
 /**
  * Google Maps Handling
