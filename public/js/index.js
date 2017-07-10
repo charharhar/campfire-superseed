@@ -110,3 +110,15 @@ $('.locations-toggle').on('click', function(){
     nextLocation.removeClass('closed-location').addClass('open-location');
   }
 });
+
+/* Loop background images */
+/* only works for screens 768px and up */
+$('#loop-text-container').on('mousemove', function(e) {
+  var leftmoveX = (e.pageX * - 1/15);
+  var leftmoveY = (e.pageY * - 1/40);
+  var rightmoveX = (e.pageX * - 1/30);
+  var rightmoveY = (e.pageY * - 1/15);
+  $('#loop-left').css('transform', 'translate3d(' + leftmoveX + 'px, ' + rightmoveX + 'px, 0)');
+  $('#loop-right').css('transform', 'translate3d(' + rightmoveX +'px, ' + rightmoveY +'px, 0)');
+});
+
