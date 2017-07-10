@@ -701,9 +701,11 @@ const HK_LOCATIONS = {
       contact: 'hello.kt@campfire.work',
     },
     images: [
-      '/images/section-location/photo2.png',
-      '/images/section-location/photo1.png',
-      '/images/section-location/photo3.png',
+      '/images/section-location/locations-kt/kt-1.png',
+      '/images/section-location/locations-kt/kt-2.png',
+      '/images/section-location/locations-kt/kt-3.png',
+      '/images/section-location/locations-kt/kt-4.png',
+      '/images/section-location/locations-kt/kt-5.png',
     ],
   },
 
@@ -716,9 +718,11 @@ const HK_LOCATIONS = {
       contact: 'hello.wch@campfire.work',
     },
     images: [
-      '/images/section-location/photo1.png',
-      '/images/section-location/photo3.png',
-      '/images/section-location/photo2.png',
+      '/images/section-location/locations-wch/wch-1.png',
+      '/images/section-location/locations-wch/wch-2.png',
+      '/images/section-location/locations-wch/wch-3.png',
+      '/images/section-location/locations-wch/wch-4.png',
+      '/images/section-location/locations-wch/wch-5.png',
     ],
   },
 
@@ -728,11 +732,7 @@ const HK_LOCATIONS = {
     tableData: {
       message: 'Coming soon',
     },
-    images: [
-      '/images/section-location/photo3.png',
-      '/images/section-location/photo2.png',
-      '/images/section-location/photo1.png',
-    ],
+    images: [],
   },
 
   HK_4: {
@@ -741,11 +741,7 @@ const HK_LOCATIONS = {
     tableData: {
       message: 'Coming soon',
     },
-    images: [
-      '/images/section-location/photo1.png',
-      '/images/section-location/photo2.png',
-      '/images/section-location/photo3.png',
-    ],
+    images: [],
   },
 
   HK_5: {
@@ -754,11 +750,7 @@ const HK_LOCATIONS = {
     tableData: {
       message: 'Coming soon',
     },
-    images: [
-      '/images/section-location/photo2.png',
-      '/images/section-location/photo3.png',
-      '/images/section-location/photo1.png',
-    ],
+    images: [],
   },
 
   HK_6: {
@@ -767,11 +759,7 @@ const HK_LOCATIONS = {
     tableData: {
       message: 'Coming soon',
     },
-    images: [
-      '/images/section-location/photo3.png',
-      '/images/section-location/photo1.png',
-      '/images/section-location/photo2.png',
-    ],
+    images: [],
   },
 }
 
