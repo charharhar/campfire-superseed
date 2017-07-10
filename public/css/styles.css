@@ -439,6 +439,69 @@ i.fa-chevron-right {
     }
   }
 
+  .sticky-nav-list {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 1000;
+    transform: translateY(-100px);
+    transition: .5s all ease;
+
+    &.sticky-nav-list-active {
+      transform: translateY(0px);
+    }
+
+    ul {
+      list-style: none;
+      padding: 5px 0;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+
+      li {
+        display: inline;
+        margin: 5px 0;
+
+        a {
+          text-transform: uppercase;
+          font-size: 14px;
+          font-weight: 300;
+          text-decoration: none;
+          letter-spacing: 1px;
+          border-bottom: 2px solid transparent;
+          cursor: pointer;
+          transition: .2s all ease;
+
+          &.stickyNavLink {
+            &:hover {
+              color: $campfire-white;
+              border-bottom: 2px solid $campfire-white;
+            }
+
+            &:focus {
+              color: $campfire-white;
+            }
+          }
+
+          img.sticky-nav-logo {
+            width: 50px;
+          }
+
+          &.navButton {
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            padding: 10px 15px;
+            width: 120px;
+            border-bottom: 2px solid transparent;
+          }
+        }
+      }
+    }
+  }
+
   .mobile-nav-list {
     display: none;
     position: fixed;
@@ -668,7 +731,6 @@ section.section-about {
   h2 {
     margin-bottom: 20px;
     font-size: 16px;
-    text-align: center;
   }
 
   .about-wording {
@@ -685,6 +747,14 @@ section.section-about {
 @media (max-width: 768px) {
   section.section-about {
     padding-top: 0;
+
+    h2 {
+      text-align: center;
+    }
+
+    p {
+      text-align: left;
+    }
 
     .section-row-wrapper {
       padding-bottom: 20px;
@@ -733,9 +803,9 @@ section.section-member {
   }
 
   .member-list {
-    font-size: 12px;
+    font-size: 14px;
     letter-spacing: 1px;
-    font-weight: 400;
+    font-weight: 300;
     line-height: 150%;
   }
 }
@@ -744,6 +814,10 @@ section.section-member {
   section.section-member {
     h1 {
       text-align: center;
+    }
+
+    .member-list {
+      font-size: 12px;
     }
   }
 }
@@ -884,6 +958,16 @@ section.section-plans {
               margin: 20px 0;
             }
 
+            ul.hour-list {
+              font-size: 14px;
+              letter-spacing: 1px;
+              font-weight: 300;
+              line-height: 150%;
+              width: 180px;
+              margin-left: 50%;
+              transform: translateX(-50%);
+            }
+
             p {
               text-align: center;
             }
@@ -941,6 +1025,10 @@ section.section-plans {
           h3 {
             font-size: 16px;
             margin: 15px 0 10px;
+          }
+
+          ul.hour-list {
+            font-size: 12px;
           }
         }
       }

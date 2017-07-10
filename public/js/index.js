@@ -43,6 +43,7 @@ function scrollTop() {
 
 const navLinks = sliceArray(document.querySelectorAll('.navLink'));
 const mobileNavLinks = sliceArray(document.querySelectorAll('.mobileNavLink'));
+const stickyNavLinks = sliceArray(document.querySelectorAll('.stickyNavLink'));
 const arrowDown = document.querySelector('.arrowDown');
 const comingSoonLinks = sliceArray(document.querySelectorAll('.comingSoonLinks'));
 
@@ -70,6 +71,12 @@ window.addEventListener('load', () => {
       html.classList.remove('is-active')
       body.classList.remove('is-active')
 
+      scrollTo(e, e.target)
+    })
+  })
+
+  stickyNavLinks.forEach(link => {
+    link.addEventListener('click', e => {
       scrollTo(e, e.target)
     })
   })
@@ -200,6 +207,8 @@ window.addEventListener('load', calculateNewsletterMaxWidth)
  * WAYPOINT HANDLER
  */
 const waypoints = sliceArray(document.querySelectorAll('.waypoint'));
+const sectionAbout = document.querySelector('.section-about');
+const stickyNav = document.querySelector('.sticky-nav-list');
 
 function isScrolledIntoView(el) {
   const elemTop = el.getBoundingClientRect().top;
@@ -242,6 +251,14 @@ function handleAllAnimations() {
 
 window.addEventListener('scroll', handleAllAnimations)
 window.addEventListener('load', handleAllAnimations)
+
+window.addEventListener('scroll', e => {
+  if (document.body.scrollTop > ( window.outerHeight / 2)) {
+    stickyNav.classList.add('sticky-nav-list-active');
+  } else {
+    stickyNav.classList.remove('sticky-nav-list-active');
+  }
+})
 
 /**
  * Loops Mouseover handler
