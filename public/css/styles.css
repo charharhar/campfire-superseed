@@ -129,6 +129,9 @@ a.button {
   text-decoration: none;
   text-transform: uppercase;
 }
+.button a:hover {
+  text-decoration: none;
+}
 
 /* Buttons: Sizes */
 .normal-button {
@@ -144,6 +147,10 @@ a.button {
 .red-button {
   color: #FFFFFF;
   background-color: #AF1D1E;
+}
+.red-button a:hover {
+  color: #FFFFFF;
+  background-color: #840001;
 }
 
 .gray-button {
@@ -183,7 +190,7 @@ a.button {
   color: #FFFFFF;
   text-decoration: none;
 }
-.navbar-link a:active, .navbar-link a:hover {
+.navbar-link a:active, a:not(.button):hover {
   border-bottom: 1px solid white;
 }
 .row {
@@ -323,6 +330,8 @@ a.button {
   overflow: hidden;
   height: 100vh;
   width: 100%;
+  transition: height 3s;
+  transition-timing-function: ease-in;
 }
 .plans-wrapper {
   position: absolute;
@@ -413,6 +422,7 @@ a.button {
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
+  display: block;
   z-index: 1;
 }
 .close-x {
@@ -422,6 +432,7 @@ a.button {
   float: right;
   max-width: 40px;
   opacity: 0.7;
+  cursor: pointer;
 }
 .location-tab {
   margin-left: -5%;
@@ -573,5 +584,8 @@ footer {
   .plans-wrapper {
     padding: 40px;
     width: 70%;
+  }
+  .logo-container {
+    display: flex;
   }
 }
