@@ -1,6 +1,5 @@
 
 import '../css/styles.css';
-import { polyfill } from './smoothscroll';
 
 /**
  * Utility Functions
@@ -37,6 +36,16 @@ function scrollTop() {
   return (window.pageYOffset !== undefined) ? window.pageYOffset : (document.documentElement || document.body.parentNode || document.body).scrollTop;
 }
 
+function scrollTo(e, elem) {
+  e.preventDefault();
+
+  const target = `.${elem.getAttribute('scrollTo')}`
+
+  $('html, body').animate({
+    scrollTop: $(target).offset().top
+  }, 1000);
+}
+
 /**
  * Smooth Scroll Handler
  */
@@ -47,16 +56,7 @@ const stickyNavLinks = sliceArray(document.querySelectorAll('.stickyNavLink'));
 const arrowDown = document.querySelector('.arrowDown');
 const comingSoonLinks = sliceArray(document.querySelectorAll('.comingSoonLinks'));
 
-function scrollTo(e, elem) {
-  e.preventDefault();
-
-  const target = `.${elem.getAttribute('scrollTo')}`
-  document.querySelector(target).scrollIntoView({ behavior: 'smooth' });
-}
-
 window.addEventListener('load', () => {
-  polyfill(); // adds smooth scrolling polyfill
-
   navLinks.forEach(link => {
     link.addEventListener('click', e => {
       scrollTo(e, e.target)
@@ -812,7 +812,7 @@ function generateLargeSoonTemplate() {
   return `
     <h1 class="campWhite large-regular">COMING SOON</h1>
     <h2 class="campWhite medium-thin text-center">Be the first to know! <br> Subscribe to our newsletter!</h2>
-    <a href="" class="button small-regular button-red comingSoonLinks" scrollTo="section-loop">Sign Me Up</a>
+    <a href="" class="button small-regular button-red comingSoonLinks comingSoonLinkTwo" scrollTo="section-loop">Sign Me Up</a>
   `
 }
 
@@ -858,9 +858,16 @@ function locationChangeHandler(button, targetId) {
     locationRightWrapper.innerHTML = galleryTemplate;
 
     const comingSoonLink = document.querySelector('.comingSoonLink');
+    const comingSoonLinkTwo = document.querySelector('.comingSoonLinkTwo');
 
     if (!!comingSoonLink) {
       comingSoonLink.addEventListener('click', e => {
+        scrollTo(e, e.target)
+      })
+    }
+
+    if (!!comingSoonLinkTwo) {
+      comingSoonLinkTwo.addEventListener('click', e => {
         scrollTo(e, e.target)
       })
     }
