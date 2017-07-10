@@ -184,7 +184,7 @@ accordionLocationButtons.forEach(button => {
  * Newsletter Input CSS listener
  */
 
-const inputNewsletter = document.querySelector('input[name="newsletter"]');
+const inputNewsletter = document.querySelector('input[name="EMAIL"]');
 const newsletterButton = document.querySelector('.newsletter-button');
 const eventsButton = document.querySelector('.events-button');
 

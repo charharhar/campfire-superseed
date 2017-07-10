@@ -687,6 +687,7 @@ section.section {
 
     .section-image {
       min-height: 200px;
+      background-attachment: scroll;
     }
 
   }
@@ -1478,7 +1479,7 @@ section.section-loop {
     position: relative;
     z-index: 1;
 
-    input[type="text"].input-newsletter {
+    input[type="email"].input-newsletter {
       padding: 15px 20px;
       font-size: 12px;
       letter-spacing: 1px;
@@ -1503,11 +1504,41 @@ section.section-loop {
       }
     }
 
-    input[type="text"].input-newsletter::-webkit-input-placeholder {
+    input[type="email"].input-newsletter::-webkit-input-placeholder {
       text-transform: uppercase;
       font-size: 12px;
       letter-spacing: 1px;
       color: $campfire-black;
+    }
+  }
+
+  input[type="submit"] {
+
+    &.button {
+      display: inline-block;
+      text-transform: uppercase;
+      text-decoration: none;
+      width: 150px;
+      text-align: center;
+      padding: 15px 20px;
+      border-radius: 4px;
+      transition: .2s all ease-in-out;
+
+      &.small-regular {
+        font-size: 12px;
+        letter-spacing: 1px;
+      }
+
+      &.button-red {
+        background-color: $campfire-lightRed;
+        color: $campfire-white;
+        border: 1px solid $campfire-lightRed;
+
+        &:hover {
+          background-color: darken($campfire-lightRed, 10%);
+          border: 1px solid darken($campfire-lightRed, 10%);
+        }
+      }
     }
   }
 
