@@ -349,11 +349,11 @@
 
             <div class="container-fluid">
                 <div id="loop-images">
-                    <img id="loop-left" src="../images/section-loop/background-animations-left.png">
-                    <img id="loop-right" src="../images/section-loop/background-animations-right.png">
+                    <img class="loop-img" id="loop-left" src="../images/section-loop/background-animations-left.png">
+                    <img class="loop-img" id="loop-right" src="../images/section-loop/background-animations-right.png">
                 </div>
                 <div id="loop-text-container">
-                    <div class="row vertical-center" id="loop">
+                    <div class="row" id="loop">
                         <h2 class="red-text letter-space medium-text">Stay in</h2>
                         <h1 class="red-text letter-space x-large-text">the Loop</h1>
                         <h2 class="red-text letter-space medium-text">with us</h2>
@@ -368,8 +368,9 @@
                             <a href="" type="button" class="button red-button medium-button">See More</a>
                         </div>
                     </div>
-                    <div class="row">
-                        email goes here
+                    <div class="row newsletter flex-center flex">
+                        <input type="email" value="" placeholder="Join our newsletter (Enter email address)" class="email-input normal-text"></input>
+                        <input type="submit" value="Sign me up" class="button red-button medium-button email-submit"></input>
                     </div>
                 </div>
             </div>
