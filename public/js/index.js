@@ -681,7 +681,7 @@ window.addEventListener('load', () => {
 
   initMap(HK_MAP_OPTIONS);
   initMap(AUS_MAP_OPTIONS);
-  initMap(SG_MAP_OPTIONS);
+  // initMap(SG_MAP_OPTIONS);
   initMap(UK_MAP_OPTIONS);
 
 })

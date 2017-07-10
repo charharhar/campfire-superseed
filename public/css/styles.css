@@ -607,6 +607,7 @@ i.fa-chevron-right {
       transform: translateY(-100%);
     }
 
+    .sticky-nav-list,
     .navigation-list-wrapper {
       display: none;
     }
@@ -1591,7 +1592,7 @@ footer.footer {
   display: inline-block;
   overflow: visible;
   margin: 0;
-  padding: 15px;
+  padding: 10px 10px 7px 10px;
   cursor: pointer;
   transition-timing-function: linear;
   transition-duration: .15s;
@@ -1601,6 +1602,9 @@ footer.footer {
   border: 0;
   background-color: transparent;
   outline: none;
+  background-color: rgba(0, 0, 0, 0.7);
+  border-radius: 5px;
+  transform: scale(.7, .7);
 
   .hamburger-box {
     position: relative;
