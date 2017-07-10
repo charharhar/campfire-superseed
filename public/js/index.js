@@ -303,6 +303,9 @@ closeButtons.forEach(button => {
   button.addEventListener('click', () => {
     const target = document.querySelector(`#${button.getAttribute('data-close')}`)
     target.classList.remove('marker-clicked')
+    locationButtons.forEach(button => {
+      button.classList.remove('overlayed');
+    })
   })
 })
 
@@ -659,10 +662,8 @@ function addMarker(point, map) {
   })
 
   google.maps.event.addListener(marker, 'click', (e) => {
-    const targetContent = document.querySelector(target)
-    targetContent.classList.add('marker-clicked');
     const targetButton = document.querySelector(`[data-context="${content}"]`)
-    !!targetButton && locationChangeHandler(targetButton);
+    !!targetButton && locationChangeHandler(targetButton, target);
   });
 }
 
@@ -775,6 +776,8 @@ const HK_LOCATIONS = {
 }
 
 const locationButtons = sliceArray(document.querySelectorAll('.location-button'));
+const locationButtonsWrapper = document.querySelector('.location-buttons-wrapper');
+const locationButtonsPlaceholder = document.querySelector('.location-buttons-placeholder');
 const locationDetails = document.querySelector('.location-details');
 const locationRightWrapper = document.querySelector('.location-right-wrapper');
 
@@ -805,6 +808,14 @@ function generateSoonTemplate() {
   `
 }
 
+function generateLargeSoonTemplate() {
+  return `
+    <h1 class="campWhite large-regular">COMING SOON</h1>
+    <h2 class="campWhite medium-thin text-center">Be the first to know! <br> Subscribe to our newsletter!</h2>
+    <a href="" class="button small-regular button-red comingSoonLinks" scrollTo="section-loop">Sign Me Up</a>
+  `
+}
+
 function generateSlide(image, slideType) {
   const div = document.createElement('div');
   const figure = document.createElement('figure');
@@ -819,72 +830,91 @@ function generateSlide(image, slideType) {
   return div;
 }
 
-function locationChangeHandler(button) {
+function locationChangeHandler(button, targetId) {
   const context = HK_LOCATIONS[button.getAttribute('data-context')];
   const sliderFor = document.createElement('div');
   const sliderNav = document.createElement('div');
+  const targetContent = document.querySelector(targetId);
   let detailsTemplate;
+  let galleryTemplate;
+
+  targetContent.classList.add('marker-clicked');
 
   locationButtons.forEach(btn => {
     btn.classList.remove('active-location');
+    btn.classList.add('overlayed');
   })
 
   button.classList.add('active-location')
 
+  removeAllChildren(locationDetails);
+  removeAllChildren(locationRightWrapper);
+
   if (context.soon) {
     detailsTemplate = generateSoonTemplate()
+    galleryTemplate = generateLargeSoonTemplate();
+    locationDetails.classList.add('coming-soon-location');
+
+    locationRightWrapper.innerHTML = galleryTemplate;
+
+    const comingSoonLink = document.querySelector('.comingSoonLink');
+
+    if (!!comingSoonLink) {
+      comingSoonLink.addEventListener('click', e => {
+        scrollTo(e, e.target)
+      })
+    }
   } else {
     detailsTemplate = generateDetailsTemplate(context.tableData);
+    locationDetails.classList.remove('coming-soon-location');
+
+    sliderFor.classList.add('slider-for');
+    sliderNav.classList.add('slider-nav');
+
+    context.images.forEach(image => {
+      sliderFor.appendChild(generateSlide(image, 'slider-for-image'))
+    })
+    context.images.forEach(image => {
+      sliderNav.appendChild(generateSlide(image, 'slider-nav-image'))
+    })
+
+    locationRightWrapper.appendChild(sliderFor);
+    locationRightWrapper.appendChild(sliderNav);
+
+    $('.slider-for').slick({
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      arrows: false,
+      fade: true,
+      asNavFor: '.slider-nav'
+    });
+
+    $('.slider-nav').slick({
+      slidesToShow: 3,
+      slidesToScroll: 1,
+      asNavFor: '.slider-for',
+      dots: false,
+      arrows: false,
+      centerMode: true,
+    });
   }
 
-  removeAllChildren(locationDetails);
   locationDetails.innerHTML = detailsTemplate;
 
-  const comingSoonLink = document.querySelector('.comingSoonLink');
-
-  if (!!comingSoonLink) {
-    comingSoonLink.addEventListener('click', e => {
-      scrollTo(e, e.target)
-    })
-  }
-
-  sliderFor.classList.add('slider-for');
-  sliderNav.classList.add('slider-nav');
-
-  context.images.forEach(image => {
-    sliderFor.appendChild(generateSlide(image, 'slider-for-image'))
-  })
-  context.images.forEach(image => {
-    sliderNav.appendChild(generateSlide(image, 'slider-nav-image'))
-  })
-
-  removeAllChildren(locationRightWrapper)
-  locationRightWrapper.appendChild(sliderFor);
-  locationRightWrapper.appendChild(sliderNav);
-
-  $('.slider-for').slick({
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    arrows: false,
-    fade: true,
-    asNavFor: '.slider-nav'
-  });
-
-  $('.slider-nav').slick({
-    slidesToShow: 3,
-    slidesToScroll: 1,
-    asNavFor: '.slider-for',
-    dots: false,
-    arrows: false,
-    centerMode: true,
-  });
 }
 
 locationButtons.forEach(button => {
   button.addEventListener('click', e => {
-    locationChangeHandler(button);
+    locationChangeHandler(button, button.getAttribute('data-target'));
   });
 })
+
+function setHeight() {
+  locationButtonsPlaceholder.style.height = `${locationButtonsWrapper.clientHeight}px`
+}
+
+window.addEventListener('load', setHeight);
+window.addEventListener('resize', setHeight);
 
 /**
  * Hot module loader (DEVELOPMENT ONLY)

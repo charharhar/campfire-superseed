@@ -617,6 +617,15 @@ i.fa-chevron-right {
 @media (max-width: 768px) {
   .main-navigation {
     .hamburger {
+      top: 50px;
+      right: 50px;
+    }
+  }
+}
+
+@media (max-width: 414px) {
+  .main-navigation {
+    .hamburger {
       top: 20px;
       right: 20px;
     }
@@ -716,6 +725,25 @@ section.section-main {
   }
 }
 
+@media (max-width: 320px) {
+  section.section-main {
+    .main-heading {
+      left: 20px;
+
+      h1.larger-bold {
+        font-size: 32px;
+        line-height: 125%;
+      }
+    }
+
+    .main-subheading {
+      h2 {
+        letter-spacing: 0;
+      }
+    }
+  }
+}
+
 /**
  * About Section
  */
@@ -759,6 +787,14 @@ section.section-about {
 
     .section-row-wrapper {
       padding-bottom: 20px;
+    }
+  }
+}
+
+@media (max-width: 320px) {
+  section.section-about {
+    h1 {
+      font-size: 32px;
     }
   }
 }
@@ -819,6 +855,15 @@ section.section-member {
 
     .member-list {
       font-size: 12px;
+    }
+  }
+}
+
+@media (max-width: 320px) {
+  section.section-member {
+    h1 {
+      font-size: 32px;
+      line-height: 125%;
     }
   }
 }
@@ -1014,7 +1059,7 @@ section.section-plans {
           ul.plan-list {
             font-size: 12px;
             margin: 0 auto 20px auto;
-            width: 200px;
+            width: 150px;
           }
 
           p {
@@ -1030,6 +1075,7 @@ section.section-plans {
 
           ul.hour-list {
             font-size: 12px;
+            width: 160px;
           }
         }
       }
@@ -1118,6 +1164,48 @@ section.section-locations {
           max-height: 700px;
         }
 
+        .location-buttons-wrapper {
+          position: absolute;
+          top: 0;
+          left: 0;
+          z-index: 2;
+
+          .location-buttons {
+            .location-button {
+              background-color: rgba($campfire-white, .85);
+              margin-bottom: 10px;
+              padding: 10px 10px 10px 20px;
+              width: 275px;
+              cursor: pointer;
+              transition: .2s all;
+
+              &:hover {
+                background-color: rgba($campfire-lightRed, .85);
+
+                h2 {
+                  color: $campfire-white;
+                }
+              }
+
+              &.overlayed {
+                background-color: rgba($campfire-white, .3);
+
+                &:hover {
+                  background-color: rgba($campfire-lightRed, .3);
+                }
+              }
+
+              &.active-location {
+                background-color: rgba($campfire-lightRed, .8);
+
+                h2 {
+                  color: $campfire-white;
+                }
+              }
+            }
+          }
+        }
+
         .accordion-content-wrapper {
           position: absolute;
           top: 0;
@@ -1170,41 +1258,14 @@ section.section-locations {
             }
           }
 
-          .location-buttons {
-            .location-button {
-              background-color: rgba($campfire-white, 0.3);
-              margin-bottom: 10px;
-              margin-left: -15px;
-              padding: 10px 10px 10px 20px;
-              max-width: 275px;
-              cursor: pointer;
-              transition: .2s all;
-
-              &:hover {
-                background-color: rgba($campfire-lightRed, .3);
-
-                h2 {
-                  color: $campfire-white;
-                }
-              }
-
-              &.active-location {
-                background-color: rgba($campfire-lightRed, .8);
-
-                h2 {
-                  color: $campfire-white;
-                }
-              }
-            }
-          }
-
           .location-details {
-            h2 {
-              text-align: left;
+            &.coming-soon-location {
+              display: none;
             }
 
             h2, p {
               margin-bottom: 10px;
+              text-align: left;
             }
 
             table {
@@ -1231,6 +1292,20 @@ section.section-locations {
           justify-content: center;
           flex-direction: column;
           padding: 50px;
+
+          h1, h2, a {
+            text-align: center;
+            margin-bottom: 20px;
+          }
+
+          h1 {
+            margin-bottom: 5px;
+          }
+
+          a {
+            margin-left: 50%;
+            transform: translateX(-50%);
+          }
 
           .slider-for {
             margin-bottom: 20px;
@@ -1316,6 +1391,24 @@ section.section-locations {
 
   .google-map-wrapper.google-map {
     min-height: auto;
+  }
+}
+
+@media (max-width: 414px) {
+  section.section-locations .accordion-location-wrapper .accordion-location .accordion-content .location-left-wrapper .location-details.coming-soon-location {
+    display: block;
+  }
+}
+
+@media (max-width: 375px) {
+  section.section-locations .accordion-location-wrapper .accordion-location .accordion-content .location-buttons-wrapper .location-buttons .location-button {
+    width: 250px;
+    padding: 8px 8px 8px 15px;
+
+    h2 {
+      font-size: 20px;
+      letter-spacing: 1px;
+    }
   }
 }
 
@@ -1431,6 +1524,7 @@ section.section-loop {
     .loop-bg {
       position: absolute;
       width: 110%;
+      max-width: 625px;
 
       &.loop-bg-left {
         left: -40%;
@@ -1444,6 +1538,14 @@ section.section-loop {
         transform: translate(0, -50%);
       }
     }
+  }
+
+  .col-xs-offset-3 {
+    margin-left: 25%;
+  }
+
+  .col-xs-6 {
+    width: 50%;
   }
 }
 
