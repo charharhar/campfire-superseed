@@ -510,7 +510,6 @@ const locationButtons = sliceArray(document.querySelectorAll('.location-button')
 const locationDetails = document.querySelector('.location-details');
 const locationRightWrapper = document.querySelector('.location-right-wrapper');
 
-
 function generateDetailsTemplate(data) {
   return `
     <table>
