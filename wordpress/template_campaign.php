@@ -8,11 +8,61 @@
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-US" prefix="og: http://ogp.me/ns#">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Campfire</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Campfire - An Industry Focused Co Working Spaces in Hong Kong</title>
+
+  <meta name="description" content="A co working space in Hong Kong for start-ups, freelancers, and working professionals. Offer private offices, fixed desk space &amp; hot desks."/>
+<meta name="robots" content="noodp"/>
+<link rel="canonical" href="https://campfire.work/" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Campfire - An Industry Focused Co Working Spaces in Hong Kong" />
+<meta property="og:description" content="A co working space in Hong Kong for start-ups, freelancers, and working professionals. Offer private offices, fixed desk space &amp; hot desks." />
+<meta property="og:url" content="https://campfire.work/" />
+<meta property="og:site_name" content="Campfire" />
+<meta property="og:image" content="https://campfire.work/wp-content/uploads/2016/07/campfire-workspace.jpg" />
+<meta property="og:image:width" content="1920" />
+<meta property="og:image:height" content="810" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:description" content="A co working space in Hong Kong for start-ups, freelancers, and working professionals. Offer private offices, fixed desk space &amp; hot desks." />
+<meta name="twitter:title" content="Campfire - An Industry Focused Co Working Spaces in Hong Kong" />
+<meta name="twitter:image" content="https://campfire.work/wp-content/uploads/2016/07/campfire-workspace.jpg" />
+<script type='application/ld+json'>{"@context":"http:\/\/schema.org","@type":"WebSite","@id":"#website","url":"https:\/\/campfire.work\/","name":"Campfire","potentialAction":{"@type":"SearchAction","target":"https:\/\/campfire.work\/?s={search_term_string}","query-input":"required name=search_term_string"}}</script>
+<script type='application/ld+json'>{"@context":"http:\/\/schema.org","@type":"Organization","url":"https:\/\/campfire.work\/","sameAs":[],"@id":"#organization","name":"Campfire Collaborative Space","logo":"https:\/\/campfire.work\/wp-content\/uploads\/2016\/08\/Campfire-Logo-Red-e1472114087819.jpg"}</script>
+
+<!-- Google Analytics -->
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-76643735-1', 'auto');
+ga('send', 'pageview');
+</script>
+<!-- End Google Analytics -->
+
+<link rel="apple-touch-icon" sizes="57x57" href="https://campfire.work/wp-content/themes/campfire/assets/images/icon/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="https://campfire.work/wp-content/themes/campfire/assets/images/icon/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="https://campfire.work/wp-content/themes/campfire/assets/images/icon/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="https://campfire.work/wp-content/themes/campfire/assets/images/icon/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="https://campfire.work/wp-content/themes/campfire/assets/images/icon/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="https://campfire.work/wp-content/themes/campfire/assets/images/icon/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="https://campfire.work/wp-content/themes/campfire/assets/images/icon/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="https://campfire.work/wp-content/themes/campfire/assets/images/icon/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="https://campfire.work/wp-content/themes/campfire/assets/images/icon/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="https://campfire.work/wp-content/themes/campfire/assets/images/icon/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://campfire.work/wp-content/themes/campfire/assets/images/icon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="https://campfire.work/wp-content/themes/campfire/assets/images/icon/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://campfire.work/wp-content/themes/campfire/assets/images/icon/favicon-16x16.png">
+<link rel="manifest" href="https://campfire.work/wp-content/themes/campfire/assets/images/icon/manifest.json">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="https://campfire.work/wp-content/themes/campfire/assets/images/icon/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+
 
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.css"/>
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick-theme.css"/>
@@ -23,7 +73,7 @@
 </head>
 <body>
 
-        <div class="wrapper">
+    <div class="wrapper">
 
             <section class="section section-main">
                 <nav class="main-navigation">
@@ -466,7 +516,7 @@
                                 </figure>
 
                                 <h1 class="campWhite large-regular">COMING SOON</h1>
-                                <h2 class="campWhite medium-thin text-center">Be the first to know!</h2>
+                                <h2 class="campWhite medium-thin text-center">Be the first to know! <br> Subscribe to our newsletter!</h2>
                                 <a href="" class="button small-regular button-red comingSoonLinks" scrollTo="section-loop">Sign Me Up</a>
                             </div>
 
