@@ -414,6 +414,9 @@ a.mobile-nav-link:hover {
   background-size: cover;
   box-shadow: inset 0 20px 55px -20px rgba(0, 0, 0, 0.51);
 }
+.membership-responsive {
+  text-align: center;
+}
 .features-icon {
   display: block;
   margin-top: 20px;
@@ -832,6 +835,10 @@ footer > .container-fluid {
   }
   #about-buttons {
     margin-top: 0px;
+  }
+  .membership-responsive {
+    text-align: left;
+    margin-top: 200px;
   }
   #features-one, #features-two {
     padding: 0;
