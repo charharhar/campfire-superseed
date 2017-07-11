@@ -178,7 +178,7 @@ a.gray-button:hover {
   padding-top: 2.5rem;
   padding-right: 1.5rem;
   padding-left: 2rem;
-  z-index: 1;
+  z-index: 1000;
 }
 .nonmobile-nav {
   display: none;
@@ -213,7 +213,6 @@ a.navbar-link:active, a:not(.button):hover {
   margin-left: 0;
   margin-right: 0;
   width: 100%;
-  height: 100%;
 }
 
 /* Burger nav */
@@ -767,6 +766,7 @@ footer > .container-fluid {
 }
 .footer-logo {
   max-height: 50px;
+  margin-bottom: 20px;
 }
 .social-icons {
   display: inline-block;
@@ -902,6 +902,7 @@ footer > .container-fluid {
     margin-right: auto;
   }
   .footer-logo {
+    margin-bottom: 0;
     margin-right: 30px;
   }
   .social-wrapper {
