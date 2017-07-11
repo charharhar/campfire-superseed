@@ -9,18 +9,51 @@
 </head>
 <body>
     <div class="wrapper">
-        <nav class id="section-nav">
-            <img class="navbar-logo" src="../images/section-top/logo-copy.png">
-            <div class="navbar-content">
-                <ul id="navbar-links">
-                    <li class="navbar-link"><a href="#section-about">Who we are</a></li>
-                    <li class="navbar-link"><a href="#section-features">Membership Features</a></li>
-                    <li class="navbar-link"><a href="#section-plans">Our plans</a></li>
-                    <li class="navbar-link"><a href="#section-locations">Our locations</a></li>
-                    <li class="navbar-link"><a href="#section-loop">Blogs/Events</a></li>
-                    <li class="navbar-link"><a href="#section-contact">Join Us</a></li>
-                    <li class="navbar-link"><a href="" type="button" class="button red-button normal-button">Contact Us</a></li>
+        <!-- burger -->
+<!--         <div class="burger-nav">
+                <ul>
+                    <li class="burger-link"><a href="#section-about">Who we are</a></li>
+                    <li class="burger-link"><a href="#section-features">Membership Features</a></li>
+                    <li class="burger-link"><a href="#section-plans">Our plans</a></li>
+                    <li class="burger-link"><a href="#section-locations">Our locations</a></li>
+                    <li class="burger-link"><a href="#section-loop">Blogs/Events</a></li>
+                    <li class="burger-link"><a href="#section-contact">Join Us</a></li>
+                    <li class="burger-link"><a href="">Contact Us</a></li>
                 </ul>
+            </div> -->
+        <nav class id="section-nav">
+            <div class="hamburger">
+                <div class="hamburger-line-container">
+                    <div class="burger-lines burger-top"></div>
+                    <div class="burger-lines burger-middle"></div>
+                    <div class="burger-lines burger-bottom"></div>
+                </div>
+            </div>
+            <div class="mobile-nav">
+                <ul>
+                    <li><a class="mobile-nav-link red-text"href="#section-about">Who we are</a></li>
+                    <li><a class="mobile-nav-link red-text" href="#section-features">Membership Features</a></li>
+                    <li><a class="mobile-nav-link red-text" href="#section-plans">Our plans</a></li>
+                    <li><a class="mobile-nav-link red-text" href="#section-locations">Our locations</a></li>
+                    <li><a class="mobile-nav-link red-text" href="#section-loop">Blogs/Events</a></li>
+                    <li><a class="mobile-nav-link red-text" href="#section-contact">Join Us</a></li>
+                    <li><a class="mobile-nav-link red-text" href="">Contact Us</a></li>
+                </ul>
+            </div>
+
+            <div class="nonmobile-nav">
+                <img class="navbar-logo" src="../images/section-top/logo-copy.png">
+                <div class="navbar-content">
+                    <ul id="navbar-links">
+                        <li class="navbar-link"><a href="#section-about">Who we are</a></li>
+                        <li class="navbar-link"><a href="#section-features">Membership Features</a></li>
+                        <li class="navbar-link"><a href="#section-plans">Our plans</a></li>
+                        <li class="navbar-link"><a href="#section-locations">Our locations</a></li>
+                        <li class="navbar-link"><a href="#section-loop">Blogs/Events</a></li>
+                        <li class="navbar-link"><a href="#section-contact">Join Us</a></li>
+                        <li class="navbar-link"><a href="" type="button" class="button red-button normal-button">Contact Us</a></li>
+                    </ul>
+                </div>
             </div>
         </nav>
 
@@ -43,8 +76,9 @@
                     <div class="col col-sm-4" id="who-we-are">
                         <h1 class="red-text x-large-text letter-space">Who<br>we<br>are</h1>
                     </div>
-                    <div class="col col-sm-8">
-                        <p class="red-text" id="who-description">Campfire Collaborative Spaces is Asia's fastest growing network of shared spaces. By end 2017, Campfire will have 7 industry-focused co-working, 1 co-living, and 1 co-learning sites in 4 countries. With real estate at a premium in most major cities. Campfire provides reliable and flexible sites to maximise utilisation. Currently operating 2 industry focused workspaces in Hong Kong (Kennedy Town - Tech and Wong Chuk Hang - Fashion), that were designed to provide every tools and services possible for members to grow. Campfire was conceptualized as a place where like-minded entrepreneurs can gather to share their experiences and work together. Campfire encourages its members to connect, create, and collaborate through industry-specific facilities, relevant events, and vibrant communities.</p>
+                    <div class="col col-sm-8" id="who-description">
+                        <p class="red-text">Campfire Collaborative Spaces is Asia's fastest growing network of shared spaces. By end 2017, Campfire will have 7 industry-focused co-working, 1 co-living, and 1 co-learning sites in 4 countries. With real estate at a premium in most major cities. Campfire provides reliable and flexible sites to maximise utilisation. Currently operating 2 industry focused workspaces in Hong Kong (Kennedy Town - Tech and Wong Chuk Hang - Fashion), that were designed to provide every tools and services possible for members to grow.</p>
+                        <p class="red-text">Campfire was conceptualized as a place where like-minded entrepreneurs can gather to share their experiences and work together. Campfire encourages its members to connect, create, and collaborate through industry-specific facilities, relevant events, and vibrant communities.</p>
                     </div>
                 </div>
                 <div class="row row-eq-height vertical-center" id="about-second">
@@ -52,7 +86,7 @@
                         <h3 class="red-text normal-text">Stay up to date with out latest project<br> developments of co-learning and co-living spaces</h3>
                     </div>
                     <div class="col col-sm-5 flex flex-center" id="about-buttons">
-                        <a href="" type="button" class="button gray-button medium-button" id="colearning">Co-learning</a>
+                        <a href="" type="button" class="button gray-button medium-button">Co-learning</a>
                         <a href="" type="button" class="button gray-button medium-button">Co-living</a>
                     </div>
                 </div>
@@ -111,7 +145,7 @@
             </div>
             <div class="plans-accordion">
                 <div class="plans-toggle active normal-text" id="flex-toggle">
-                    <h3 class="toggle-text normal-text">Flex</h3>
+                    <h3 class="toggle-text normal-text toggle-left">Flex</h3>
                     <i class="fa fa-chevron-up fa-lg plans-chevron" aria-hidden="true"></i>
                 </div>
                 <!-- Flex panel -->
@@ -147,7 +181,7 @@
 
                 <!-- Hot Desk panel -->
                 <div class="plans-toggle inactive" id="hot-toggle">
-                    <h3 class="toggle-text normal-text">Hot Desk</h3>
+                    <h3 class="toggle-text normal-text toggle-left">Hot Desk</h3>
                     <i class="fa fa-chevron-down fa-lg plans-chevron" aria-hidden="true"></i>
                 </div>
                 <div class="plans-content closed" id="hot-content">
@@ -181,7 +215,7 @@
                 </div>
                 <!-- Mixed Desk panel -->
                 <div class="plans-toggle inactive" id="mixed-toggle">
-                    <h3 class="toggle-text normal-text">Mixed Desk</h3>
+                    <h3 class="toggle-text normal-text toggle-left">Mixed Desk</h3>
                     <i class="fa fa-chevron-down fa-lg plans-chevron" aria-hidden="true"></i>
                 </div>
                 <div class="plans-content closed" id="mixed-content">
@@ -215,7 +249,7 @@
                 </div>
                 <!-- Private panel -->
                 <div class="plans-toggle inactive" id="private-toggle">
-                    <h3 class="toggle-text normal-text">Private</h3>
+                    <h3 class="toggle-text toggle-left normal-text">Private</h3>
                     <i class="fa fa-chevron-down fa-lg plans-chevron" aria-hidden="true"></i>
                 </div>
                 <div class="plans-content closed" id="private-content">
@@ -260,7 +294,7 @@
             <div class="locations-container">
                 <div class="locations-accordion">
                     <div class="locations-toggle active-location">
-                        <h3 class="toggle-text normal-text">Hong Kong</h3>
+                        <h3 class="toggle-text normal-text flex-center">Hong Kong</h3>
                         <i class="fa fa-chevron-up fa-lg locations-chevron" aria-hidden="true"></i>
                     </div>
 
@@ -333,7 +367,7 @@
 
                     <!-- United Kingdom -->
                     <div class="locations-toggle inactive-location" id="uk">
-                        <h3 class="toggle-text normal-text">United Kingdom</h3>
+                        <h3 class="toggle-text normal-text flex-center">United Kingdom</h3>
                         <i class="fa fa-chevron-down fa-lg locations-chevron" aria-hidden="true"></i>
                     </div>
                     <div class="locations-content closed-location" id="uk-content">
@@ -354,11 +388,14 @@
                 </div>
                 <div id="loop-text-container">
                     <div class="row" id="loop">
-                        <h2 class="red-text letter-space medium-text">Stay in</h2>
-                        <h1 class="red-text letter-space x-large-text">the Loop</h1>
-                        <h2 class="red-text letter-space medium-text">with us</h2>
+                        <div class="col col-md-6">
+                            <h2 class="red-text letter-space medium-text">Stay in</h2>
+                            <h1 class="red-text letter-space x-large-text">the Loop</h1>
+                            <h2 class="red-text letter-space medium-text right-align">with us</h2>
+                        </div>
+                        <div class="col col-md-offset-6"></div>
                     </div>
-                    <div class="row" id="loop-buttons">
+                    <div class="row row-eq-height" id="loop-buttons">
                         <div class="col col-md-6">
                             <h3 class="red-text normal-text">Blogs</h3>
                             <a href="" type="button" class="button red-button medium-button">Read More</a>
