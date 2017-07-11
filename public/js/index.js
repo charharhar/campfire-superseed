@@ -14,6 +14,12 @@ $('html, body').animate({
   }, 500);
 };
 
+/* Mobile nav -- Hamburger */
+$('.hamburger').on('click', function(){
+  $($(this)).toggleClass("open");
+  $('.mobile-nav').toggleClass("open");
+});
+
 /* Plans accordion */
 $('.plans-toggle').on('click', function(){
   var plansContent = $(this).next('.plans-content');
