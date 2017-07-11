@@ -96,6 +96,12 @@ window.addEventListener('load', function() {
 /* Location Modal */
 $('.close-x').on('click', function() {
   $('.modal').css('display','none');
+  $('.location-tab').removeClass('open');
+});
+
+$('.location-tab').on('click', function() {
+  $($(this)).toggleClass('open');
+  $('.modal').css('display','block');
 });
 
 /* Location accordion*/
@@ -117,8 +123,26 @@ $('.locations-toggle').on('click', function(){
   }
 });
 
-/* Loop background images */
-/* only works for screens 768px and up */
+/* Image slider */
+ $('.slider-for').slick({
+  slidesToShow: 1,
+  slidesToScroll: 1,
+  arrows: false,
+  fade: true,
+  asNavFor: '.slider-nav'
+});
+$('.slider-nav').slick({
+  slidesToShow: 3,
+  slidesToScroll: 1,
+  asNavFor: '.slider-for',
+  arrows: true,
+  centerMode: true,
+  centerPadding: 0,
+  dots: false,
+  focusOnSelect: true
+});
+
+
 $('#loop-text-container').on('mousemove', function(e) {
   var leftmoveX = (e.pageX * - 1/15);
   var leftmoveY = (e.pageY * - 1/40);

@@ -5,22 +5,11 @@
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1">
 	<title>Campfire</title>
     <script src="https://use.fontawesome.com/e1a7194148.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/jquery.slick/1.6.0/slick.css">
     <link rel="stylesheet" href="<%= assetsMap.main.css %>">
 </head>
 <body>
     <div class="wrapper">
-        <!-- burger -->
-<!--         <div class="burger-nav">
-                <ul>
-                    <li class="burger-link"><a href="#section-about">Who we are</a></li>
-                    <li class="burger-link"><a href="#section-features">Membership Features</a></li>
-                    <li class="burger-link"><a href="#section-plans">Our plans</a></li>
-                    <li class="burger-link"><a href="#section-locations">Our locations</a></li>
-                    <li class="burger-link"><a href="#section-loop">Blogs/Events</a></li>
-                    <li class="burger-link"><a href="#section-contact">Join Us</a></li>
-                    <li class="burger-link"><a href="">Contact Us</a></li>
-                </ul>
-            </div> -->
         <nav class id="section-nav">
             <div class="hamburger">
                 <span class="burger-lines"></span>
@@ -58,8 +47,7 @@
         <section class="section-wrapper" id="section-top">
             <div class="row" id="top-first-quote">
                 <h1 class="white-text large-text letter-space">
-                    Industry focused<br>
-                    coworking spaces
+                    Industry focused<span class="br"></span> coworking spaces
                 </h1>
             </div>
             <div class="row">
@@ -69,9 +57,9 @@
         </section>
 
         <section class="section-wrapper" id="section-about">
-            <div class="container-fluid" id="about-wrapper">
+            <div class="container-fluid">
                 <div class="row row-eq-height vertical-center" id="about-first">
-                    <div class="col col-sm-4 left-to-center">
+                    <div class="col col-sm-4 flex left-to-center">
                         <h1 class="red-text x-large-text letter-space">Who <span class="br"></span>we <span class="br"></span>are</h1>
                     </div>
                     <div class="col col-sm-8" id="who-description">
@@ -80,7 +68,7 @@
                     </div>
                 </div>
                 <div class="row row-eq-height vertical-center" id="about-second">
-                    <div class="col col-sm-8 left-to-center">
+                    <div class="col col-sm-8 flex left-to-center">
                         <h3 class="red-text normal-text">Stay up to date with out latest project<span class="br"></span> developments of co-learning and co-living spaces</h3>
                     </div>
                     <div class="col col-sm-5 flex flex-center" id="about-buttons">
@@ -99,9 +87,9 @@
 
         <section class="section-wrapper" id="section-features">
             <div class="container-fluid">
-                <div class="row row-eq-height vertical-center">
+                <div class="row vertical-center left-to-center">
                     <div class="col col-sm-6">
-                        <h1 class="large-text white-text">Membership<br>features</h1>
+                        <h1 class="large-text white-text">Membership<span class="br"></span> features</h1>
                     </div>
                     <div class="col col-sm-6">
                         <div class="row" id="features-one">
@@ -302,38 +290,51 @@
 
                     <!-- Hong Kong -->
                     <div class="locations-content open-location" id="hk-content">
+                        <div class="tab-list">
+                            <div class="location-tab inactive-tab kennedy"><h3 class="normal-text"> Kennedy Town</h3></div>
+                            <div class="location-tab inactive-tab quarry"><h3 class="normal-text">Quarry Bay</h3></div>
+                            <div class="location-tab inactive-tab wch"><h3 class="normal-text">Wong Chuk Hang</h3></div>
+                        </div>
                         <div class="modal hk-modal">
                             <div class="modal-wrapper">
                                 <div class="row location-tabs">
                                     <img class="close-x" src="../images/section-locations/close-x.png">
-                                    <div class="col col-sm-6">
-                                        <div class="row tab-list">
-                                            <div class="location-tab inactive-tab"><h3 class="normal-text"> Kennedy Town</h3></div>
-                                            <div class="location-tab inactive-tab"><h3 class="normal-text">Quarry Bay</h3></div>
-                                            <div class="location-tab active-tab"><h3 class="normal-text">Wong Chuk Hang</h3></div>
-                                        </div>
-                                        <div class="row address-details">
-                                                <table class="white-text address-table">
-                                                    <tr>
-                                                        <td class="table-left">Industry:</td>
-                                                        <td>Fashion</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td class="table-left">Address:</td>
-                                                        <td>5/F, Remex Centre,<br>
-                                                            42 Wong Chuk Hang Road,<br>
-                                                            Hong Kong
-                                                    </tr>
-                                                    <tr>
-                                                        <td class="table-left">Contact:</td>
-                                                        <td>hello.wch@campfire.work</td>
-                                                    </tr>
-                                                </table>
+                                    <div class="col col-sm-5">
+                                        <div class="tab-list-blank"></div>
+                                        <div class="address-details">
+                                            <table class="white-text address-table small-text">
+                                                <tr>
+                                                    <td class="table-left">Industry:</td>
+                                                    <td>Fashion</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="table-left">Address:</td>
+                                                    <td>5/F, Remex Centre,<br>
+                                                        42 Wong Chuk Hang Road,<br>
+                                                        Hong Kong
+                                                </tr>
+                                                <tr>
+                                                    <td class="table-left">Contact:</td>
+                                                    <td>hello.wch@campfire.work</td>
+                                                </tr>
+                                            </table>
 
-                                                <a href="" type="button" class="button red-button medium-button">Contact Us</a>
+                                            <a href="" type="button" class="button red-button medium-button">Contact Us</a>
                                         </div>
                                     </div>
-                                    <div class="col col-sm-6">
+                                    <div class="col col-sm-7">
+                                        <div class="slider">
+                                            <div class="slider-for">
+                                                <div><img class="slider-img" data-slick-index="1" src="../images/section-locations/photo1.png"></div>
+                                                <div><img class="slider-img" data-slick-index="2" src="../images/section-locations/photo2.png"></div>
+                                                <div><img class="slider-img" data-slick-index="2" src="../images/section-locations/photo3.png"></div>
+                                            </div>
+                                            <div class="slider-nav">
+                                                <div><img class="slider-img" data-slick-index="1" src="../images/section-locations/photo1.png"></div>
+                                                <div><img class="slider-img" data-slick-index="2" src="../images/section-locations/photo2.png"></div>
+                                                <div><img class="slider-img" data-slick-index="2" src="../images/section-locations/photo3.png"></div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -351,6 +352,15 @@
                     </div>
 
                     <div class="locations-content closed-location" id="au-content">
+                        <div class="modal">
+                            <div class="modal-wrapper">
+                                <div class="location-coming-soon flex vertical-center flex-column">
+                                    <h1 class="white-text large-text">Coming Soon</h1>
+                                    <p class="white-text normal-text">Be the first to know</p>
+                                    <a href="" type="button" class="button red-button medium-button">Contact Us</a>
+                                </div>
+                            </div>
+                        </div>
                         <div class="map-wrapper">
                             <div class="map-canvas" id="map2"></div>
                         </div>
@@ -390,25 +400,25 @@
                 </div>
                 <div id="loop-text-container">
                     <div class="row" id="loop">
-                        <div class="col col-md-6">
+                        <div class="col col-sm-6">
                             <h2 class="red-text letter-space medium-text">Stay in</h2>
                             <h1 class="red-text letter-space x-large-text">the Loop</h1>
                             <h2 class="red-text letter-space medium-text right-align">with us</h2>
                         </div>
-                        <div class="col col-md-offset-6"></div>
+                        <div class="col col-sm-offset-6"></div>
                     </div>
-                    <div class="row row-eq-height" id="loop-buttons">
-                        <div class="col col-md-6">
+                    <div class="row row-eq-height flex flex-center">
+                        <div class="col col-sm-6 flex vertical-center flex-column">
                             <h3 class="red-text normal-text">Blogs</h3>
                             <a href="" type="button" class="button red-button medium-button">Read More</a>
                         </div>
-                        <div class="col col-md-6">
+                        <div class="col col-sm-6 flex vertical-center flex-column">
                             <h3 class="red-text normal-text">Events</h3>
                             <a href="" type="button" class="button red-button medium-button">See More</a>
                         </div>
                     </div>
                     <div class="row newsletter flex-center flex">
-                        <input type="email" value="" placeholder="Join our newsletter (Enter email address)" class="email-input normal-text"></input>
+                        <input type="email" value="" placeholder="Join our newsletter (Enter email address)" class="email-input"></input>
                         <input type="submit" value="Sign me up" class="button red-button medium-button email-submit"></input>
                     </div>
                 </div>
@@ -417,13 +427,13 @@
 
         <section class="section wrapper" id="section-contact">
             <div class="container-fluid">
-                <div class="row vertical-center">
-                    <div class="col col-md-5">
+                <div class="row vertical-center contact-responsive">
+                    <div class="col col-sm-5">
                         <h2 class="red-text letter-space medium-text">Interested in our space?</h2>
                         <h1 class="red-text letter-space x-large-text">Join us</h1>
                     </div>
-                    <div class="col col-md-7 flex flex-end">
-                        <a href="" type="button" id="loop-contact" class="button red-button normal-button">Contact Us</a>
+                    <div class="col col-sm-7 flex contact-button-responsive">
+                        <a href="" type="button" class="button red-button normal-button">Contact Us</a>
                     </div>
                 </div>
             </div>
@@ -432,12 +442,12 @@
         <footer>
             <div class="container-fluid">
                 <div class="footer-wrapper">
-                    <div class="row icon-wrapper flex">
-                        <div class="col col-mid-6 vertical-center logo-container">
+                    <div class="row icon-wrapper flex footer-responsive">
+                        <div class="col col-mid-6 logo-container">
                             <img class="footer-logo" src="../images/footer/footersmall-logo.png">
                             <p class="red-text footer-text">Industry focused coworking spaces</p>
                         </div>
-                        <div class="col col-mid-6 social-wrapper inline-flex">
+                        <div class="col col-mid-6 social-wrapper">
                             <a href="">
                             <img class="social-icons" src="../images/footer/footer-social-icons_01.png" alt="Instagram">
                             </a>
@@ -461,6 +471,7 @@
     </div>
 
     <script src="http://code.jquery.com/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js"></script>
     <script src="<%= assetsMap.main.js %>"></script>
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDeUTHyja3qHkEDdBeQk4Py0s1TcavBF38"></script>
 
