@@ -54,7 +54,6 @@ const navLinks = sliceArray(document.querySelectorAll('.navLink'));
 const mobileNavLinks = sliceArray(document.querySelectorAll('.mobileNavLink'));
 const stickyNavLinks = sliceArray(document.querySelectorAll('.stickyNavLink'));
 const arrowDown = document.querySelector('.arrowDown');
-const comingSoonLinks = sliceArray(document.querySelectorAll('.comingSoonLinks'));
 
 window.addEventListener('load', () => {
   navLinks.forEach(link => {
@@ -87,12 +86,6 @@ window.addEventListener('load', () => {
     target = findParent(target, 'arrowDown');
 
     scrollTo(e, target);
-  })
-
-  comingSoonLinks.forEach(link => {
-    link.addEventListener('click', e => {
-      scrollTo(e, e.target)
-    })
   })
 
 })
@@ -651,7 +644,7 @@ function generateMapOptions(center, zoom) {
 function addMarker(point, map) {
   const { coords, content, target } = point;
   const icon = {
-    url: '/images/section-location/location-pin.png',
+    url: 'https://campfire.work/wp-content/themes/campfire/assets/images/section-location/location-pin.png',
     scaledSize: new google.maps.Size(25, 41.48),
   }
 
@@ -701,11 +694,11 @@ const HK_LOCATIONS = {
       contact: 'hello.kt@campfire.work',
     },
     images: [
-      '/images/section-location/locations-kt/kt-1.png',
-      '/images/section-location/locations-kt/kt-2.png',
-      '/images/section-location/locations-kt/kt-3.png',
-      '/images/section-location/locations-kt/kt-4.png',
-      '/images/section-location/locations-kt/kt-5.png',
+      'https://campfire.work/wp-content/themes/campfire/assets/images/section-location/locations-kt/kt-1.png',
+      'https://campfire.work/wp-content/themes/campfire/assets/images/section-location/locations-kt/kt-2.png',
+      'https://campfire.work/wp-content/themes/campfire/assets/images/section-location/locations-kt/kt-3.png',
+      'https://campfire.work/wp-content/themes/campfire/assets/images/section-location/locations-kt/kt-4.png',
+      'https://campfire.work/wp-content/themes/campfire/assets/images/section-location/locations-kt/kt-5.png',
     ],
   },
 
@@ -718,11 +711,11 @@ const HK_LOCATIONS = {
       contact: 'hello.wch@campfire.work',
     },
     images: [
-      '/images/section-location/locations-wch/wch-1.png',
-      '/images/section-location/locations-wch/wch-2.png',
-      '/images/section-location/locations-wch/wch-3.png',
-      '/images/section-location/locations-wch/wch-4.png',
-      '/images/section-location/locations-wch/wch-5.png',
+      'https://campfire.work/wp-content/themes/campfire/assets/images/section-location/locations-wch/wch-1.png',
+      'https://campfire.work/wp-content/themes/campfire/assets/images/section-location/locations-wch/wch-2.png',
+      'https://campfire.work/wp-content/themes/campfire/assets/images/section-location/locations-wch/wch-3.png',
+      'https://campfire.work/wp-content/themes/campfire/assets/images/section-location/locations-wch/wch-4.png',
+      'https://campfire.work/wp-content/themes/campfire/assets/images/section-location/locations-wch/wch-5.png',
     ],
   },
 
@@ -791,16 +784,15 @@ function generateDetailsTemplate(data) {
 function generateSoonTemplate() {
   return `
     <h2 class="campWhite medium-regular">Coming soon</h2>
-    <p class="campWhite">Be the first to know! <br> Subscribe to our newsletter</p>
-    <a href="" class="button small-regular button-red comingSoonLink" scrollTo="section-loop">Sign Me Up</a>
+    <p class="campWhite">Be the first to know!</p>
   `
 }
 
 function generateLargeSoonTemplate() {
   return `
     <h1 class="campWhite large-regular">COMING SOON</h1>
-    <h2 class="campWhite medium-thin text-center">Be the first to know! <br> Subscribe to our newsletter!</h2>
-    <a href="" class="button small-regular button-red comingSoonLinks comingSoonLinkTwo" scrollTo="section-loop">Sign Me Up</a>
+    <h2 class="campWhite medium-thin text-center">Be the first to know!</h2>
+    <a href="https://campfire.work/contact-us/" class="button small-bold button-red">Contact Us</a>
   `
 }
 
@@ -845,20 +837,6 @@ function locationChangeHandler(button, targetId) {
 
     locationRightWrapper.innerHTML = galleryTemplate;
 
-    const comingSoonLink = document.querySelector('.comingSoonLink');
-    const comingSoonLinkTwo = document.querySelector('.comingSoonLinkTwo');
-
-    if (!!comingSoonLink) {
-      comingSoonLink.addEventListener('click', e => {
-        scrollTo(e, e.target)
-      })
-    }
-
-    if (!!comingSoonLinkTwo) {
-      comingSoonLinkTwo.addEventListener('click', e => {
-        scrollTo(e, e.target)
-      })
-    }
   } else {
     detailsTemplate = generateDetailsTemplate(context.tableData);
     locationDetails.classList.remove('coming-soon-location');
