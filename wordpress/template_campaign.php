@@ -442,7 +442,7 @@
                                 </figure>
 
                                 <h1 class="campWhite large-regular">COMING SOON</h1>
-                                <h2 class="campWhite medium-thin text-center">Be the first to know! <br> Subscribe to our newsletter!</h2>
+                                <h2 class="campWhite medium-thin text-center">Be the first to know!</h2>
                                 <a href="https://campfire.work/contact-us/" class="button small-bold button-red">Contact Us</a>
                             </div>
 
@@ -466,7 +466,7 @@
                                 </figure>
 
                                 <h1 class="campWhite large-regular">COMING SOON</h1>
-                                <h2 class="campWhite medium-thin text-center">Be the first to know! <br> Subscribe to our newsletter!</h2>
+                                <h2 class="campWhite medium-thin text-center">Be the first to know!</h2>
                                 <a href="" class="button small-regular button-red comingSoonLinks" scrollTo="section-loop">Sign Me Up</a>
                             </div>
 
@@ -490,7 +490,7 @@
                                 </figure>
 
                                 <h1 class="campWhite large-regular">COMING SOON</h1>
-                                <h2 class="campWhite medium-thin text-center">Be the first to know! <br> Subscribe to our newsletter!</h2>
+                                <h2 class="campWhite medium-thin text-center">Be the first to know!</h2>
                                 <a href="https://campfire.work/contact-us/" class="button small-bold button-red">Contact Us</a>
                             </div>
 
