@@ -74,8 +74,8 @@ tr, td{
 /* Font Sizes */
 .x-large-text {
   font-weight: 700;
-  font-size: 65px;
-  line-height: 75px;
+  font-size: 35px;
+  line-height: 40px;
 }
 .large-text {
   font-weight: 600;
@@ -88,7 +88,7 @@ tr, td{
 }
 .normal-text {
   font-weight: 300;
-  font-size: 1px;
+  font-size: 20px;
 }
 .letter-space {
   letter-spacing: 3px;
@@ -111,7 +111,6 @@ tr, td{
   display: inline-flex;
 }
 .flex-end {
-  display: flex;
   justify-content: flex-end;
 }
 
@@ -140,7 +139,7 @@ a.button, a.button:hover {
   padding: 12px 14px 12px 14px;
 }
 .medium-button {
-  padding: 12px 30px 12px 30px;
+  padding: 12px 15px 12px 15px;
 }
 .large-button {
   padding: 12px 50px 12px 50px;
@@ -211,7 +210,7 @@ a.navbar-link:active, a:not(.button):hover {
 /* Burger nav */
 .hamburger {
   position: absolute;
-  z-index: 1000;
+  z-index: 1;
   padding-top: 10px;
   padding-bottom: 30px;
   width: 50px;
@@ -232,6 +231,7 @@ a.navbar-link:active, a:not(.button):hover {
     transition: all 0.3s linear;
   }
   &.open{
+
     span{
       &:nth-child(1),
       &:nth-child(3) {
@@ -248,6 +248,32 @@ a.navbar-link:active, a:not(.button):hover {
     }
   }
 }
+
+$b-trans-speed: .5s;
+$b-transition: all $b-trans-speed ease;
+
+@keyframes slideInLeft {
+  0% {
+    transform: translate3d(-250px, 0, 0);
+    visibility: visible;
+  }
+
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes slideOutLeft {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+
+  100% {
+    transform: translate3d(-250px, 0, 0);
+    visibility: hidden;
+  }
+}
+
 .mobile-nav {
   position: absolute;
   padding-top: 2rem;
@@ -259,12 +285,27 @@ a.navbar-link:active, a:not(.button):hover {
 
   &:not(.open){
     visibility: hidden;
+    animation-duration: $b-trans-speed;
+    animation-fill-mode: both;
+    animation-name: slideOutLeft;
+  }
+  &.open{
+    visibility: visible;
+    animation-duration: $b-trans-speed;
+    animation-fill-mode: both;
+    animation-name: slideInLeft;
   }
   ul {
     margin-top: 4rem;
   }
   li {
     list-style-type: none;
+  }
+  @-webkit-keyframes:slide{
+    100% { left: 0; }
+  }
+  @keyframes slide {
+    100% { left: 0; }
   }
 }
 .mobile-nav-link {
@@ -302,6 +343,7 @@ a.mobile-nav-link:hover {
 }
 #section-top{
   width: 100%;
+  padding-top: 13rem;
   padding-left: 2rem;
   padding-right: 2rem;
   height: 94.5vh;
@@ -332,6 +374,10 @@ a.mobile-nav-link:hover {
   padding-right: 1rem;
   padding-top: 3rem;
   padding-bottom: 3rem;
+}
+.left-to-center {
+  display: flex;
+  justify-content: center;
 }
 #who-we-are, #who-description {
   padding-bottom: 2rem;
@@ -406,7 +452,10 @@ a.mobile-nav-link:hover {
   background-image: url("../images/paralax-2.png");
 }
 /* Accordion styling */
+.toggle-text {
+  line-height: 30px;
 
+}
 .toggle-text {
   line-height: 30px;
   display: inline-block;
@@ -628,17 +677,6 @@ td {
 #loop {
   padding-bottom: 3rem;
 }
-#loop-buttons {
-  text-align: center;
-}
-#loop-contact {
-  margin-right: 30px;
-  float: right;
-}
-#loop-buttons > div > a[type="button"] {
-  margin-top: 10px;
-  margin-bottom: 25px;
-}
 
 /* Contact section */
 #section-contact {
@@ -703,14 +741,21 @@ footer {
   .letter-space {
     letter-spacing: 10px;
   }
+  .medium-button {
+  padding: 12px 30px 12px 30px;
+  }
   .row-eq-height {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
   }
-  #top-first-quote  {
-    padding-top: 250px;
+  .br {
+    content: ' ';
+    display: block;
+  }
+  #section-top {
+    padding-top: none;
   }
   #top-second-quote {
     padding-top: 60px;
@@ -721,6 +766,9 @@ footer {
   }
   #about-second {
     padding-top: 100px;
+  }
+  .left-to-center {
+    float: left;
   }
   #who-we-are, #who-description {
     padding-bottom: 0;
