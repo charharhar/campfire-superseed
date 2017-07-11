@@ -884,7 +884,10 @@ footer > .container-fluid {
     text-align: left;
     display: flex;
   }
-  .contact-button-responsive {
+  .join-responsive {
+    text-align: left;
+  }
+  .join-contact-responsive {
     justify-content: flex-end;
   }
   footer {

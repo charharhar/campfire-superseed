@@ -84,6 +84,7 @@ window.addEventListener('load', function() {
 
         google.maps.event.addListener(markers[i], 'click', function () {
           $('.modal').css('display', 'block');
+          $('.location-tab')
         });
       }
 
