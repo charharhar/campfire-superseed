@@ -56,8 +56,8 @@ h1, h2, h3 {
 
 p, ul, ol {
   font-weight: 300;
-  font-size: 14px;
-  line-height: 20px;
+  font-size: 13px;
+  line-height: 18px;
   color: #AF1D1E;
 }
 tr, td{
@@ -113,6 +113,9 @@ tr, td{
 .flex-end {
   justify-content: flex-end;
 }
+.flex-column {
+  flex-direction: column;
+}
 
 /* Parallax */
 .parallax {
@@ -123,6 +126,8 @@ tr, td{
 
 /* Buttons */
 .button {
+  font-size: 12px;
+  letter-spacing: 2px;
   text-align: center;
   display: inline-block;
   border: none;
@@ -209,13 +214,17 @@ a.navbar-link:active, a:not(.button):hover {
 
 /* Burger nav */
 .hamburger {
-  position: absolute;
+  top: 30px;
+  left: auto;
+  right: 20px;
+  position: fixed;
   z-index: 1;
   padding-top: 10px;
   padding-bottom: 30px;
   width: 50px;
   height: 30px;
-  background-color: #fff;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 5px;
   cursor: pointer;
 
   span {
@@ -252,9 +261,9 @@ a.navbar-link:active, a:not(.button):hover {
 $b-trans-speed: .5s;
 $b-transition: all $b-trans-speed ease;
 
-@keyframes slideInLeft {
+@keyframes slideInRight {
   0% {
-    transform: translate3d(-250px, 0, 0);
+    transform: translate3d(250px, 0, 0);
     visibility: visible;
   }
 
@@ -263,13 +272,13 @@ $b-transition: all $b-trans-speed ease;
   }
 }
 
-@keyframes slideOutLeft {
+@keyframes slideOutRight {
   0% {
     transform: translate3d(0, 0, 0);
   }
 
   100% {
-    transform: translate3d(-250px, 0, 0);
+    transform: translate3d(250px, 0, 0);
     visibility: hidden;
   }
 }
@@ -287,13 +296,13 @@ $b-transition: all $b-trans-speed ease;
     visibility: hidden;
     animation-duration: $b-trans-speed;
     animation-fill-mode: both;
-    animation-name: slideOutLeft;
+    animation-name: slideOutRight;
   }
   &.open{
     visibility: visible;
     animation-duration: $b-trans-speed;
     animation-fill-mode: both;
-    animation-name: slideInLeft;
+    animation-name: slideInRight;
   }
   ul {
     margin-top: 4rem;
@@ -368,13 +377,6 @@ a.mobile-nav-link:hover {
 }
 
 /* About section */
-#about-wrapper {
-  overflow: hidden;
-  padding-left: 1rem;
-  padding-right: 1rem;
-  padding-top: 3rem;
-  padding-bottom: 3rem;
-}
 .left-to-center {
   display: flex;
   justify-content: center;
@@ -398,7 +400,6 @@ a.mobile-nav-link:hover {
   background-color: #caabab;
   background-image: url("../images/parallax-1.png");
 }
-
 
 /* Features section */
 #section-features {
@@ -669,9 +670,6 @@ td {
 #loop-text-container {
   width: 100%;
   position: relative;
-  padding-top: 2rem;
-  padding-right: 2rem;
-  padding-left: 2rem;
   z-index: 1;
 }
 #loop {
@@ -682,16 +680,18 @@ td {
 #section-contact {
   height: auto;
 }
-#loop-contact {
-  position: absolute;
-  display: block;
-}
 .email-input {
+  font-size: 12px;
   text-transform: uppercase;
+  min-width: 300px;
   width: 50%;
   padding-left: 10px;
+  border-radius: 4px;
+  border: 1px solid #AF1D1E;
+  margin-right: 5px;
 }
 .email-submit {
+  font-size: 12px;
 }
 
 /* Footer */
@@ -742,7 +742,7 @@ footer {
     letter-spacing: 10px;
   }
   .medium-button {
-  padding: 12px 30px 12px 30px;
+    padding: 12px 30px 12px 30px;
   }
   .row-eq-height {
     display: -webkit-box;
@@ -754,18 +754,12 @@ footer {
     content: ' ';
     display: block;
   }
-  #section-top {
-    padding-top: none;
-  }
   #top-second-quote {
     padding-top: 60px;
     padding-bottom: 10px;
   }
-  #about-wrapper {
-    padding: 3rem;
-  }
   #about-second {
-    padding-top: 100px;
+    padding-top: 50px;
   }
   .left-to-center {
     float: left;
@@ -800,20 +794,10 @@ footer {
     padding-right: 3rem;
     padding-left: 3rem;
   }
-  .about-buttons > a[type=button] {
-    margin-right: 70px;
-  }
 }
 @media (min-width: 1139px) {
   .hamburger {
     display: none;
-    position: absolute;
-    z-index: 1000;
-    padding-top: 10px;
-    padding-bottom: 30px;
-    width: 60px;
-    height: 30px;
-    background-color: #fff;
   }
   .nonmobile-nav {
     display: block;
