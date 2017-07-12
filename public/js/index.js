@@ -691,7 +691,7 @@ const HK_LOCATIONS = {
     tableData: {
       industry: 'Tech',
       address: '4/F, Cheung Hing Industrial Building, <br> 12P Smithfield, Kennedy Town <br> Hong Kong',
-      contact: 'hello.kt@campfire.work',
+      contact: 'hello.kt@campfire.work <br> 2793 9500',
     },
     images: [
       'https://campfire.work/wp-content/themes/campfire/assets/images/section-location/locations-kt/kt-1.png',
@@ -708,7 +708,7 @@ const HK_LOCATIONS = {
     tableData: {
       industry: 'Fashion',
       address: '5/F, Remex Centre, <br> 42 Wong Chuk Hang Road. <br> Hong Kong',
-      contact: 'hello.wch@campfire.work',
+      contact: 'hello.wch@campfire.work <br> 2780 5586',
     },
     images: [
       'https://campfire.work/wp-content/themes/campfire/assets/images/section-location/locations-wch/wch-1.png',
@@ -723,7 +723,7 @@ const HK_LOCATIONS = {
     soon: true,
     name: 'Quarry Bay',
     tableData: {
-      message: 'Coming soon',
+      message: '',
     },
     images: [],
   },
@@ -732,7 +732,7 @@ const HK_LOCATIONS = {
     soon: true,
     name: 'Tai Koo',
     tableData: {
-      message: 'Coming soon',
+      message: '',
     },
     images: [],
   },
@@ -741,7 +741,7 @@ const HK_LOCATIONS = {
     soon: true,
     name: 'Sham Shui Po',
     tableData: {
-      message: 'Coming soon',
+      message: 'Co-Living',
     },
     images: [],
   },
@@ -750,7 +750,7 @@ const HK_LOCATIONS = {
     soon: true,
     name: 'Tseung Kwan O',
     tableData: {
-      message: 'Coming soon',
+      message: 'Co-Learning',
     },
     images: [],
   },
@@ -760,6 +760,7 @@ const locationButtons = sliceArray(document.querySelectorAll('.location-button')
 const locationButtonsWrapper = document.querySelector('.location-buttons-wrapper');
 const locationButtonsPlaceholder = document.querySelector('.location-buttons-placeholder');
 const locationDetails = document.querySelector('.location-details');
+const locationContact = document.querySelector('.location-contact');
 const locationRightWrapper = document.querySelector('.location-right-wrapper');
 
 function generateDetailsTemplate(data) {
@@ -788,8 +789,9 @@ function generateSoonTemplate() {
   `
 }
 
-function generateLargeSoonTemplate() {
+function generateLargeSoonTemplate(message) {
   return `
+    <h1 class="campWhite medium-thin">${message}</h1>
     <h1 class="campWhite large-regular">COMING SOON</h1>
     <h2 class="campWhite medium-thin text-center">Be the first to know!</h2>
     <a href="https://campfire.work/contact-us/" class="button small-bold button-red">Contact Us</a>
@@ -832,14 +834,16 @@ function locationChangeHandler(button, targetId) {
 
   if (context.soon) {
     detailsTemplate = generateSoonTemplate()
-    galleryTemplate = generateLargeSoonTemplate();
+    galleryTemplate = generateLargeSoonTemplate(context.tableData.message);
     locationDetails.classList.add('coming-soon-location');
+    locationContact.classList.add('coming-soon-location');
 
     locationRightWrapper.innerHTML = galleryTemplate;
 
   } else {
     detailsTemplate = generateDetailsTemplate(context.tableData);
     locationDetails.classList.remove('coming-soon-location');
+    locationContact.classList.remove('coming-soon-location');
 
     sliderFor.classList.add('slider-for');
     sliderNav.classList.add('slider-nav');
@@ -866,9 +870,11 @@ function locationChangeHandler(button, targetId) {
       slidesToShow: 3,
       slidesToScroll: 1,
       asNavFor: '.slider-for',
-      dots: false,
-      arrows: false,
+      dots: true,
+      arrows: true,
       centerMode: true,
+      prevArrow: "<button type='button' class='slick-prev'><i class='fa fa-chevron-left' aria-hidden='true'></i></button>",
+      nextArrow: "<button type='button' class='slick-next'><i class='fa fa-chevron-right' aria-hidden='true'></i></button>"
     });
   }
 

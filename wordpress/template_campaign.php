@@ -304,7 +304,7 @@ ga('send', 'pageview');
                                             <li>Day Pass</li>
                                             <li>Half Day Membership</li>
                                         </ul>
-                                        <a href="https://campfire.work/contact-us/" class="button small-bold button-red">Contact Us</a>
+                                        <a href="https://campfire.work/contact-us/" class="button small-bold button-red plans-desktop-button">Contact Us</a>
                                     </div>
                                     <div class="col-sm-6 accordion-right">
                                         <div class="hours-block half-height">
@@ -323,6 +323,7 @@ ga('send', 'pageview');
                                                 Meeting Room
                                             </p>
                                         </div>
+                                        <a href="https://campfire.work/contact-us/" class="button small-bold button-red plans-mobile-button">Contact Us</a>
                                     </div>
                                 </div>
                             </div>
@@ -345,7 +346,7 @@ ga('send', 'pageview');
                                         <ul class="campWhite plan-list">
                                             <li>Full Membership</li>
                                         </ul>
-                                        <a href="https://campfire.work/contact-us/" class="button small-bold button-red">Contact Us</a>
+                                        <a href="https://campfire.work/contact-us/" class="button small-bold button-red plans-desktop-button">Contact Us</a>
                                     </div>
                                     <div class="col-sm-6 accordion-right">
                                         <div class="hours-block half-height">
@@ -362,6 +363,7 @@ ga('send', 'pageview');
                                                 Meeting Room
                                             </p>
                                         </div>
+                                        <a href="https://campfire.work/contact-us/" class="button small-bold button-red plans-mobile-button">Contact Us</a>
                                     </div>
                                 </div>
                             </div>
@@ -492,7 +494,7 @@ ga('send', 'pageview');
                                 </figure>
 
                                 <h1 class="campWhite large-regular">COMING SOON</h1>
-                                <h2 class="campWhite medium-thin text-center">Be the first to know!</h2>
+                                <h2 class="campWhite medium-thin text-center">Be the first to know! <br> Subscribe to our newsletter!</h2>
                                 <a href="https://campfire.work/contact-us/" class="button small-bold button-red">Contact Us</a>
                             </div>
 
@@ -540,7 +542,7 @@ ga('send', 'pageview');
                                 </figure>
 
                                 <h1 class="campWhite large-regular">COMING SOON</h1>
-                                <h2 class="campWhite medium-thin text-center">Be the first to know!</h2>
+                                <h2 class="campWhite medium-thin text-center">Be the first to know! <br> Subscribe to our newsletter!</h2>
                                 <a href="https://campfire.work/contact-us/" class="button small-bold button-red">Contact Us</a>
                             </div>
 

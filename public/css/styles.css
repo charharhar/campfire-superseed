@@ -188,6 +188,11 @@ h1 {
     font-size: 32px;
     font-weight: 400;
   }
+
+  &.medium-thin {
+    font-size: 32px;
+    font-weight: 300;
+  }
 }
 
 h2 {
@@ -264,6 +269,7 @@ p {
       font-size: 34px;
     }
 
+    &.medium-thin,
     &.medium-regular {
       font-size: 24px;
     }
@@ -698,7 +704,7 @@ section.section {
  */
 section.section-main {
   border-bottom: 30px solid $campfire-lightRed;
-  background-image: url(/images/section-main/header-bg.jpg);
+  background-image: url(https://campfire.work/wp-content/themes/campfire/assets/images/section-main/header-bg.jpg);
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -769,7 +775,7 @@ section.section-about {
 
   .section-image {
     &.parallax-first {
-      background-image: url(/images/parallax-1.png);
+      background-image: url(https://campfire.work/wp-content/themes/campfire/assets/images/parallax-1.png);
     }
   }
 }
@@ -805,7 +811,7 @@ section.section-about {
  */
 section.section-member {
   height: auto;
-  background-image: url(/images/section-member/membershipfeature-bg.png);
+  background-image: url(https://campfire.work/wp-content/themes/campfire/assets/images/section-member/membershipfeature-bg.png);
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -936,19 +942,19 @@ section.section-plans {
         transition: all .5s ease-out;
 
         &#acc-1 {
-          background-image: url(/images/section-plans/plans-flex.png);
+          background-image: url(https://campfire.work/wp-content/themes/campfire/assets/images/section-plans/plans-flex.png);
         }
 
         &#acc-2 {
-          background-image: url(/images/section-plans/plans-hotdesk.png);
+          background-image: url(https://campfire.work/wp-content/themes/campfire/assets/images/section-plans/plans-hotdesk.png);
         }
 
         &#acc-3 {
-          background-image: url(/images/section-plans/plans-mixeddesk.png);
+          background-image: url(https://campfire.work/wp-content/themes/campfire/assets/images/section-plans/plans-mixeddesk.png);
         }
 
         &#acc-4 {
-          background-image: url(/images/section-plans/plans-privateoffice.png);
+          background-image: url(https://campfire.work/wp-content/themes/campfire/assets/images/section-plans/plans-privateoffice.png);
         }
 
         &.active-plan {
@@ -998,6 +1004,10 @@ section.section-plans {
             a {
               margin-bottom: 40px;
             }
+
+            .plans-desktop-button {
+              display: block;
+            }
           }
 
           .accordion-right {
@@ -1018,6 +1028,10 @@ section.section-plans {
             p {
               text-align: center;
             }
+
+            .plans-mobile-button {
+              display: none;
+            }
           }
         }
       }
@@ -1026,7 +1040,7 @@ section.section-plans {
 
   .section-image {
     &.parallax-second {
-      background-image: url(/images/parallax-2.png);
+      background-image: url(https://campfire.work/wp-content/themes/campfire/assets/images/parallax-2.png);
     }
   }
 }
@@ -1066,6 +1080,10 @@ section.section-plans {
           p {
             text-align: center;
           }
+
+          .plans-desktop-button {
+            display: none;
+          }
         }
 
         .accordion-right {
@@ -1074,9 +1092,18 @@ section.section-plans {
             margin: 15px 0 10px;
           }
 
+          p {
+            margin-bottom: 15px;
+          }
+
           ul.hour-list {
             font-size: 12px;
             width: 160px;
+          }
+
+          .plans-mobile-button {
+            display: block;
+            margin: 0 auto;
           }
         }
       }
@@ -1180,6 +1207,10 @@ section.section-locations {
               cursor: pointer;
               transition: .2s all;
 
+              h2 {
+                font-size: 18px;
+              }
+
               &:hover {
                 background-color: rgba($campfire-lightRed, .85);
 
@@ -1254,29 +1285,29 @@ section.section-locations {
           justify-content: space-between;
 
           .location-left {
+            &.coming-soon-location {
+              display: none;
+            }
+
             &:last-of-type {
               margin-bottom: 20px;
             }
           }
 
           .location-details {
-            &.coming-soon-location {
-              display: none;
-            }
-
             h2, p {
               margin-bottom: 10px;
               text-align: left;
             }
 
             table {
-              table-layout: fixed;
               width: 100%;
             }
             td {
               padding: 10px 0;
-              word-break: break-all;
-              font-size: 12px;
+              word-break: break-word;
+              white-space: normal;
+              font-size: 14px;
             }
             td.table-head {
               text-transform: uppercase;
@@ -1322,9 +1353,23 @@ section.section-locations {
             div {
               margin: 0 10px;
             }
+
             .slider-nav-image {
-              cursor: pointer;
+              cursor: grab;
             }
+
+            .slick-prev,
+            .slick-next {
+              i {
+                color: #fff;
+                font-size: 16px;
+              }
+
+              &:before {
+                content: '';
+              }
+            }
+
           }
         }
       }
@@ -1396,7 +1441,7 @@ section.section-locations {
 }
 
 @media (max-width: 414px) {
-  section.section-locations .accordion-location-wrapper .accordion-location .accordion-content .location-left-wrapper .location-details.coming-soon-location {
+  section.section-locations .accordion-location-wrapper .accordion-location .accordion-content .location-left-wrapper .location-left.coming-soon-location {
     display: block;
   }
 }
@@ -1407,7 +1452,7 @@ section.section-locations {
     padding: 8px 8px 8px 15px;
 
     h2 {
-      font-size: 20px;
+      font-size: 16px;
       letter-spacing: 1px;
     }
   }
