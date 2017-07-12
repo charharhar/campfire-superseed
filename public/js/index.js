@@ -782,8 +782,9 @@ function generateDetailsTemplate(data) {
   `
 }
 
-function generateSoonTemplate() {
+function generateSoonTemplate(message) {
   return `
+    <h2 class="campWhite medium-thin">${message}</h2>
     <h2 class="campWhite medium-regular">Coming soon</h2>
     <p class="campWhite">Be the first to know!</p>
   `
@@ -833,7 +834,7 @@ function locationChangeHandler(button, targetId) {
   removeAllChildren(locationRightWrapper);
 
   if (context.soon) {
-    detailsTemplate = generateSoonTemplate()
+    detailsTemplate = generateSoonTemplate(context.tableData.message)
     galleryTemplate = generateLargeSoonTemplate(context.tableData.message);
     locationDetails.classList.add('coming-soon-location');
     locationContact.classList.add('coming-soon-location');
