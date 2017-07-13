@@ -276,7 +276,7 @@
         <section class="parallax" id="plans-parallax">
         </section>
 
-        <section class="section-wrapper section-locations">
+        <section class="section-wrapper" id="section-locations">
             <div class="section-header vertical-center flex flex-center">
                 <h2 class="white-text medium-text">Locations</h2>
             </div>
@@ -287,16 +287,19 @@
                 </div>
                 <div class="locations-content open-location" id="hk-content">
                     <div class="tab-list">
-                        <div class="location-tab inactive-tab kennedy"><h3 class="normal-text"> Kennedy Town</h3></div>
-                        <div class="location-tab inactive-tab quarry"><h3 class="normal-text">Quarry Bay</h3></div>
-                        <div class="location-tab inactive-tab wch"><h3 class="normal-text">Wong Chuk Hang</h3></div>
+                        <div class="location-tab inactive-tab" data-target="#hk-content" data-context="HK_1"><h3 class="normal-text"> Kennedy Town</h3></div>
+                        <div class="location-tab inactive-tab" data-target="#hk-content" data-context="HK_2"><h3 class="normal-text">Wong Chuk Hang</h3></div>
+                        <div class="location-tab inactive-tab" data-target="#hk-content" data-context="HK_3"><h3 class="normal-text">Quarry Bay</h3></div>
+                        <div class="location-tab inactive-tab" data-target="#hk-content" data-context="HK_4"><h3 class="normal-text">Tai Koo</h3></div>
+                        <div class="location-tab inactive-tab" data-target="#hk-content" data-context="HK_5"><h3 class="normal-text">Sham Shui Po</h3></div>
+                        <div class="location-tab inactive-tab" data-target="#hk-content" data-context="HK_6"><h3 class="normal-text">Tseung Kwan O</h3></div>
                     </div>
 
                     <div class="map-wrapper">
-                        <div class="map-canvas" id="map1"></div>
+                        <div class="map-canvas" id="hk-map"></div>
                     </div>
 
-                    <div class="row modal hk-modal open-location">
+                    <div class="row modal hk-modal open-location" id="wongchuk">
                         <img class="close-x" src="../images/section-locations/close-x.png">
                         <div class="col col-sm-5">
                             <div class="tab-list-blank"></div>
@@ -346,16 +349,32 @@
                     <h3 class="toggle-text normal-text flex-center">Australia</h3>
                     <i class="fa fa-chevron-up fa-lg locations-chevron" aria-hidden="true"></i>
                 </div>
-                <!-- Sing -->
-                <div class="locations-toggle inactive-location">
+                 <div class="locations-content open-location" id="au-content">
+                    <div class="map-wrapper">
+                        <div class="map-canvas" id="au-map"></div>
+                    </div>
+                 </div>
+
+                <!-- <div class="locations-toggle inactive-location">
                     <h3 class="toggle-text normal-text flex-center">Singapore</h3>
                     <i class="fa fa-chevron-up fa-lg locations-chevron" aria-hidden="true"></i>
                 </div>
+                 <div class="locations-content open-location" id="sg-content">
+                    <div class="map-wrapper">
+                        <div class="map-canvas" id="sg-map"></div>
+                    </div>
+                 </div> -->
+
                 <!-- UK -->
                 <div class="locations-toggle inactive-location">
                     <h3 class="toggle-text normal-text flex-center">United Kingdom</h3>
                     <i class="fa fa-chevron-up fa-lg locations-chevron" aria-hidden="true"></i>
                 </div>
+                <div class="locations-content open-location" id="uk-content">
+                    <div class="map-wrapper">
+                        <div class="map-canvas" id="uk-map"></div>
+                    </div>
+                 </div>
 
             </div>
         </section>

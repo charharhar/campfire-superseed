@@ -614,21 +614,20 @@ a.mobile-nav-link:hover {
   text-align: center;
   max-width: 450px;
   cursor: pointer;
+  color: #2f4f4f;
+  background-color: rgba(255, 255, 255, 0.5);
 
   &.open {
     color: #ffffff;
     background-color: #af1d1e;
   }
-  &:not(.open){
-    color: #2f4f4f;
-    background-color: rgba(255, 255, 255, 0.5);
+  &:hover{
+    color: #ffffff;
+    transition: all .4s ease-in;
+    background-color: #af1d1e;
   }
 }
 
-.location-tab:hover {
-  color: #ffffff;
-  background-color: #af1d1e;
-}
 .tab-list {
   position: absolute;
   top: 0;
@@ -795,6 +794,7 @@ footer > .container-fluid {
   padding-bottom: 30px;
 }
 .logo-container {
+  justify-content: center;
   padding-right: 0;
 }
 .footer-responsive {

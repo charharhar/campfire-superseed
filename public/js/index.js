@@ -42,66 +42,259 @@ $('.plans-toggle').on('click', function(){
   }
 });
 
+/* Location Tab Swap */
+var HK_Locations = {
+  HK_1: {
+    open: true,
+    name: 'Kennedy Town',
+    tableData: {
+      industry: 'tech',
+      address: '4/F, Cheung Hing Industrial Building, <br> 12P Smithfield, Kennedy Town <br> Hong Kong',
+      contact: 'hello.kt@campfire.work',
+    },
+    images: [
+      '../images/section-locations/photo1.png',
+      '../images/section-locations/photo2.png',
+      '../images/section-locations/photo3.png',
+    ],
+  },
+  HK_2: {
+    open: true,
+    name: 'Wong Chuk Hang',
+    tableData: {
+      industry: 'fashion',
+      address: '5/F, Remex Centre, <br> 42 Wong Chuk Hang Road, <br> Hong Kong',
+      contact: 'hello.wch@campfire.work'
+    },
+    images: [
+      '../images/section-locations/photo1.png',
+      '../images/section-locations/photo2.png',
+      '../images/section-locations/photo3.png',
+    ],
+  },
+  HK_3: {
+    open: false,
+    name: 'Quarry Bay',
+    tableData: {
+      message: 'Coming Soon',
+    },
+    images: [
+      '../images/section-locations/photo1.png',
+      '../images/section-locations/photo2.png',
+      '../images/section-locations/photo3.png',
+    ],
+  },
+  HK_4: {
+    open: false,
+    name: 'Tai Koo',
+    tableData: {
+      message: 'Coming Soon',
+    },
+    images: [
+      '../images/section-locations/photo1.png',
+      '../images/section-locations/photo2.png',
+      '../images/section-locations/photo3.png',
+    ],
+  },
+  HK_5: {
+    open: false,
+    name: 'Sham Shui Po',
+    tableData: {
+      message: 'Coming Soon',
+    },
+    images: [
+      '../images/section-locations/photo1.png',
+      '../images/section-locations/photo2.png',
+      '../images/section-locations/photo3.png',
+    ],
+  },
+  HK_6: {
+    open: false,
+    name: 'Tseung Kwan O',
+    tableData: 'Coming Soon',
+  },
+    images: [
+      '../images/section-locations/photo1.png',
+      '../images/section-locations/photo2.png',
+      '../images/section-locations/photo3.png',
+    ],
+  }
+
+
+var locationTab = $('.location-tab');
+var tabList = $('.tab-list');
+var locationWrapper = $('.location-column');
+
+// Generate modal windows
+function generateAddressTable(data) {
+  return `
+    <table class="white-text address-table small-text">
+      <tr>
+          <td class="table-left">Industry:</td>
+          <td>${data.industry}</td>
+      </tr>
+      <tr>
+          <td class="table-left">Address:</td>
+          <td>${data.address}</td>
+      </tr>
+      <tr>
+          <td class="table-left">Contact:</td>
+          <td>${data.contact}</td>
+      </tr>
+  </table>
+  `
+}
+
+function generateComingSoon() {
+  return `
+    <h1 class="white-text large-text">Coming Soon</h2>
+    <h2 class="white-text normal-text">Be the first to know!</h2>
+  `
+}
 /* Google Maps */
 /* HK */
-window.addEventListener('load', function() {
-  var coords = [
-    {lat: 22.248337, lng: 114.166833, zoom: 15}, // hk
-    {lat: -33.8688, lng: 151.2093, zoom: 15}, // aus
-    {lat: 1.3554, lng: 103.8677, zoom: 15}, // sg
-    {lat: 51.5074, lng: -0.1278, zoom: 15} //uk
-  ];
-  var markers = [];
-  var maps = [];
+var HK_Map_Details = [{
+  mapTarget: '#hk-map',
+  center: {lat: 22.248337, lng: 114.166833},
+  zoom: 15,
+  markers: [
+    // Kennedy Town
+    {
+      coords: {lat: 22.280789, lng: 114.129113},
+      content: 'HK_1',
+      target: '#hk-content'
+    },
+    // Wong Chuk Hang
+    {
+      coords: {lat: 22.248337, lng: 114.166833},
+      content: 'HK_2',
+      target: '#hk_content'
+    },
+    // Quarry Bay
+    {
+      coords: {lat: 22.248337, lng: 114.166833},
+      content: 'HK_3',
+      target: '#hk_content'
+    },
+    // Tai Koo
+    {
+      coords: {lat: 22.248337, lng: 114.166833},
+      content: 'HK_4',
+      target: '#hk_content'
+    },
+    // Sam Shui Po
+    {
+      coords: {lat: 22.248337, lng: 114.166833},
+      content: 'HK_5',
+      target: '#hk_content'
+    },
+    // Tseung Kwan O
+    {
+      coords: {lat: 22.248337, lng: 114.166833},
+      content: 'HK_6',
+      target: '#hk_content'
+    },
+  ],
+}]
 
-  function showMap() {
-      for(var i = 0, length = coords.length; i < length; i++) {
-        var center = coords[i];
-        var latlng = new google.maps.LatLng(center.lat, center.lng);
-        var icon = {
-          url: '../images/section-locations/pin.png',
-          scaledSize: new google.maps.Size(40,60),
-          origin: new google.maps.Point(0,0),
-          anchor: new google.maps.Point(0,32)
-        };
+/* AU */
+var AU_Map_Details = [{
+  mapTarget: '#au-map',
+  center: {lat: -33.8688, lng: 151.2093},
+  zoom: 12,
+  markers: [
+    {
+      coords: {lat: -33.8688, lng: 151.2093},
+      content: 'AU_1',
+      target: '#au_content'
+    },
+  ],
+}]
 
-        maps[i] = new google.maps.Map(document.getElementById('map' + (i + 1)), {
-          zoom: center.zoom,
-          center: latlng,
-          scrollWheel: false,
-          streetViewControl: false,
-          mapTypeControl: false
-        });
+/* SG */
+var SG_Map_Details = [{
+  mapTarget: '#sg-map',
+  center: {lat: 1.3554, lng: 103.8677},
+  zoom: 12,
+  markers: [
+    {
+      coords: {lat: 1.3554, lng: 103.8677},
+      content: 'SG_1',
+      target: '#sg_content'
+    },
+  ],
+}]
 
-        markers[i] = new google.maps.Marker({
-          icon: icon,
-          position: latlng,
-          map: maps[i]
-        });
+/* UK*/
+var UK_Map_Details = [{
+  mapTarget: '#uk-map',
+  center: {lat: 51.5074, lng: -0.1278},
+  zoom: 12,
+  markers: [
+    {
+      coords: {lat: 51.5074, lng: -0.1278},
+      content: 'UK_1',
+      target: '#uk_content'
+    },
+  ],
+}]
 
-        $('.location-toggle').on('click', function() {
-          google.maps.event.trigger(maps, 'resize');
-        });
-
-        google.maps.event.addListener(markers[i], 'click', function () {
-          $('.modal').toggleClass('open');
-        });
-      }
-
+// Map options -- zoom, streetview control, etc. go here
+function mapOptions(center, zoom) {
+  return {
+    center: center,
+    zoom: zoom,
+    scrollwheel: false,
+    mapTypeControl: false,
+    streetViewControl: false
   }
-  if($('.locations-content').hasClass("open-location")) {
-    showMap();
+}
+
+// Add location markers to map
+
+function addMarker(point, map) {
+  var point = {coords, content, target};
+  var icon = {
+    url: '../images/section-locations/pin.png',
+    scaledSize: new google.maps.Size(40,60),
   }
+
+  var marker = new google.maps.Marker({
+    position: coords,
+    map: map,
+    icon,
+  })
+
+  // Add event listener to map markers
+  google.maps.event.addListener(marker, 'click', (e) => {
+    var targetTab = document.querySelector(`[data-context="${content}"]`);
+    !!targetTab && locationTabChange(targetTab, target);
+  });
+}
+
+// Initialise map
+window.addEventListener('load', function(){
+
+  function showMap(options) {
+    var mapTarget =
+    var options = {mapTarget, center, zoom, markers};
+    var mapOptions = mapOptions(center, zoom);
+    var map = new google.maps.Map(document.querySelector(mapTarget), mapOptions);
+
+    markers.forEach(marker => {
+      addMarker(marker, map)
+    });
+  }
+
+  // Initialise maps
+  showMap(HK_Map_Details);
+  showMap(AU_Map_Details);
+  // showMap(SG_Map_Details);
+  showMap(UK_Map_Details);
 });
 
-/* Location Modal */
-$('.close-x').on('click', function() {
-  $('.location-tab').removeClass('open');
-});
 
-$('.location-tab').on('click', function() {
-  $($(this)).toggleClass('open');
-});
+
 
 /* Location accordion*/
 $('.locations-toggle').on('click', function(){
