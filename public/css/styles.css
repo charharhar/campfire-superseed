@@ -562,7 +562,8 @@ a.mobile-nav-link:hover {
 }
 
 /* Locations section */
-#section-locations {
+.section-locations {
+  height: auto;
   background-color: #e9e9e9;
 }
 .locations-toggle {
@@ -570,20 +571,29 @@ a.mobile-nav-link:hover {
 }
 /* Map styling */
 .locations-content {
-  overflow: hidden;
+  width: 100%;
   position: relative;
   max-height: 0px;
 }
+.open-location {
+  width: 100%;
+  overflow: hidden;
+  max-height: 700px;
+}
 .modal {
+  display: block;
   position: absolute;
   left: 0%;
   top: 0%;
   transform: translate(0, 0);
   width: 100%;
-  height: 100%;
+  max-height: 0;
   background-color: rgba(0, 0, 0, 0.8);
-  display: block;
   z-index: 1;
+
+  &.open {
+    max-height: 100%;
+  }
 }
 .close-x {
   display: inline-block;
@@ -607,7 +617,7 @@ a.mobile-nav-link:hover {
   }
   &:not(.open){
     color: #2f4f4f;
-    background-color: rgba(255, 255, 255, 0.3);
+    background-color: rgba(255, 255, 255, 0.5);
   }
 }
 
@@ -615,13 +625,6 @@ a.mobile-nav-link:hover {
   color: #ffffff;
   background-color: #af1d1e;
 }
-/*.active-tab {
-  color: #ffffff;
-  background-color: #af1d1e;
-}
-.inactive-tab {
-
-}*/
 .tab-list {
   position: absolute;
   top: 0;
@@ -649,29 +652,43 @@ td {
 }
 
 /* slider*/
-.slider-container {
-  display: none;
+.slider {
+  margin: 0 auto;
+  width: 600px;
 }
-
+.slider-for {
+  padding-bottom: 15px;
+}
+.slider-for > div {
+  text-align: center;
+}
+.slider-img {
+  margin: auto;
+  max-width: 550px;
+}
+.slider-nav {
+  width: 600px;
+}
+.slider-thumb {
+  width: 200px;
+}
 .location-coming-soon {
   max-width: 500px;
 }
 .map-wrapper {
+  overflow: hidden;
   display: relative;
   width: 100%;
 }
 .map-canvas {
-  display: relative;
   width: 100%;
+  min-height: 700px;
 }
 .map-canvas::before {
   content: '';
   display: block;
   width: 100%;
   padding-top: 56.25%;
-}
-.open-location {
-  max-height: 100vh;
 }
 
 /* Loop section */
@@ -847,16 +864,6 @@ footer > .container-fluid {
   .plans-wrapper {
     padding: 40px;
     width: 70%;
-  }
-  .slider {
-    padding-top: 4rem;
-  }
-  .slider-img {
-    width: 70%;
-    margin: 0 auto;
-  }
-  .slider-for {
-    padding-bottom: 2rem;
   }
   .logo-container {
     display: flex;

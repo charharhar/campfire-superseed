@@ -4,8 +4,9 @@
 	<meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1">
 	<title>Campfire</title>
-    <script src="https://use.fontawesome.com/e1a7194148.js"></script>
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/jquery.slick/1.6.0/slick.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/jquery.slick/1.6.0/slick-theme.css"/>
+    <script src="https://use.fontawesome.com/e1a7194148.js"></script>
     <link rel="stylesheet" href="<%= assetsMap.main.css %>">
 </head>
 <body>
@@ -23,7 +24,6 @@
                     <li><a class="mobile-nav-link red-text" href="#section-plans">Our plans</a></li>
                     <li><a class="mobile-nav-link red-text" href="#section-locations">Our locations</a></li>
                     <li><a class="mobile-nav-link red-text" href="#section-loop">Blogs/Events</a></li>
-                    <li><a class="mobile-nav-link red-text" href="#section-contact">Join Us</a></li>
                     <li><a class="mobile-nav-link red-text" href="">Contact Us</a></li>
                 </ul>
             </div>
@@ -37,7 +37,6 @@
                         <li class="navbar-link"><a class="small-text" href="#section-plans">Our plans</a></li>
                         <li class="navbar-link"><a class="small-text" href="#section-locations">Our locations</a></li>
                         <li class="navbar-link"><a class="small-text" href="#section-loop">Blogs/Events</a></li>
-                        <li class="navbar-link"><a class="small-text" href="#section-contact">Join Us</a></li>
                         <li class="navbar-link"><a href="" type="button" class="button red-button normal-button small-text">Contact Us</a></li>
                     </ul>
                 </div>
@@ -277,117 +276,87 @@
         <section class="parallax" id="plans-parallax">
         </section>
 
-        <section class="section-wrapper" id="section-locations">
+        <section class="section-wrapper section-locations">
             <div class="section-header vertical-center flex flex-center">
                 <h2 class="white-text medium-text">Locations</h2>
             </div>
             <div class="locations-container">
-                <div class="locations-accordion">
-                    <div class="locations-toggle active-location">
-                        <h3 class="toggle-text normal-text flex-center">Hong Kong</h3>
-                        <i class="fa fa-chevron-up fa-lg locations-chevron" aria-hidden="true"></i>
+                <div class="locations-toggle active-location">
+                    <h3 class="toggle-text normal-text flex-center">Hong Kong</h3>
+                    <i class="fa fa-chevron-up fa-lg locations-chevron" aria-hidden="true"></i>
+                </div>
+                <div class="locations-content open-location" id="hk-content">
+                    <div class="tab-list">
+                        <div class="location-tab inactive-tab kennedy"><h3 class="normal-text"> Kennedy Town</h3></div>
+                        <div class="location-tab inactive-tab quarry"><h3 class="normal-text">Quarry Bay</h3></div>
+                        <div class="location-tab inactive-tab wch"><h3 class="normal-text">Wong Chuk Hang</h3></div>
                     </div>
 
-                    <!-- Hong Kong -->
-                    <div class="locations-content open-location" id="hk-content">
-                        <div class="tab-list">
-                            <div class="location-tab inactive-tab kennedy"><h3 class="normal-text"> Kennedy Town</h3></div>
-                            <div class="location-tab inactive-tab quarry"><h3 class="normal-text">Quarry Bay</h3></div>
-                            <div class="location-tab inactive-tab wch"><h3 class="normal-text">Wong Chuk Hang</h3></div>
-                        </div>
-                        <div class="modal hk-modal">
-                            <div class="modal-wrapper">
-                                <div class="row location-tabs">
-                                    <img class="close-x" src="../images/section-locations/close-x.png">
-                                    <div class="col col-sm-5">
-                                        <div class="tab-list-blank"></div>
-                                        <div class="address-details">
-                                            <table class="white-text address-table small-text">
-                                                <tr>
-                                                    <td class="table-left">Industry:</td>
-                                                    <td>Fashion</td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="table-left">Address:</td>
-                                                    <td>5/F, Remex Centre,<br>
-                                                        42 Wong Chuk Hang Road,<br>
-                                                        Hong Kong
-                                                </tr>
-                                                <tr>
-                                                    <td class="table-left">Contact:</td>
-                                                    <td>hello.wch@campfire.work</td>
-                                                </tr>
-                                            </table>
+                    <div class="map-wrapper">
+                        <div class="map-canvas" id="map1"></div>
+                    </div>
 
-                                            <a href="" type="button" class="button red-button medium-button">Contact Us</a>
-                                        </div>
-                                    </div>
-                                    <div class="col col-sm-7">
-                                        <div class="slider">
-                                            <div class="slider-for">
-                                                <div><img class="slider-img" data-slick-index="1" src="../images/section-locations/photo1.png"></div>
-                                                <div><img class="slider-img" data-slick-index="2" src="../images/section-locations/photo2.png"></div>
-                                                <div><img class="slider-img" data-slick-index="2" src="../images/section-locations/photo3.png"></div>
-                                            </div>
-                                            <div class="slider-nav">
-                                                <div><img class="slider-img" data-slick-index="1" src="../images/section-locations/photo1.png"></div>
-                                                <div><img class="slider-img" data-slick-index="2" src="../images/section-locations/photo2.png"></div>
-                                                <div><img class="slider-img" data-slick-index="2" src="../images/section-locations/photo3.png"></div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                    <div class="row modal hk-modal open-location">
+                        <img class="close-x" src="../images/section-locations/close-x.png">
+                        <div class="col col-sm-5">
+                            <div class="tab-list-blank"></div>
+                            <div class="address-details">
+                                <table class="white-text address-table small-text">
+                                    <tr>
+                                        <td class="table-left">Industry:</td>
+                                        <td>Fashion</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="table-left">Address:</td>
+                                        <td>5/F, Remex Centre,<br>
+                                            42 Wong Chuk Hang Road,<br>
+                                            Hong Kong
+                                    </tr>
+                                    <tr>
+                                        <td class="table-left">Contact:</td>
+                                        <td>hello.wch@campfire.work</td>
+                                    </tr>
+                                </table>
+
+                                <a href="" type="button" class="button red-button medium-button">Contact Us</a>
                             </div>
                         </div>
-
-                        <div class="map-wrapper">
-                            <div class="map-canvas" id="map1"></div>
-                        </div>
-                    </div>
-
-                    <!-- Australia -->
-                    <div class="locations-toggle inactive-location" id="au">
-                        <h3 class="toggle-text normal-text">Australia</h3>
-                        <i class="fa fa-chevron-down fa-lg locations-chevron" aria-hidden="true"></i>
-                    </div>
-
-                    <div class="locations-content closed-location" id="au-content">
-                        <div class="modal">
-                            <div class="modal-wrapper">
-                                <div class="location-coming-soon flex vertical-center flex-column">
-                                    <h1 class="white-text large-text">Coming Soon</h1>
-                                    <p class="white-text normal-text">Be the first to know</p>
-                                    <a href="" type="button" class="button red-button medium-button">Contact Us</a>
+                        <div class="col col-sm-7">
+                            <div class="slider">
+                                <div class="slider-for">
+                                    <div><img class="slider-img" src="../images/section-locations/photo1.png"></div>
+                                    <div><img class="slider-img" src="../images/section-locations/photo2.png"></div>
+                                    <div><img class="slider-img" src="../images/section-locations/photo1.png"></div>
+                                    <div><img class="slider-img" src="../images/section-locations/photo2.png"></div>
+                                </div>
+                                <div class="slider-nav">
+                                    <div><img class="slider-thumb" src="../images/section-locations/photo1.png"></div>
+                                    <div><img class="slider-thumb" src="../images/section-locations/photo2.png"></div>
+                                    <div><img class="slider-thumb" data-slick-index="2" src="../images/section-locations/photo3.png"></div>
+                                    <div><img class="slider-thumb" src="../images/section-locations/photo1.png"></div>
+                                    <div><img class="slider-thumb" src="../images/section-locations/photo2.png"></div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="map-wrapper">
-                            <div class="map-canvas" id="map2"></div>
-                        </div>
-                    </div>
-
-                    <!-- Singapore -->
-                    <div class="locations-toggle inactive-location" id="sg">
-                        <h3 class="toggle-text normal-text">Singapore</h3>
-                        <i class="fa fa-chevron-down fa-lg locations-chevron" aria-hidden="true"></i>
-                    </div>
-                    <div class="locations-content closed-location" id="sg-content">
-                        <div class="map-wrapper">
-                            <div class="map-canvas" id="map3"></div>
-                        </div>
-                    </div>
-
-                    <!-- United Kingdom -->
-                    <div class="locations-toggle inactive-location" id="uk">
-                        <h3 class="toggle-text normal-text flex-center">United Kingdom</h3>
-                        <i class="fa fa-chevron-down fa-lg locations-chevron" aria-hidden="true"></i>
-                    </div>
-                    <div class="locations-content closed-location" id="uk-content">
-                        <div class="map-wrapper">
-                            <div class="map-canvas" id="map4"></div>
                         </div>
                     </div>
                 </div>
+
+                <!-- Aus -->
+                <div class="locations-toggle inactive-location">
+                    <h3 class="toggle-text normal-text flex-center">Australia</h3>
+                    <i class="fa fa-chevron-up fa-lg locations-chevron" aria-hidden="true"></i>
+                </div>
+                <!-- Sing -->
+                <div class="locations-toggle inactive-location">
+                    <h3 class="toggle-text normal-text flex-center">Singapore</h3>
+                    <i class="fa fa-chevron-up fa-lg locations-chevron" aria-hidden="true"></i>
+                </div>
+                <!-- UK -->
+                <div class="locations-toggle inactive-location">
+                    <h3 class="toggle-text normal-text flex-center">United Kingdom</h3>
+                    <i class="fa fa-chevron-up fa-lg locations-chevron" aria-hidden="true"></i>
+                </div>
+
             </div>
         </section>
 

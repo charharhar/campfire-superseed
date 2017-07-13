@@ -69,6 +69,7 @@ window.addEventListener('load', function() {
           zoom: center.zoom,
           center: latlng,
           scrollWheel: false,
+          streetViewControl: false,
           mapTypeControl: false
         });
 
@@ -83,8 +84,7 @@ window.addEventListener('load', function() {
         });
 
         google.maps.event.addListener(markers[i], 'click', function () {
-          $('.modal').css('display', 'block');
-          $('.location-tab')
+          $('.modal').toggleClass('open');
         });
       }
 
@@ -96,13 +96,11 @@ window.addEventListener('load', function() {
 
 /* Location Modal */
 $('.close-x').on('click', function() {
-  $('.modal').css('display','none');
   $('.location-tab').removeClass('open');
 });
 
 $('.location-tab').on('click', function() {
   $($(this)).toggleClass('open');
-  $('.modal').css('display','block');
 });
 
 /* Location accordion*/
@@ -129,6 +127,7 @@ $('.locations-toggle').on('click', function(){
   slidesToShow: 1,
   slidesToScroll: 1,
   arrows: false,
+  centerMode: true,
   fade: true,
   asNavFor: '.slider-nav'
 });
@@ -136,9 +135,9 @@ $('.slider-nav').slick({
   slidesToShow: 3,
   slidesToScroll: 1,
   asNavFor: '.slider-for',
-  arrows: true,
   centerMode: true,
-  centerPadding: 0,
+  centerPadding: 5,
+  arrows: true,
   dots: false,
   focusOnSelect: true
 });
