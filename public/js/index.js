@@ -136,7 +136,7 @@ $('.slider-nav').slick({
   slidesToScroll: 1,
   asNavFor: '.slider-for',
   centerMode: true,
-  centerPadding: 5,
+  centerPadding: 10,
   arrows: true,
   dots: false,
   focusOnSelect: true

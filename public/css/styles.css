@@ -38,7 +38,6 @@ html, body {
   font-weight: 400;
   color: #222;
 }
-
 .wrapper {
   background-color: #FFFFFF;
   padding: 3.125% 3.125% 0% 3.125%;
@@ -92,6 +91,9 @@ a:hover {
 .normal-text {
   font-weight: 300;
   font-size: 16px;
+}
+.small-text {
+  font-size: 13px;
 }
 .letter-space {
   letter-spacing: 3px;
@@ -287,6 +289,7 @@ $b-transition: all $b-trans-speed ease;
 }
 
 .mobile-nav {
+  overflow: hidden;
   position: absolute;
   padding-top: 2rem;
   left: 0;
@@ -296,6 +299,7 @@ $b-transition: all $b-trans-speed ease;
   background-color: #FFFFFF;
 
   &:not(.open){
+    width: 0;
     visibility: hidden;
     animation-duration: $b-trans-speed;
     animation-fill-mode: both;
@@ -606,9 +610,9 @@ a.mobile-nav-link:hover {
 }
 .location-tab {
   margin-bottom: 10px;
-  padding: 13px 30px 13px 30px;
+  padding: 13px 60px 13px 60px;
   text-align: center;
-  max-width: 300px;
+  max-width: 450px;
   cursor: pointer;
 
   &.open {
@@ -638,7 +642,7 @@ a.mobile-nav-link:hover {
   padding-left: 2rem;
 }
 .address-table {
-  padding-left: 2rem;
+  padding-left: 1rem;
   max-height: 200px;
   margin-bottom: 100px;
 }
@@ -648,13 +652,29 @@ td {
 .table-left {
   text-transform: uppercase;
   padding-left: 0px;
-  padding-right: 80px;
+  padding-right: 50px;
 }
-
+.location-column, .slider {
+  max-height: 0;
+}
 /* slider*/
 .slider {
+  padding-top: 40px;
+  padding-right: 20px;
   margin: 0 auto;
   width: 600px;
+}
+.slick-slide {
+  margin: 0 27px;
+}
+.slick-list {
+  margin: 0 -27px;
+}
+.slick-next {
+  right: -60px;
+}
+.slick-prev {
+  left: -60px;
 }
 .slider-for {
   padding-bottom: 15px;
@@ -665,9 +685,6 @@ td {
 .slider-img {
   margin: auto;
   max-width: 550px;
-}
-.slider-nav {
-  width: 600px;
 }
 .slider-thumb {
   width: 200px;
@@ -782,17 +799,16 @@ footer > .container-fluid {
 }
 .footer-responsive {
   text-align: center;
-  justify-content: center;
   flex-direction: center;
   flex-direction: column-reverse;
 }
 .footer-logo {
   max-height: 50px;
-  margin-bottom: 20px;
+  margin-right: 20px;
 }
 .social-icons {
   display: inline-block;
-  margin-left: 10px;
+  margin-left: 20px;
   max-height: 40px;
   margin-bottom: 30px;
 }
@@ -865,6 +881,9 @@ footer > .container-fluid {
     padding: 40px;
     width: 70%;
   }
+  .location-column {
+    height: 100%;
+  }
   .logo-container {
     display: flex;
   }
@@ -913,8 +932,6 @@ footer > .container-fluid {
     flex-direction: row;
   }
   .logo-container {
-    display: flex;
-    vertical-align: middle;
     margin-right: auto;
   }
   .footer-logo {
