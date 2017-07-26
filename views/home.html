@@ -244,28 +244,9 @@
                 <div class="plans-content closed" id="private-content">
                     <div class="plans-wrapper" id="mixed-details">
                         <div class="row plans-details">
-                            <div class="col col-sm-6">
-                                <h2 class="white-text medium-text">Flex Plan</h2>
-                                <p class="white-text">The Flexible plan is a short-term alternative to a home-office. These plans are flexible Hot Desk for a short-term membership. The plans include the following</p>
-                                <a href="" type="button" class="button red-button large-button">Sign me up</a>
-                            </div>
-                            <div class="col col-sm-6">
-                                <div class="plans-hours">
-                                    <h3 class="white-text">Hours</h3>
-                                    <p class="white-text">
-                                        Day (9.00AM - 6.30PM)<br>
-                                        Week (Monday - Friday 9.00AM - 6.30PM)<br>
-                                        Half Day Monthly
-                                    </p>
-                                </div>
-                                <div class="plans-addons">
-                                    <h3 class="white-text">Additional Add-Ons</h3>
-                                    <p class="white-text">
-                                        Lockers<br>
-                                        Mail/Handling<br>
-                                        Meeting Room
-                                    </p>
-                                </div>
+                            <div class="col col-sm-12">
+                                <h2 class="white-text medium-text">Private Desk</h2>
+                                <p class="white-text">Campfire Private Campsites are spaces for medium to large companies to grow and collaborate. These offices are fully furnished and customized for your company. Ditch those cube farms and create your own open office space. With your own lockable space that you can access 24 hours a day, 7 days a week, you will have the space and privacy to run your growing business. You’ll be amazed at how spacious these private campsites are, with enough room for up to 25 people.</p>
                             </div>
                         </div>
                     </div>
@@ -286,6 +267,7 @@
                     <i class="fa fa-chevron-up fa-lg locations-chevron" aria-hidden="true"></i>
                 </div>
                 <div class="locations-content open-location" id="hk-content">
+                    <img class="close-modal" src="../images/section-locations/close-x.png">
                     <div class="tab-list">
                         <div class="location-tab inactive-tab" data-target="#hk-content" data-context="HK_1"><h3 class="normal-text"> Kennedy Town</h3></div>
                         <div class="location-tab inactive-tab" data-target="#hk-content" data-context="HK_2"><h3 class="normal-text">Wong Chuk Hang</h3></div>
@@ -299,63 +281,27 @@
                         <div class="map-canvas" id="hk-map"></div>
                     </div>
 
-                    <div class="row modal hk-modal open-location" id="wongchuk">
-                        <img class="close-x" src="../images/section-locations/close-x.png">
-                        <div class="col col-sm-5">
-                            <div class="tab-list-blank"></div>
-                            <div class="address-details">
-                                <table class="white-text address-table small-text">
-                                    <tr>
-                                        <td class="table-left">Industry:</td>
-                                        <td>Fashion</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="table-left">Address:</td>
-                                        <td>5/F, Remex Centre,<br>
-                                            42 Wong Chuk Hang Road,<br>
-                                            Hong Kong
-                                    </tr>
-                                    <tr>
-                                        <td class="table-left">Contact:</td>
-                                        <td>hello.wch@campfire.work</td>
-                                    </tr>
-                                </table>
-
-                                <a href="" type="button" class="button red-button medium-button">Contact Us</a>
-                            </div>
-                        </div>
-                        <div class="col col-sm-7 location-column hidden-xs">
-                            <div class="slider">
-                                <div class="slider-for">
-                                    <div><img class="slider-img" src="../images/section-locations/photo1.png"></div>
-                                    <div><img class="slider-img" src="../images/section-locations/photo2.png"></div>
-                                    <div><img class="slider-img" src="../images/section-locations/photo1.png"></div>
-                                    <div><img class="slider-img" src="../images/section-locations/photo2.png"></div>
-                                </div>
-                                <div class="slider-nav">
-                                    <div><img class="slider-thumb" src="../images/section-locations/photo1.png"></div>
-                                    <div><img class="slider-thumb" src="../images/section-locations/photo2.png"></div>
-                                    <div><img class="slider-thumb" data-slick-index="2" src="../images/section-locations/photo3.png"></div>
-                                    <div><img class="slider-thumb" src="../images/section-locations/photo1.png"></div>
-                                    <div><img class="slider-thumb" src="../images/section-locations/photo2.png"></div>
-                                </div>
-                            </div>
-                        </div>
+                    <div class="container-fluid row modal" id="hk-modal">
                     </div>
                 </div>
 
                 <!-- Aus -->
                 <div class="locations-toggle inactive-location">
                     <h3 class="toggle-text normal-text flex-center">Australia</h3>
-                    <i class="fa fa-chevron-up fa-lg locations-chevron" aria-hidden="true"></i>
+                    <i class="fa fa-chevron-down fa-lg locations-chevron" aria-hidden="true"></i>
                 </div>
-                 <div class="locations-content open-location" id="au-content">
+                 <div class="locations-content closed-location" id="au-content">
                     <div class="map-wrapper">
                         <div class="map-canvas" id="au-map"></div>
                     </div>
+                    <div class="container-fluid modal open-modal coming-soon">
+                        <h1 class="white-text medium-text">COMING SOON</h1>
+                        <h2 class="white-text normal-text">Be the first to know!</h2>
+                        <a href="" class="button red-button normal-button">Contact Us</a>
+                    </div>
                  </div>
 
-                <!-- <div class="locations-toggle inactive-location">
+<!--                 <div class="locations-toggle inactive-location">
                     <h3 class="toggle-text normal-text flex-center">Singapore</h3>
                     <i class="fa fa-chevron-up fa-lg locations-chevron" aria-hidden="true"></i>
                 </div>
@@ -368,13 +314,20 @@
                 <!-- UK -->
                 <div class="locations-toggle inactive-location">
                     <h3 class="toggle-text normal-text flex-center">United Kingdom</h3>
-                    <i class="fa fa-chevron-up fa-lg locations-chevron" aria-hidden="true"></i>
+                    <i class="fa fa-chevron-down fa-lg locations-chevron" aria-hidden="true"></i>
                 </div>
-                <div class="locations-content open-location" id="uk-content">
+                <div class="locations-content closed-location" id="uk-content">
                     <div class="map-wrapper">
                         <div class="map-canvas" id="uk-map"></div>
                     </div>
-                 </div>
+
+                    <div class="container-fluid modal open-modal coming-soon">
+                        <h1 class="white-text medium-text">COMING SOON</h1>
+                        <h2 class="white-text normal-text">Be the first to know!</h2>
+                        <a href="" class="button red-button normal-button">Contact Us</a>
+                    </div>
+
+                </div>
 
             </div>
         </section>
@@ -407,7 +360,7 @@
                     </div>
                     <div class="row newsletter flex">
                         <div class="newsletter-input">
-                            <input type="email" value="" placeholder="Join our newsletter (Enter email address)" class="email-input"></input>
+                            <input type="email" value="" class="email-input" placeholder="Join our newsletter (Enter Email Address)"></input>
                         </div>
                         <div class="newsletter-submit">
                             <input type="submit" value="Sign me up" class="button red-button medium-button email-submit"></input>
