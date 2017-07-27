@@ -20,6 +20,20 @@ $('.hamburger').on('click', function(){
   $('.mobile-nav').toggleClass("open");
 });
 
+/* Sticky Nav */
+
+$(window).on("scroll",function() {
+  var stickyNav = $('.sticky-nav');
+  var offset = Math.floor($(window).outerHeight() / 2);
+
+  if($(window).scrollTop() > offset) {
+    stickyNav.addClass("sticky");
+  }
+  else {
+    stickyNav.removeClass("sticky");
+  }
+});
+
 /* Plans accordion */
 $('.plans-toggle').on('click', function(){
 
