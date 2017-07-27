@@ -22,24 +22,31 @@ $('.hamburger').on('click', function(){
 
 /* Plans accordion */
 $('.plans-toggle').on('click', function(){
+
   var plansContent = $(this).next('.plans-content');
   var nextPlan = $(this).nextAll('.plans-toggle:first');
-  var plansChevron = $(this).find('.plans-chevron');
+  var plansChevron = $(this).children('.plans-chevron');
 
   if($(this).hasClass('inactive')) {
-    plansContent.removeClass('closed').addClass('open');
-    $(this).removeClass('inactive').addClass('active');
-    $('.open').not(plansContent).addClass('closed').removeClass('open');
-    $('.active').not($(this)).addClass('inactive').removeClass('active');
-    plansChevron.addClass('fa-chevron-up').removeClass('fa-chevron-down');
+
+    plansContent.toggleClass('closed open');
+    $(this).toggleClass('inactive active');
+    $('.open').not(plansContent).toggleClass('open closed');
+    $('.active').not($(this)).toggleClass('active inactive');
+    $('.fa-chevron-up').not($(this)).removeClass('fa-chevron-up').addClass('fa-chevron-down');
+    plansChevron.removeClass('fa-chevron-down').addClass('fa-chevron-up');
+
   } else {
-    plansContent.removeClass('open').addClass('closed');
-    $(this).addClass('inactive').removeClass('active');
-    plansChevron.addClass('fa-chevron-down').removeClass('fa-chevron-up');
+
+    plansContent.toggleClass('open closed');
+    $(this).toggleClass('inactive active');
+    $(this).children('i').removeClass('fa-chevron-up').addClass('fa-chevron-down');
     $(this).nextAll('.plans-toggle:first').addClass('active').removeClass('inactive');
-    nextPlan.next().removeClass('closed').addClass('open');
-    nextPlan.find('.plans-chevron').removeClass('fa-chevron-down').addClass('fa-chevron-up');
+    $('.fa-chevron-up').not($(this)).removeClass('fa-chevron-up').addClass('fa-chevron-down');
+    nextPlan.children('i').removeClass('fa-chevron-down').addClass('fa-chevron-up');
+    nextPlan.next().toggleClass('closed open');
   }
+
 });
 
 /* Google Maps */
@@ -312,6 +319,7 @@ function locationTabChange(tab, targetID) {
   sliderNav.className = "slider-nav";
 
   locationDetails.addClass("open-modal");
+  $('.close-modal').css('opacity', '0.7');
 
   if(locationData.open) {
     locationDetails.empty();
@@ -371,19 +379,22 @@ locationTabs.on('click', function() {
 $('.locations-toggle').on('click', function(){
   var locationContent = $(this).next('.locations-content');
   var nextLocation = $(this).nextAll('.locations-toggle:first').next();
-  var locationChevron = $(this).find('.locations-chevron');
+  var locationChevron = $(this).children('i');
 
   if($(this).hasClass('inactive-location')) {
-    locationContent.removeClass('closed-location').addClass('open-location');
-    $(this).removeClass('inactive-location').addClass('active-location');
-    $('.open-location').not(locationContent).addClass('closed-location').removeClass('open-location');
-    $('.active-location').not($(this)).addClass('inactive-location').removeClass('active-location');
-    locationChevron.addClass('fa-chevron-up').removeClass('fa-chevron-down');
+
+    locationContent.toggleClass('closed-location open-location');
+    $(this).toggleClass('inactive-location active-location');
+    $('.open-location').not(locationContent).toggleClass('closed-location open-location');
+    $('.active-location').not($(this)).toggleClass('inactive-location active-location');
+    locationChevron.toggleClass('fa-chevron-up fa-chevron-down');
+
   } else {
-    locationContent.removeClass('open-location').addClass('closed-location');
-    $(this).addClass('inactive-location').removeClass('active-location');
-    $(this).nextAll('.locations-toggle:first').addClass('active-location').removeClass('inactive-location');
-    nextLocation.removeClass('closed-location').addClass('open-location');
+
+    locationContent.toggleClass('open-location closed-location')
+    $(this).toggleClass('inactive-location active-location');
+    $(this).nextAll('.locations-toggle:first').toggleClass('active-location inactive-location');
+    nextLocation.toggleClass('closed-location open-location');
   }
 });
 
@@ -391,6 +402,7 @@ $('.locations-toggle').on('click', function(){
 $('.close-modal').on('click', function(){
   console.log('okay');
   $('#hk-modal').hide();
+  $('.close-modal').css('opacity', '0');
 });
 
 /* Stay in the loop background image thing */
