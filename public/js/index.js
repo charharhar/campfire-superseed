@@ -14,6 +14,43 @@ $('html, body').animate({
   }, 500);
 };
 
+/* Transition/Animation on scroll */
+function isScrolledIntoView(elem)
+{
+    var docViewTop = $(window).scrollTop();
+    var docViewBottom = docViewTop + $(window).height();
+
+    var elemTop = $(elem).offset().top;
+    var elemBottom = elemTop + $(elem).height();
+    var elemHeight = elem.clientHeight;
+
+    return (
+      (elemBottom <= docViewBottom) &&
+      (elemTop >= docViewTop)
+    );
+}
+
+$(window).on('scroll', function() {
+
+  $('.left-right').each(function() {
+    if(isScrolledIntoView($(this))) {
+      $(this).addClass('visible');
+    }
+    else {
+      $(this).removeClass('visible');
+    }
+  })
+
+  $('.right-left').each(function() {
+    if(isScrolledIntoView($(this))){
+      $(this).addClass('visible');
+    }
+    else {
+      $(this).removeClass('visible');
+    }
+  });
+});
+
 /* Mobile nav -- Hamburger */
 $('.hamburger').on('click', function(){
   $($(this)).toggleClass("open");
@@ -334,7 +371,10 @@ function locationTabChange(tab, targetID) {
   sliderNav.className = "slider-nav";
 
   locationDetails.addClass("open-modal");
+
   $('.close-modal').css('opacity', '0.7');
+
+  $(tab).toggleClass('open');
 
   if(locationData.open) {
     locationDetails.empty();
@@ -420,9 +460,14 @@ $('.locations-toggle').on('click', function(){
 
 /* Close location details */
 $('.close-modal').on('click', function(){
-  console.log('okay');
+
   $('#hk-modal').hide();
   $('.close-modal').css('opacity', '0');
+
+  if($('.location-tab').hasClass('open')) {
+    $('.location-tab').removeClass('open');
+  }
+
 });
 
 /* Stay in the loop background image thing */
