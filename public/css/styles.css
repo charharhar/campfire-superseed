@@ -350,7 +350,7 @@ $b-transition: all $b-trans-speed ease;
   width: 100vw;
   height: 100vh;
   background-color: #FFFFFF;
-  z-index: 5;
+  z-index: 8;
 
   &:not(.open){
     width: 0;
@@ -380,7 +380,7 @@ $b-transition: all $b-trans-speed ease;
 }
 .mobile-nav-link {
   display: block;
-  font-size: 25px;
+  font-size: 20px;
   line-height: 30px;
   text-align: center;
   text-transform: uppercase;
@@ -388,11 +388,11 @@ $b-transition: all $b-trans-speed ease;
   padding-right: 30px;
   padding-top: 30px;
   padding-bottom: 30px;
-  background-color: #FFFFFF;
-}
-a.mobile-nav-link:hover {
-  color: #E9E9E9;
-  text-decoration: underline;
+
+  &:hover {
+    color: #AF1D1E;
+    text-decoration: underline;
+  }
 }
 .burger-middle {
   margin-top: 6px;
