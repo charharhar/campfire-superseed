@@ -602,7 +602,7 @@ a.mobile-nav-link:hover {
   padding-left: 15px;
   padding-right: 15px;
   padding-top: 40px;
-  padding-bottom: 40px;
+  padding-bottom: 30px;
   width: 90%;
   background-color: rgba(0, 0, 0, 0.80);
 }
@@ -646,9 +646,12 @@ a.mobile-nav-link:hover {
 
 /* Panel content */
 .plans-hours, .plans-addons {
-  margin-top: 30px;
+  margin-top: 15px;
   margin-bottom: 20px;
   text-align: center;
+}
+.plans-hours > h3, .plans-addons > h3 {
+  margin-bottom: 10px;
 }
 
 /* Panel backgrounds */
@@ -1026,7 +1029,8 @@ footer {
     }
   }
   .plans-wrapper {
-    padding: 40px;
+    padding-top: 30px;
+    padding-bottom: 10px;
     width: 50%;
   }
   .location-column {
