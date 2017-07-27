@@ -33,7 +33,7 @@ $('.plans-toggle').on('click', function(){
     $(this).toggleClass('inactive active');
     $('.open').not(plansContent).toggleClass('open closed');
     $('.active').not($(this)).toggleClass('active inactive');
-    $('.fa-chevron-up').not($(this)).removeClass('fa-chevron-up').addClass('fa-chevron-down');
+    $('.plans-accordion .fa-chevron-up').not($(this)).removeClass('fa-chevron-up').addClass('fa-chevron-down');
     plansChevron.removeClass('fa-chevron-down').addClass('fa-chevron-up');
 
   } else {
@@ -42,9 +42,10 @@ $('.plans-toggle').on('click', function(){
     $(this).toggleClass('inactive active');
     $(this).children('i').removeClass('fa-chevron-up').addClass('fa-chevron-down');
     $(this).nextAll('.plans-toggle:first').addClass('active').removeClass('inactive');
-    $('.fa-chevron-up').not($(this)).removeClass('fa-chevron-up').addClass('fa-chevron-down');
+    $('.plans-accordion .fa-chevron-up').not($(this)).removeClass('fa-chevron-up').addClass('fa-chevron-down');
     nextPlan.children('i').removeClass('fa-chevron-down').addClass('fa-chevron-up');
     nextPlan.next().toggleClass('closed open');
+
   }
 
 });
@@ -387,14 +388,19 @@ $('.locations-toggle').on('click', function(){
     $(this).toggleClass('inactive-location active-location');
     $('.open-location').not(locationContent).toggleClass('closed-location open-location');
     $('.active-location').not($(this)).toggleClass('inactive-location active-location');
-    locationChevron.toggleClass('fa-chevron-up fa-chevron-down');
+    $('.locations-container .fa-chevron-up').not($(this)).removeClass('fa-chevron-up').addClass('fa-chevron-down');
+    locationChevron.removeClass('fa-chevron-down').addClass('fa-chevron-up');
 
   } else {
 
     locationContent.toggleClass('open-location closed-location')
     $(this).toggleClass('inactive-location active-location');
-    $(this).nextAll('.locations-toggle:first').toggleClass('active-location inactive-location');
+    $(this).children('i').removeClass('fa-chevron-up').addClass('fa-chevron-down');
+    $(this).nextAll('.locations-toggle:first').addClass('active-location').removeClass('inactive-location');
+    $('.locations-container .fa-chevron-up').not($(this)).removeClass('fa-chevron-up').addClass('fa-chevron-down');
+    $(this).nextAll('.locations-toggle:first').children('i').removeClass('fa-chevron-down').addClass('fa-chevron-up');
     nextLocation.toggleClass('closed-location open-location');
+
   }
 });
 
