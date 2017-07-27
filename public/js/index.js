@@ -374,7 +374,8 @@ function locationTabChange(tab, targetID) {
 
   $('.close-modal').css('opacity', '0.7');
 
-  $(tab).toggleClass('open');
+  $(tab).addClass('open');
+  $(tab).siblings().removeClass('open');
 
   if(locationData.open) {
     locationDetails.empty();
@@ -425,9 +426,11 @@ function locationTabChange(tab, targetID) {
 }
 
 locationTabs.on('click', function() {
+
   const tabDetails = $(this)[0];
   console.log(tabDetails);
   locationTabChange(tabDetails);
+
 });
 
 /* Location accordion*/
@@ -472,11 +475,13 @@ $('.close-modal').on('click', function(){
 
 /* Stay in the loop background image thing */
 $('#loop-text-container').on('mousemove', function(e) {
+
   var leftmoveX = (e.pageX * - 1/15);
   var leftmoveY = (e.pageY * - 1/40);
   var rightmoveX = (e.pageX * - 1/30);
   var rightmoveY = (e.pageY * - 1/15);
   $('#loop-left').css('transform', 'translate3d(' + leftmoveX + 'px, ' + rightmoveX + 'px, 0)');
   $('#loop-right').css('transform', 'translate3d(' + rightmoveX +'px, ' + rightmoveY +'px, 0)');
+
 });
 
