@@ -704,7 +704,7 @@ section.section {
  */
 section.section-main {
   border-bottom: 30px solid $campfire-lightRed;
-  background-image: url(https://campfire.work/wp-content/themes/campfire/assets/images/section-main/header-bg.jpg);
+  background-image: url(/images/section-main/header-bg.jpg);
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -775,7 +775,7 @@ section.section-about {
 
   .section-image {
     &.parallax-first {
-      background-image: url(https://campfire.work/wp-content/themes/campfire/assets/images/parallax-1.png);
+      background-image: url(/images/parallax-1.png);
     }
   }
 }
@@ -811,7 +811,7 @@ section.section-about {
  */
 section.section-member {
   height: auto;
-  background-image: url(https://campfire.work/wp-content/themes/campfire/assets/images/section-member/membershipfeature-bg.png);
+  background-image: url(/images/section-member/membershipfeature-bg.png);
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -942,19 +942,19 @@ section.section-plans {
         transition: all .5s ease-out;
 
         &#acc-1 {
-          background-image: url(https://campfire.work/wp-content/themes/campfire/assets/images/section-plans/plans-flex.png);
+          background-image: url(/images/section-plans/plans-flex.png);
         }
 
         &#acc-2 {
-          background-image: url(https://campfire.work/wp-content/themes/campfire/assets/images/section-plans/plans-hotdesk.png);
+          background-image: url(/images/section-plans/plans-hotdesk.png);
         }
 
         &#acc-3 {
-          background-image: url(https://campfire.work/wp-content/themes/campfire/assets/images/section-plans/plans-mixeddesk.png);
+          background-image: url(/images/section-plans/plans-mixeddesk.png);
         }
 
         &#acc-4 {
-          background-image: url(https://campfire.work/wp-content/themes/campfire/assets/images/section-plans/plans-privateoffice.png);
+          background-image: url(/images/section-plans/plans-privateoffice.png);
         }
 
         &.active-plan {
@@ -1040,7 +1040,7 @@ section.section-plans {
 
   .section-image {
     &.parallax-second {
-      background-image: url(https://campfire.work/wp-content/themes/campfire/assets/images/parallax-2.png);
+      background-image: url(/images/parallax-2.png);
     }
   }
 }
